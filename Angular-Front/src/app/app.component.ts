@@ -1,4 +1,12 @@
 import { Component } from '@angular/core';
+import { FirebaseListObservable } from 'angularfire2/database-deprecated';
+import { AngularFireDatabase } from 'angularfire2/database-deprecated';
+
+
+
+class Items {
+  constructor(public title) { }
+}
 
 @Component({
   selector: 'app-root',
@@ -6,5 +14,12 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'app';
+  public items: FirebaseListObservable<Items[]>;
+  constructor(db: AngularFireDatabase) {
+    this.items = db.list('/bin');
+    this.items.forEach(item => {
+      console.log('Item:', item);
+    });
+  }
+
 }

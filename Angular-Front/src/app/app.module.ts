@@ -12,7 +12,11 @@ import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
 import { Ng2CarouselamosModule } from 'ng2-carouselamos';
 import { CarouselComponent } from './components/carousel/carousel.component';
-import { AuthService } from './service/auth.service'
+
+import { AngularFireModule } from 'angularfire2';
+import { AngularFireDatabaseModule } from 'angularfire2/database-deprecated';
+
+import { environment } from '../environments/environment';
 
 const  applicationRouters:Routes = [
   {path:'login',component:LoginComponent},
@@ -29,14 +33,16 @@ const  applicationRouters:Routes = [
     LoginComponent,
     RegisterComponent,
     CarouselComponent,
+
   ],
   imports: [
     BrowserModule,
     Ng2CarouselamosModule,
     FormsModule,
-    RouterModule.forRoot(applicationRouters)
+    RouterModule.forRoot(applicationRouters),
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFireDatabaseModule
   ],
-  providers: [AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

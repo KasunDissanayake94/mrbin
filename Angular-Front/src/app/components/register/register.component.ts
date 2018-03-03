@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { AuthService} from '../../service/auth.service'
+//import { AuthService} from '../../service/auth.service'
 import {enableProdMode} from '@angular/core';
 enableProdMode();
 
@@ -14,7 +14,7 @@ export class RegisterComponent implements OnInit {
   email:String;
   password:String;
 
-  constructor(private authService:AuthService) { }
+  constructor() { }
 
   ngOnInit() {
   }
@@ -23,7 +23,7 @@ export class RegisterComponent implements OnInit {
       email:this.email,
       password:this.password
     };
-    this.authService.registerUser(user)
+    //this.authService.registerUser(user)
 
   }
 
