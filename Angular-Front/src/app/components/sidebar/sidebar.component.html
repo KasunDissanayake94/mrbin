@@ -1,0 +1,11 @@
+<ul class="nav nav-pills flex-column">
+  <li class="nav-item">
+    <a class="nav-link active" href="#">Active</a>
+  </li>
+  <li routerLinkActive="active" *ngFor="let menuItem of menuItems" >
+    <a  [routerLink]="[menuItem.path]">
+      <i class="{{menuItem.icon}}"></i>
+      <p>{{menuItem.title}}</p>
+    </a>
+  </li>
+</ul>
