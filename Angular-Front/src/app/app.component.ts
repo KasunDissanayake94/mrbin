@@ -17,9 +17,7 @@ export class AppComponent {
   public items: FirebaseListObservable<Items[]>;
   constructor(db: AngularFireDatabase) {
     this.items = db.list('/bin');
-    this.items.forEach(item => {
-      console.log('Item:', item);
-    });
+
   }
 
 }

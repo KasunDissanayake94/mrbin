@@ -17,11 +17,18 @@ import { AngularFireModule } from 'angularfire2';
 import { AngularFireDatabaseModule } from 'angularfire2/database-deprecated';
 
 import { environment } from '../environments/environment';
-import { UserpageComponent } from './components/userpage/userpage.component';
+import {AngularFireAuthModule} from "angularfire2/auth";
+import {AuthService} from "./services/auth.service";
+import { UserloggedinnavbarComponent } from './components/userloggedinnavbar/userloggedinnavbar.component';
+import { DashboardComponent } from './components/dashboard/dashboard.component';
+
+
+
+
 
 const  applicationRouters:Routes = [
   {path:'login',component:LoginComponent},
-  //{path:'register',component:RegisterComponent},
+  {path:'userhome',component:UserloggedinnavbarComponent},
   {path:'',component:HomePageContentComponent},
 ];
 
@@ -32,9 +39,9 @@ const  applicationRouters:Routes = [
     HomePageContentComponent,
     FooterComponent,
     LoginComponent,
-    //RegisterComponent,
     CarouselComponent,
-    UserpageComponent,
+    UserloggedinnavbarComponent,
+    DashboardComponent,
 
   ],
   imports: [
@@ -43,8 +50,10 @@ const  applicationRouters:Routes = [
     FormsModule,
     RouterModule.forRoot(applicationRouters),
     AngularFireModule.initializeApp(environment.firebase),
-    AngularFireDatabaseModule
+    AngularFireDatabaseModule,
+    AngularFireAuthModule,
   ],
+  providers: [AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
