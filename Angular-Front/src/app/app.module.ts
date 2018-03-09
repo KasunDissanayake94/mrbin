@@ -66,7 +66,8 @@ const  applicationRouters:Routes = [
     IconsComponent,
     MapsComponent,
     NotificationsComponent,
-    UpgradeComponent
+    UpgradeComponent,
+
 
   ],
   imports: [
