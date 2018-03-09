@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+
 declare const google: any;
 interface Marker {
 lat: number;

@@ -1,10 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
+<<<<<<< Updated upstream
     <list default="true" id="9f7fcb45-59fc-4056-bcae-c7cc337d4131" name="Default" comment="">
 <<<<<<< Updated upstream
       <change beforePath="" afterPath="$PROJECT_DIR$/Angular-Front/src/app/components/lbd/lbd-chart/lbd-chart.component.css" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+<<<<<<< Updated upstream
       <change beforePath="$PROJECT_DIR$/Angular-Front/src/app/components/dashboard/dashboard.component.css" afterPath="$PROJECT_DIR$/Angular-Front/src/app/components/dashboard/dashboard.component.css" />
       <change beforePath="$PROJECT_DIR$/Angular-Front/src/app/components/dashboard/dashboard.component.html" afterPath="$PROJECT_DIR$/Angular-Front/src/app/components/dashboard/dashboard.component.html" />
       <change beforePath="$PROJECT_DIR$/Angular-Front/src/app/components/dashboard/dashboard.component.ts" afterPath="$PROJECT_DIR$/Angular-Front/src/app/components/dashboard/dashboard.component.ts" />
@@ -15,12 +17,25 @@
       <change beforePath="$PROJECT_DIR$/Angular-Front/src/app/components/upgrade/upgrade.component.spec.ts" afterPath="" />
       <change beforePath="$PROJECT_DIR$/Angular-Front/src/assets/css/light-bootstrap-dashboard.css" afterPath="$PROJECT_DIR$/Angular-Front/src/assets/css/light-bootstrap-dashboard.css" />
 =======
+<<<<<<< HEAD
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Angular-Front/package-lock.json" afterPath="$PROJECT_DIR$/Angular-Front/package-lock.json" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Angular-Front/package.json" afterPath="$PROJECT_DIR$/Angular-Front/package.json" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Angular-Front/src/app/components/home-page-content/home-page-content.component.html" afterPath="$PROJECT_DIR$/Angular-Front/src/app/components/home-page-content/home-page-content.component.html" />
+=======
+      <change beforePath="$PROJECT_DIR$/Angular-Front/package-lock.json" afterPath="$PROJECT_DIR$/Angular-Front/package-lock.json" />
+      <change beforePath="$PROJECT_DIR$/Angular-Front/package.json" afterPath="$PROJECT_DIR$/Angular-Front/package.json" />
+      <change beforePath="$PROJECT_DIR$/Angular-Front/src/app/app.module.ts" afterPath="$PROJECT_DIR$/Angular-Front/src/app/app.module.ts" />
+      <change beforePath="$PROJECT_DIR$/Angular-Front/src/app/components/navbar/navbar.component.html" afterPath="$PROJECT_DIR$/Angular-Front/src/app/components/navbar/navbar.component.html" />
+      <change beforePath="$PROJECT_DIR$/Angular-Front/src/app/components/navbar/navbar.component.ts" afterPath="$PROJECT_DIR$/Angular-Front/src/app/components/navbar/navbar.component.ts" />
+      <change beforePath="$PROJECT_DIR$/Angular-Front/src/app/components/typography/typography.component.ts" afterPath="$PROJECT_DIR$/Angular-Front/src/app/components/typography/typography.component.ts" />
+      <change beforePath="$PROJECT_DIR$/Angular-Front/src/index.html" afterPath="$PROJECT_DIR$/Angular-Front/src/index.html" />
+>>>>>>> master
 >>>>>>> Stashed changes
     </list>
+=======
+    <list default="true" id="9f7fcb45-59fc-4056-bcae-c7cc337d4131" name="Default" comment="" />
+>>>>>>> Stashed changes
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
     <ignored path="$PROJECT_DIR$/tmp/" />
@@ -70,14 +85,28 @@
       <file leaf-file-name="dashboard.component.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Angular-Front/src/app/components/dashboard/dashboard.component.html">
           <provider selected="true" editor-type-id="text-editor">
+<<<<<<< Updated upstream
             <state relative-caret-position="252">
               <caret line="12" column="17" lean-forward="false" selection-start-line="12" selection-start-column="17" selection-end-line="12" selection-end-column="17" />
 =======
+<<<<<<< HEAD
       <file leaf-file-name="app.component.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Angular-Front/src/app/app.component.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="102">
               <caret line="6" column="0" lean-forward="false" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
+=======
+<<<<<<< HEAD
+            <state relative-caret-position="187">
+              <caret line="11" column="0" lean-forward="false" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
+=======
+      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Angular-Front/src/index.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="170">
+              <caret line="10" column="210" lean-forward="false" selection-start-line="10" selection-start-column="210" selection-end-line="10" selection-end-column="210" />
+>>>>>>> master
+>>>>>>> master
 >>>>>>> Stashed changes
               <folding />
             </state>
@@ -88,38 +117,82 @@
       <file leaf-file-name="lbd-chart.component.ts" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Angular-Front/src/app/components/lbd/lbd-chart/lbd-chart.component.ts">
           <provider selected="true" editor-type-id="text-editor">
+<<<<<<< Updated upstream
             <state relative-caret-position="336">
               <caret line="17" column="26" lean-forward="false" selection-start-line="17" selection-start-column="26" selection-end-line="17" selection-end-column="26" />
+=======
+            <state relative-caret-position="219">
+              <caret line="108" column="44" lean-forward="false" selection-start-line="108" selection-start-column="44" selection-end-line="108" selection-end-column="44" />
+>>>>>>> Stashed changes
               <folding>
                 <element signature="e#0#95#0" expanded="true" />
               </folding>
+=======
+      <file leaf-file-name="navbar.component.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Angular-Front/src/app/components/navbar/navbar.component.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="129">
+              <caret line="25" column="0" lean-forward="false" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="113" />
+              <folding />
+>>>>>>> Stashed changes
             </state>
           </provider>
         </entry>
       </file>
+<<<<<<< Updated upstream
       <file leaf-file-name="lbd-chart.component.css" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Angular-Front/src/app/components/lbd/lbd-chart/lbd-chart.component.css">
           <provider selected="true" editor-type-id="text-editor">
+<<<<<<< Updated upstream
             <state relative-caret-position="567">
               <caret line="1133" column="12" lean-forward="true" selection-start-line="1133" selection-start-column="12" selection-end-line="1133" selection-end-column="12" />
+=======
+<<<<<<< HEAD
+            <state relative-caret-position="425">
+              <caret line="25" column="8" lean-forward="false" selection-start-line="25" selection-start-column="8" selection-end-line="25" selection-end-column="8" />
+=======
+      <file leaf-file-name="login.component.ts" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Angular-Front/src/app/components/login/login.component.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="306">
+              <caret line="20" column="0" lean-forward="false" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
+>>>>>>> master
+>>>>>>> Stashed changes
               <folding />
             </state>
           </provider>
         </entry>
       </file>
+<<<<<<< Updated upstream
       <file leaf-file-name="lbd-chart.component.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Angular-Front/src/app/components/lbd/lbd-chart/lbd-chart.component.html">
           <provider selected="true" editor-type-id="text-editor">
+<<<<<<< Updated upstream
             <state relative-caret-position="21">
               <caret line="1" column="27" lean-forward="false" selection-start-line="1" selection-start-column="27" selection-end-line="1" selection-end-column="27" />
 =======
+<<<<<<< HEAD
       <file leaf-file-name="home-page-content.component.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Angular-Front/src/app/components/home-page-content/home-page-content.component.css">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="0">
               <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+=======
+            <state relative-caret-position="323">
+              <caret line="19" column="0" lean-forward="false" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
+>>>>>>> master
 >>>>>>> Stashed changes
               <folding />
+=======
+      <file leaf-file-name="navbar.component.ts" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Angular-Front/src/app/components/navbar/navbar.component.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="17">
+              <caret line="2" column="0" lean-forward="false" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
+              <folding>
+                <element signature="e#0#50#0" expanded="true" />
+              </folding>
+>>>>>>> Stashed changes
             </state>
           </provider>
         </entry>
@@ -128,24 +201,44 @@
       <file leaf-file-name="home-page-content.component.ts" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Angular-Front/src/app/components/home-page-content/home-page-content.component.ts">
           <provider selected="true" editor-type-id="text-editor">
+<<<<<<< Updated upstream
             <state relative-caret-position="315">
               <caret line="15" column="0" lean-forward="false" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
               <folding />
+=======
+<<<<<<< HEAD
+            <state relative-caret-position="238">
+              <caret line="43" column="56" lean-forward="false" selection-start-line="43" selection-start-column="56" selection-end-line="43" selection-end-column="56" />
+=======
+            <state relative-caret-position="680">
+              <caret line="69" column="0" lean-forward="false" selection-start-line="69" selection-start-column="0" selection-end-line="69" selection-end-column="0" />
+>>>>>>> master
+              <folding>
+                <element signature="e#651#708#0" expanded="true" />
+              </folding>
+>>>>>>> Stashed changes
             </state>
           </provider>
         </entry>
       </file>
+<<<<<<< Updated upstream
       <file leaf-file-name="home-page-content.component.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Angular-Front/src/app/components/home-page-content/home-page-content.component.css">
           <provider selected="true" editor-type-id="text-editor">
+<<<<<<< Updated upstream
             <state relative-caret-position="0">
               <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
 =======
+<<<<<<< HEAD
       <file leaf-file-name="home-page-content.component.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Angular-Front/src/app/components/home-page-content/home-page-content.component.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="271">
               <caret line="33" column="8" lean-forward="false" selection-start-line="33" selection-start-column="8" selection-end-line="33" selection-end-column="8" />
+=======
+            <state relative-caret-position="119">
+              <caret line="7" column="31" lean-forward="false" selection-start-line="7" selection-start-column="31" selection-end-line="7" selection-end-column="31" />
+>>>>>>> master
 >>>>>>> Stashed changes
               <folding />
             </state>
@@ -156,14 +249,28 @@
       <file leaf-file-name="home-page-content.component.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Angular-Front/src/app/components/home-page-content/home-page-content.component.html">
           <provider selected="true" editor-type-id="text-editor">
+<<<<<<< Updated upstream
             <state relative-caret-position="21">
               <caret line="1" column="25" lean-forward="false" selection-start-line="1" selection-start-column="25" selection-end-line="1" selection-end-column="25" />
 =======
+<<<<<<< HEAD
       <file leaf-file-name="home-page-content.component.ts" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Angular-Front/src/app/components/home-page-content/home-page-content.component.ts">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="382">
               <caret line="62" column="4" lean-forward="false" selection-start-line="62" selection-start-column="4" selection-end-line="62" selection-end-column="4" />
+=======
+<<<<<<< HEAD
+            <state relative-caret-position="374">
+              <caret line="22" column="41" lean-forward="false" selection-start-line="22" selection-start-column="41" selection-end-line="22" selection-end-column="41" />
+=======
+      <file leaf-file-name="typography.component.ts" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Angular-Front/src/app/components/typography/typography.component.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="17">
+              <caret line="1" column="0" lean-forward="true" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
+>>>>>>> master
+>>>>>>> master
 >>>>>>> Stashed changes
               <folding />
             </state>
@@ -197,6 +304,12 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
+<<<<<<< Updated upstream
+=======
+        <option value="$PROJECT_DIR$/Angular-Front/src/app/components/carousel/carousel.component.css" />
+        <option value="$PROJECT_DIR$/Angular-Front/src/app/components/carousel/carousel.component.ts" />
+        <option value="$PROJECT_DIR$/Angular-Front/src/app/components/register/register.component.html" />
+>>>>>>> Stashed changes
         <option value="$PROJECT_DIR$/Angular-Front/src/tsconfig.spec.json" />
         <option value="$PROJECT_DIR$/Angular-Front/src/app/providers/af.ts" />
         <option value="$PROJECT_DIR$/Angular-Front/src/app/service/auth.service.ts" />
@@ -209,7 +322,6 @@
         <option value="$PROJECT_DIR$/Angular-Front/src/tsconfig.app.json" />
         <option value="$PROJECT_DIR$/Angular-Front/src/typings.d.ts" />
         <option value="$PROJECT_DIR$/Angular-Front/src/environments/environment.ts" />
-        <option value="$PROJECT_DIR$/Angular-Front/src/app/components/navbar/navbar.component.html" />
         <option value="$PROJECT_DIR$/Angular-Front/src/app/components/navbar/navbar.component.css" />
         <option value="$PROJECT_DIR$/Angular-Front/src/app/app.component.css" />
         <option value="$PROJECT_DIR$/Angular-Front/src/providers/af.ts" />
@@ -229,7 +341,6 @@
         <option value="$PROJECT_DIR$/Angular-Front/src/app/components/tables/tables.component.html" />
         <option value="$PROJECT_DIR$/Angular-Front/src/app/components/home/home.component.html" />
         <option value="$PROJECT_DIR$/Angular-Front/src/app/components/mainmemu/mainmemu.component.html" />
-        <option value="$PROJECT_DIR$/Angular-Front/src/index.html" />
         <option value="$PROJECT_DIR$/Angular-Front/src/app/components/userloggedinnavbar/userloggedinnavbar.component.css" />
         <option value="$PROJECT_DIR$/Angular-Front/src/app/app.component.html" />
         <option value="$PROJECT_DIR$/Angular-Front/src/app/services/auth.service.ts" />
@@ -237,7 +348,6 @@
         <option value="$PROJECT_DIR$/Angular-Front/src/app/components/userloggedinnavbar/userloggedinnavbar.component.ts" />
         <option value="$PROJECT_DIR$/Angular-Front/src/app/components/lbd/lbd-chart/lbd-chart.component.html" />
         <option value="$PROJECT_DIR$/Angular-Front/src/app/components/sidebar/sidebar.component.ts" />
-        <option value="$PROJECT_DIR$/Angular-Front/src/app/app.module.ts" />
         <option value="$PROJECT_DIR$/Angular-Front/src/app/components/user/user.component.html" />
 <<<<<<< Updated upstream
         <option value="$PROJECT_DIR$/Angular-Front/src/app/components/dashboard/dashboard.component.html" />
@@ -250,7 +360,15 @@
         <option value="$PROJECT_DIR$/Angular-Front/src/app/components/dashboard/dashboard.component.css" />
         <option value="$PROJECT_DIR$/Angular-Front/src/app/components/lbd/lbd-chart/lbd-chart.component.css" />
 =======
+<<<<<<< HEAD
         <option value="$PROJECT_DIR$/Angular-Front/src/app/components/home-page-content/home-page-content.component.html" />
+=======
+        <option value="$PROJECT_DIR$/Angular-Front/src/app/components/navbar/navbar.component.ts" />
+        <option value="$PROJECT_DIR$/Angular-Front/src/index.html" />
+        <option value="$PROJECT_DIR$/Angular-Front/src/app/components/navbar/navbar.component.html" />
+        <option value="$PROJECT_DIR$/Angular-Front/src/app/app.module.ts" />
+        <option value="$PROJECT_DIR$/Angular-Front/src/app/components/typography/typography.component.ts" />
+>>>>>>> master
 >>>>>>> Stashed changes
       </list>
     </option>
@@ -265,11 +383,27 @@
     <handled-path value="$PROJECT_DIR$/Angular-Front/node_modules" />
     <handled-path value="$PROJECT_DIR$/node_modules" />
   </component>
+<<<<<<< HEAD
   <component name="ProjectFrameBounds">
     <option name="x" value="-8" />
     <option name="y" value="-8" />
     <option name="width" value="1382" />
     <option name="height" value="744" />
+=======
+<<<<<<< HEAD
+  <component name="ProjectFrameBounds">
+    <option name="x" value="-8" />
+    <option name="y" value="-8" />
+    <option name="width" value="1378" />
+    <option name="height" value="754" />
+=======
+  <component name="ProjectFrameBounds" extendedState="7">
+    <option name="x" value="55" />
+    <option name="y" value="33" />
+    <option name="width" value="1400" />
+    <option name="height" value="990" />
+>>>>>>> master
+>>>>>>> master
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -287,8 +421,12 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+<<<<<<< Updated upstream
       <pane id="Scope" />
+<<<<<<< Updated upstream
       <pane id="Scratches" />
+=======
+>>>>>>> Stashed changes
       <pane id="ProjectPane">
         <subPane>
 <<<<<<< Updated upstream
@@ -330,6 +468,7 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="app" type="462c0819:PsiDirectoryNode" />
               <item name="components" type="462c0819:PsiDirectoryNode" />
+<<<<<<< Updated upstream
               <item name="dashboard" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -347,6 +486,9 @@
               <item name="Angular-Front" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="assets" type="462c0819:PsiDirectoryNode" />
+=======
+              <item name="typography" type="462c0819:PsiDirectoryNode" />
+>>>>>>> Stashed changes
             </path>
           </expand>
           <select />
@@ -496,6 +638,17 @@
 >>>>>>> Stashed changes
         </subPane>
       </pane>
+<<<<<<< HEAD
+=======
+      <pane id="Scratches" />
+      <pane id="Scope" />
+      <pane id="ProjectPane" />
+=======
+<<<<<<< Updated upstream
+=======
+      <pane id="Scratches" />
+>>>>>>> master
+>>>>>>> Stashed changes
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -506,6 +659,10 @@
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="SearchEverywhereHistoryKey" value="&#9;FILE&#9;file://D:/Express/mrbin/Angular-Front/src/app/components/typography/typography.component.html" />
     <property name="nodejs_interpreter_path" value="C:/Program Files/nodejs/node" />
+<<<<<<< HEAD
+=======
+    <property name="settings.editor.selected.configurable" value="vcs.Git" />
+>>>>>>> master
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -550,9 +707,24 @@
       <workItem from="1520390440476" duration="2227000" />
 =======
       <workItem from="1520309363418" duration="41937000" />
+<<<<<<< HEAD
       <workItem from="1520437795530" duration="596000" />
       <workItem from="1520488967974" duration="593000" />
       <workItem from="1520519131396" duration="4134000" />
+=======
+<<<<<<< HEAD
+      <workItem from="1520393361539" duration="1172000" />
+      <workItem from="1520571131926" duration="237000" />
+=======
+      <workItem from="1520392919844" duration="1995000" />
+      <workItem from="1520443851796" duration="874000" />
+      <workItem from="1520484562888" duration="559000" />
+      <workItem from="1520485191181" duration="1387000" />
+      <workItem from="1520515689341" duration="751000" />
+      <workItem from="1520527285127" duration="7570000" />
+      <workItem from="1520570855379" duration="192000" />
+>>>>>>> master
+>>>>>>> master
 >>>>>>> Stashed changes
     </task>
     <servers />
@@ -566,14 +738,31 @@
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17979905" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
 =======
+<<<<<<< HEAD
     <option name="totallyTimeSpent" value="104264000" />
+=======
+<<<<<<< HEAD
+    <option name="totallyTimeSpent" value="100329000" />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-8" y="-8" width="1378" height="754" extended-state="0" />
+    <layout>
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17910448" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+=======
+    <option name="totallyTimeSpent" value="112248000" />
+>>>>>>> master
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="7" />
     <editor active="true" />
     <layout>
+<<<<<<< HEAD
       <window_info id="TypeScript" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295325" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17935579" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+=======
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17931548" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+>>>>>>> master
+>>>>>>> master
 >>>>>>> Stashed changes
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
@@ -583,7 +772,15 @@
 <<<<<<< Updated upstream
       <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.15963513" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
 =======
+<<<<<<< HEAD
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.29968455" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+=======
+<<<<<<< HEAD
+      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.15806451" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+=======
+      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.37993422" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+>>>>>>> master
+>>>>>>> master
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
 >>>>>>> Stashed changes
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -594,8 +791,17 @@
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
 <<<<<<< Updated upstream
 =======
+<<<<<<< HEAD
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+=======
+      <window_info id="TypeScript" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295325" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+<<<<<<< HEAD
+      <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+=======
+>>>>>>> master
+>>>>>>> master
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
@@ -617,7 +823,15 @@
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
+<<<<<<< HEAD
     <option name="processedProjectFiles" value="true" />
+=======
+<<<<<<< HEAD
+    <option name="processedProjectFiles" value="true" />
+=======
+    <option name="version" value="1" />
+>>>>>>> master
+>>>>>>> master
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
@@ -652,6 +866,9 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Angular-Front/src/app/components/maps/maps.component.html">
+=======
+    <entry file="file://$PROJECT_DIR$/Angular-Front/src/typings.d.ts">
+>>>>>>> Stashed changes
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -692,6 +909,9 @@
         <state relative-caret-position="0">
 <<<<<<< Updated upstream
           <caret line="0" column="0" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+=======
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+>>>>>>> Stashed changes
         </state>
       </provider>
     </entry>
@@ -703,6 +923,7 @@
     <entry file="file://$PROJECT_DIR$/Angular-Front/src/app/components/mainmemu/mainmemu.component.html" />
     <entry file="file://$PROJECT_DIR$/Angular-Front/src/index.html">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< Updated upstream
         <state relative-caret-position="210">
           <caret line="10" column="0" lean-forward="false" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
         </state>
@@ -762,7 +983,12 @@
         <state relative-caret-position="0">
           <caret line="0" column="7" lean-forward="true" selection-start-line="0" selection-start-column="7" selection-end-line="0" selection-end-column="7" />
 =======
+<<<<<<< HEAD
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+=======
+        <state relative-caret-position="336">
+          <caret line="16" column="0" lean-forward="false" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
+>>>>>>> master
         </state>
       </provider>
     </entry>
@@ -825,6 +1051,7 @@
         </state>
       </provider>
     </entry>
+<<<<<<< Updated upstream
     <entry file="file://$PROJECT_DIR$/Angular-Front/src/app/components/userloggedinnavbar/userloggedinnavbar.component.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="388">
@@ -884,14 +1111,49 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="64" selection-end-column="0" />
+=======
+    <entry file="file://$PROJECT_DIR$/Angular-Front/src/app/components/typography/typography.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Angular-Front/src/app/components/tables/tables.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Angular-Front/src/app/routing.ts" />
+    <entry file="file://$PROJECT_DIR$/Angular-Front/src/app/app.routing.ts" />
+    <entry file="file://$PROJECT_DIR$/Angular-Front/src/app/components/shared/navbar/navbar.component.ts" />
+    <entry file="file://$PROJECT_DIR$/Angular-Front/src/app/components/home/home.component.html" />
+    <entry file="file://$PROJECT_DIR$/Angular-Front/src/app/components/mainmemu/mainmemu.component.ts" />
+    <entry file="file://$PROJECT_DIR$/Angular-Front/src/app/components/mainmemu/mainmemu.component.html" />
+    <entry file="file://$PROJECT_DIR$/Angular-Front/src/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="10" column="0" lean-forward="false" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Angular-Front/src/app/components/userloggedinnavbar/userloggedinnavbar.component.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="945">
+          <caret line="65" column="1" lean-forward="false" selection-start-line="65" selection-start-column="1" selection-end-line="65" selection-end-column="1" />
+>>>>>>> Stashed changes
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Angular-Front/src/assets/css/pe-icon-7-stroke.css">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< Updated upstream
         <state relative-caret-position="1260">
           <caret line="270" column="19" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="632" selection-end-column="0" />
 =======
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/Angular-Front/src/app/components/userloggedinnavbar/userloggedinnavbar.component.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="214">
@@ -945,6 +1207,96 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Angular-Front/src/app/components/sidebar/sidebar.module.ts">
       <provider selected="true" editor-type-id="text-editor">
+=======
+<<<<<<< HEAD
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+>>>>>>> Stashed changes
+=======
+>>>>>>> master
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Angular-Front/src/app/components/typography/typography.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Angular-Front/src/app/routing.ts" />
+    <entry file="file://$PROJECT_DIR$/Angular-Front/src/app/app.routing.ts" />
+    <entry file="file://$PROJECT_DIR$/Angular-Front/src/app/components/shared/navbar/navbar.component.ts" />
+    <entry file="file://$PROJECT_DIR$/Angular-Front/src/app/components/home/home.component.html" />
+    <entry file="file://$PROJECT_DIR$/Angular-Front/src/app/components/mainmemu/mainmemu.component.ts" />
+    <entry file="file://$PROJECT_DIR$/Angular-Front/src/app/components/mainmemu/mainmemu.component.html" />
+    <entry file="file://$PROJECT_DIR$/Angular-Front/src/app/components/userloggedinnavbar/userloggedinnavbar.component.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="945">
+          <caret line="65" column="1" lean-forward="false" selection-start-line="65" selection-start-column="1" selection-end-line="65" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Angular-Front/src/app/components/dashboard/dashboard.component.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Angular-Front/src/app/components/userloggedinnavbar/userloggedinnavbar.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="214">
+          <caret line="15" column="24" lean-forward="false" selection-start-line="15" selection-start-column="24" selection-end-line="15" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Angular-Front/src/app/components/userloggedinnavbar/userloggedinnavbar.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="525">
+          <caret line="25" column="64" lean-forward="false" selection-start-line="25" selection-start-column="64" selection-end-line="25" selection-end-column="64" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Angular-Front/src/app/services/auth.service.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="183">
+          <caret line="38" column="2" lean-forward="false" selection-start-line="38" selection-start-column="2" selection-end-line="38" selection-end-column="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Angular-Front/src/app/components/lbd/lbd-chart/lbd-chart.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="42">
+          <caret line="2" column="27" lean-forward="false" selection-start-line="2" selection-start-column="27" selection-end-line="2" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Angular-Front/src/app/components/home-page-content/home-page-content.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="42">
+          <caret line="2" column="0" lean-forward="false" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external/lib.es6.d.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="226">
+          <caret line="20818" column="12" lean-forward="false" selection-start-line="20818" selection-start-column="12" selection-end-line="20818" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Angular-Front/src/app/components/login/login.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="19" column="0" lean-forward="false" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
+>>>>>>> Stashed changes
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Angular-Front/src/app/components/lbd/lbd.module.ts">
+      <provider selected="true" editor-type-id="text-editor">
+>>>>>>> master
 <<<<<<< Updated upstream
         <state relative-caret-position="357">
           <caret line="19" column="0" lean-forward="false" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
@@ -953,9 +1305,11 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Angular-Front/src/assets/css/light-bootstrap-dashboard.css">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< Updated upstream
         <state relative-caret-position="226">
           <caret line="1862" column="18" lean-forward="false" selection-start-line="1862" selection-start-column="18" selection-end-line="1862" selection-end-column="18" />
 =======
+<<<<<<< HEAD
         <state relative-caret-position="0">
           <caret line="0" column="7" lean-forward="true" selection-start-line="0" selection-start-column="7" selection-end-line="0" selection-end-column="7" />
         </state>
@@ -965,6 +1319,10 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="462">
           <caret line="22" column="41" lean-forward="false" selection-start-line="22" selection-start-column="41" selection-end-line="22" selection-end-column="41" />
+=======
+        <state relative-caret-position="214">
+          <caret line="15" column="24" lean-forward="false" selection-start-line="15" selection-start-column="24" selection-end-line="15" selection-end-column="24" />
+>>>>>>> master
 >>>>>>> Stashed changes
         </state>
       </provider>
@@ -974,25 +1332,40 @@
 <<<<<<< Updated upstream
         <state relative-caret-position="42">
           <caret line="2" column="61" lean-forward="false" selection-start-line="2" selection-start-column="61" selection-end-line="2" selection-end-column="61" />
+=======
+        <state relative-caret-position="525">
+          <caret line="25" column="64" lean-forward="false" selection-start-line="25" selection-start-column="64" selection-end-line="25" selection-end-column="64" />
+>>>>>>> Stashed changes
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Angular-Front/src/app/components/sidebar/sidebar.component.ts">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< Updated upstream
         <state relative-caret-position="693">
           <caret line="33" column="36" lean-forward="true" selection-start-line="33" selection-start-column="36" selection-end-line="33" selection-end-column="36" />
+=======
+        <state relative-caret-position="183">
+          <caret line="38" column="2" lean-forward="false" selection-start-line="38" selection-start-column="2" selection-end-line="38" selection-end-column="2" />
+>>>>>>> Stashed changes
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Angular-Front/node_modules/@types/chartist/index.d.ts">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< Updated upstream
         <state relative-caret-position="235">
           <caret line="130" column="4" lean-forward="false" selection-start-line="130" selection-start-column="4" selection-end-line="130" selection-end-column="4" />
+=======
+        <state relative-caret-position="168">
+          <caret line="20" column="0" lean-forward="false" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
+>>>>>>> Stashed changes
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Angular-Front/src/app/components/home-page-content/home-page-content.component.css">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< Updated upstream
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
 =======
@@ -1030,15 +1403,35 @@
         <state relative-caret-position="21">
           <caret line="1" column="25" lean-forward="false" selection-start-line="1" selection-start-column="25" selection-end-line="1" selection-end-column="25" />
           <folding />
+=======
+        <state relative-caret-position="84">
+          <caret line="4" column="0" lean-forward="false" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Angular-Front/src/app/components/lbd/lbd-chart/lbd-chart.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="42">
+          <caret line="2" column="27" lean-forward="false" selection-start-line="2" selection-start-column="27" selection-end-line="2" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Angular-Front/src/app/components/home-page-content/home-page-content.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="42">
+          <caret line="2" column="0" lean-forward="false" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
+>>>>>>> Stashed changes
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Angular-Front/src/app/components/home-page-content/home-page-content.component.ts">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< Updated upstream
         <state relative-caret-position="315">
           <caret line="15" column="0" lean-forward="false" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
           <folding />
 =======
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/Angular-Front/src/environments/environment.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="272">
@@ -1057,6 +1450,10 @@
             <element signature="e#0#58#0" expanded="false" />
             <element signature="e#651#708#0" expanded="false" />
           </folding>
+=======
+        <state relative-caret-position="226">
+          <caret line="20818" column="12" lean-forward="false" selection-start-line="20818" selection-start-column="12" selection-end-line="20818" selection-end-column="12" />
+>>>>>>> master
 >>>>>>> Stashed changes
         </state>
       </provider>
@@ -1066,8 +1463,13 @@
 <<<<<<< Updated upstream
         <state relative-caret-position="252">
           <caret line="12" column="17" lean-forward="false" selection-start-line="12" selection-start-column="17" selection-end-line="12" selection-end-column="17" />
+=======
+        <state relative-caret-position="323">
+          <caret line="19" column="0" lean-forward="false" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
+>>>>>>> Stashed changes
           <folding />
 =======
+<<<<<<< HEAD
         <state relative-caret-position="34">
           <caret line="2" column="0" lean-forward="false" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
           <folding>
@@ -1079,14 +1481,108 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Angular-Front/src/app/app.component.ts">
       <provider selected="true" editor-type-id="text-editor">
+=======
+        <state relative-caret-position="441">
+          <caret line="21" column="26" lean-forward="true" selection-start-line="21" selection-start-column="26" selection-end-line="21" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Angular-Front/src/app/components/sidebar/sidebar.module.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="7" lean-forward="true" selection-start-line="0" selection-start-column="7" selection-end-line="0" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Angular-Front/src/app/components/sidebar/sidebar.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="22" column="41" lean-forward="false" selection-start-line="22" selection-start-column="41" selection-end-line="22" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Angular-Front/src/app/components/home-page-content/home-page-content.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
+=======
+        <state relative-caret-position="1302">
+          <caret line="62" column="4" lean-forward="false" selection-start-line="62" selection-start-column="4" selection-end-line="62" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Angular-Front/src/app/components/sidebar/sidebar.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" column="31" lean-forward="false" selection-start-line="7" selection-start-column="31" selection-end-line="7" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Angular-Front/src/app/components/user/user.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1904">
+          <caret line="112" column="43" lean-forward="false" selection-start-line="112" selection-start-column="43" selection-end-line="112" selection-end-column="43" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Angular-Front/src/app/components/tables/tables.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="13" column="101" lean-forward="true" selection-start-line="13" selection-start-column="101" selection-end-line="13" selection-end-column="101" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Angular-Front/src/app/components/dashboard/dashboard.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="27" column="47" lean-forward="false" selection-start-line="27" selection-start-column="47" selection-end-line="27" selection-end-column="47" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Angular-Front/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-97">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Angular-Front/src/app/app.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+>>>>>>> Stashed changes
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Angular-Front/src/app/components/navbar/navbar.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+>>>>>>> master
+>>>>>>> master
 <<<<<<< Updated upstream
         <state relative-caret-position="357">
           <caret line="21" column="26" lean-forward="false" selection-start-line="21" selection-start-column="26" selection-end-line="21" selection-end-column="26" />
 =======
+<<<<<<< HEAD
         <state relative-caret-position="202">
           <caret line="18" column="30" lean-forward="false" selection-start-line="18" selection-start-column="30" selection-end-line="18" selection-end-column="30" />
           <folding>
             <element signature="e#0#42#0" expanded="false" />
+=======
+<<<<<<< HEAD
+        <state relative-caret-position="441">
+          <caret line="21" column="26" lean-forward="true" selection-start-line="21" selection-start-column="26" selection-end-line="21" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Angular-Front/src/app/components/navbar/navbar.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="425">
+          <caret line="25" column="8" lean-forward="false" selection-start-line="25" selection-start-column="8" selection-end-line="25" selection-end-column="8" />
+=======
+        <state relative-caret-position="17">
+          <caret line="2" column="0" lean-forward="false" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#50#0" expanded="true" />
+>>>>>>> master
           </folding>
         </state>
       </provider>
@@ -1094,7 +1590,12 @@
     <entry file="file://$PROJECT_DIR$/Angular-Front/src/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="170">
+<<<<<<< HEAD
           <caret line="10" column="0" lean-forward="false" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
+=======
+          <caret line="10" column="210" lean-forward="false" selection-start-line="10" selection-start-column="210" selection-end-line="10" selection-end-column="210" />
+>>>>>>> master
+>>>>>>> master
 >>>>>>> Stashed changes
           <folding />
         </state>
@@ -1103,76 +1604,162 @@
 <<<<<<< Updated upstream
     <entry file="file://$PROJECT_DIR$/Angular-Front/src/app/components/dashboard/dashboard.component.ts">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< Updated upstream
         <state relative-caret-position="105">
           <caret line="8" column="2" lean-forward="false" selection-start-line="8" selection-start-column="2" selection-end-line="8" selection-end-column="42" />
           <folding>
             <element signature="e#0#50#0" expanded="true" />
           </folding>
+=======
+        <state relative-caret-position="0">
+          <caret line="0" column="7" lean-forward="true" selection-start-line="0" selection-start-column="7" selection-end-line="0" selection-end-column="7" />
+>>>>>>> Stashed changes
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Angular-Front/src/app/components/lbd/lbd-chart/lbd-chart.component.html">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< Updated upstream
         <state relative-caret-position="21">
           <caret line="1" column="27" lean-forward="false" selection-start-line="1" selection-start-column="27" selection-end-line="1" selection-end-column="27" />
 =======
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/Angular-Front/src/app/app.component.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
           <caret line="6" column="0" lean-forward="false" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
+=======
+<<<<<<< HEAD
+        <state relative-caret-position="374">
+          <caret line="22" column="41" lean-forward="false" selection-start-line="22" selection-start-column="41" selection-end-line="22" selection-end-column="41" />
+=======
+    <entry file="file://$PROJECT_DIR$/Angular-Front/src/app/components/login/login.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="20" column="0" lean-forward="false" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
+>>>>>>> master
+>>>>>>> master
 >>>>>>> Stashed changes
           <folding />
         </state>
       </provider>
     </entry>
+<<<<<<< Updated upstream
     <entry file="file://$PROJECT_DIR$/Angular-Front/src/app/components/dashboard/dashboard.component.css">
       <provider selected="true" editor-type-id="text-editor">
 <<<<<<< Updated upstream
         <state relative-caret-position="13293">
           <caret line="633" column="0" lean-forward="false" selection-start-line="633" selection-start-column="0" selection-end-line="633" selection-end-column="0" />
 =======
+<<<<<<< HEAD
         <state relative-caret-position="382">
           <caret line="62" column="4" lean-forward="false" selection-start-line="62" selection-start-column="4" selection-end-line="62" selection-end-column="4" />
+=======
+    <entry file="file://$PROJECT_DIR$/Angular-Front/src/app/components/typography/typography.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" column="0" lean-forward="true" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
+>>>>>>> master
 >>>>>>> Stashed changes
           <folding />
+=======
+        <state relative-caret-position="1302">
+          <caret line="62" column="4" lean-forward="false" selection-start-line="62" selection-start-column="4" selection-end-line="62" selection-end-column="4" />
+>>>>>>> Stashed changes
         </state>
       </provider>
     </entry>
 <<<<<<< Updated upstream
     <entry file="file://$PROJECT_DIR$/Angular-Front/src/app/components/lbd/lbd-chart/lbd-chart.component.ts">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< Updated upstream
         <state relative-caret-position="336">
           <caret line="17" column="26" lean-forward="false" selection-start-line="17" selection-start-column="26" selection-end-line="17" selection-end-column="26" />
+=======
+<<<<<<< HEAD
+        <state relative-caret-position="238">
+          <caret line="43" column="56" lean-forward="false" selection-start-line="43" selection-start-column="56" selection-end-line="43" selection-end-column="56" />
+=======
+        <state relative-caret-position="680">
+          <caret line="69" column="0" lean-forward="false" selection-start-line="69" selection-start-column="0" selection-end-line="69" selection-end-column="0" />
+>>>>>>> master
+>>>>>>> Stashed changes
           <folding>
             <element signature="e#0#95#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+<<<<<<< Updated upstream
     <entry file="file://$PROJECT_DIR$/Angular-Front/src/app/components/lbd/lbd-chart/lbd-chart.component.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="567">
           <caret line="1133" column="12" lean-forward="true" selection-start-line="1133" selection-start-column="12" selection-end-line="1133" selection-end-column="12" />
 =======
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/Angular-Front/src/app/components/home-page-content/home-page-content.component.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
 >>>>>>> Stashed changes
+=======
+<<<<<<< HEAD
+    <entry file="file://$PROJECT_DIR$/Angular-Front/src/app/components/sidebar/sidebar.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" column="31" lean-forward="false" selection-start-line="7" selection-start-column="31" selection-end-line="7" selection-end-column="31" />
+>>>>>>> master
           <folding />
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
 <<<<<<< Updated upstream
 =======
     <entry file="file://$PROJECT_DIR$/Angular-Front/src/app/components/home-page-content/home-page-content.component.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="271">
           <caret line="33" column="8" lean-forward="false" selection-start-line="33" selection-start-column="8" selection-end-line="33" selection-end-column="8" />
+=======
+    <entry file="file://$PROJECT_DIR$/Angular-Front/src/app/components/dashboard/dashboard.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="11" column="0" lean-forward="false" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
+=======
+    <entry file="file://$PROJECT_DIR$/Angular-Front/src/app/app.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" column="31" lean-forward="true" selection-start-line="7" selection-start-column="31" selection-end-line="7" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Angular-Front/src/app/components/navbar/navbar.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="129">
+          <caret line="25" column="0" lean-forward="false" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="113" />
+>>>>>>> master
+>>>>>>> Stashed changes
+>>>>>>> master
           <folding />
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
+=======
+<<<<<<< Updated upstream
+=======
+    <entry file="file://$PROJECT_DIR$/Angular-Front/src/app/components/user/user.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="219">
+          <caret line="108" column="44" lean-forward="false" selection-start-line="108" selection-start-column="44" selection-end-line="108" selection-end-column="44" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#body#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#1;n#div#1;n#div#0;n#div#0;n#body#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+>>>>>>> master
 >>>>>>> Stashed changes
   </component>
 </project>
