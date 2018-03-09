@@ -8,9 +8,13 @@ import {Router} from '@angular/router';
 })
 export class NavbarComponent implements OnInit {
 
+  title = 'app works!';
+
+
   constructor(
     private router:Router
   ) { }
+
 
   ngOnInit() {
   }

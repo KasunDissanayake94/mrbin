@@ -47,6 +47,15 @@ const  applicationRouters:Routes = [
     CarouselComponent,
     UserloggedinnavbarComponent,
     DashboardComponent,
+<<<<<<< HEAD
+=======
+    TablesComponent,
+    TypographyComponent,
+    IconsComponent,
+    MapsComponent,
+    NotificationsComponent,
+    UpgradeComponent,
+>>>>>>> master
 
 
   ],
