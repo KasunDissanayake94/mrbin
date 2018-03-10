@@ -1,12 +1,12 @@
-<div class="card">
-  <div class="header">
-    <h4 class="title">{{ title }}</h4>
-    <p class="category">{{ subtitle }}</p>
-  </div>
+<div class="card mb-3">
+  <h3 class="card-header">
+    <h5 class="card-title">{{ title }}</h5>
+    <p class="card-text">{{ subtitle }}</p>
+  </h3>
   <div class="content">
     <div [attr.id]="chartId" class="ct-chart {{ chartClass }}"></div>
 
-    <div class="footer">
+    <div class="card-body">
       <div class="legend">
         <span *ngFor="let item of legendItems">
           <i [ngClass]="item.imageClass"></i> {{ item.title }}
