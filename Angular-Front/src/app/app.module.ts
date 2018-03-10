@@ -22,6 +22,9 @@ import {AuthService} from "./services/auth.service";
 import { UserloggedinnavbarComponent } from './components/userloggedinnavbar/userloggedinnavbar.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
+import { LbdModule } from './components/lbd/lbd.module';
+import { TablesComponent } from './components/tables/tables.component';
+import { UserComponent } from './components/user/user.component';
 
 
 
@@ -33,7 +36,9 @@ import { SidebarComponent } from './components/sidebar/sidebar.component';
 const  applicationRouters:Routes = [
   {path:'login',component:LoginComponent},
   {path:'userhome',component:DashboardComponent},
-  {path:'',component:HomePageContentComponent},
+  {path:'tables',component:TablesComponent},
+  {path:'dashboard',component:DashboardComponent},
+  {path:'user',component:UserComponent},
 
 ];
 
@@ -48,6 +53,8 @@ const  applicationRouters:Routes = [
     UserloggedinnavbarComponent,
     DashboardComponent,
     SidebarComponent,
+    TablesComponent,
+    UserComponent,
 
 
 
@@ -63,7 +70,8 @@ const  applicationRouters:Routes = [
     AngularFireAuthModule,
     BrowserModule,
     FormsModule,
-    RouterModule
+    RouterModule,
+    LbdModule
 
   ],
   providers: [AuthService],
