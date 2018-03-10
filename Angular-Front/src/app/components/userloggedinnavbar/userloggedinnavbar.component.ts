@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { LoginComponent } from '../login/login.component';
 import {Router} from "@angular/router";
-import {AuthService} from "../../services/auth.service";
+import {AuthService} from "../../service/auth.service";
 
 @Component({
   selector: 'app-userloggedinnavbar',

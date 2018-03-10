@@ -18,13 +18,14 @@ import { AngularFireDatabaseModule } from 'angularfire2/database-deprecated';
 
 import { environment } from '../environments/environment';
 import {AngularFireAuthModule} from "angularfire2/auth";
-import {AuthService} from "./services/auth.service";
+import {AuthService} from "./service/auth.service";
 import { UserloggedinnavbarComponent } from './components/userloggedinnavbar/userloggedinnavbar.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { LbdModule } from './components/lbd/lbd.module';
 import { TablesComponent } from './components/tables/tables.component';
 import { UserComponent } from './components/user/user.component';
+import { FlashMessagesModule } from 'angular2-flash-messages';
 
 
 
@@ -34,6 +35,7 @@ import { UserComponent } from './components/user/user.component';
 
 
 const  applicationRouters:Routes = [
+  {path:'',component:HomePageContentComponent},
   {path:'login',component:LoginComponent},
   {path:'userhome',component:DashboardComponent},
   {path:'tables',component:TablesComponent},
@@ -54,7 +56,7 @@ const  applicationRouters:Routes = [
     DashboardComponent,
     SidebarComponent,
     TablesComponent,
-    UserComponent,
+    UserComponent
 
 
 
@@ -71,7 +73,8 @@ const  applicationRouters:Routes = [
     BrowserModule,
     FormsModule,
     RouterModule,
-    LbdModule
+    LbdModule,
+    FlashMessagesModule.forRoot()
 
   ],
   providers: [AuthService],

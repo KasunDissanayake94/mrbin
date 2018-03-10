@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { AuthService } from '../../services/auth.service';
+import { AuthService } from '../../service/auth.service';
+import { FlashMessagesService } from 'angular2-flash-messages';
 
 @Component({
   selector: 'app-login',
@@ -11,10 +12,10 @@ export class LoginComponent implements OnInit {
 
   user = {
     email: '',
-    password: ''
+    password: '',
   };
 
-  constructor(private authService: AuthService, private router: Router) {
+  constructor(private authService: AuthService, private router: Router,private _flashMessagesService: FlashMessagesService) {
   }
 
 
@@ -23,15 +24,12 @@ export class LoginComponent implements OnInit {
   signInWithGoogle() {
     this.authService.signInWithGoogle()
       .then((res) => {
-        this.router.navigate(['userhome'])
+        this.router.navigate(['userhome']);
+
       })
-      .catch((err) => console.log(err));
+
   }
 
-  getName(){
-
-    return this.user.email;
-  }
 
 
 
@@ -41,13 +39,12 @@ export class LoginComponent implements OnInit {
     this.authService.signInRegular(this.user.email, this.user.password)
 
       .then((res) => {
-        console.log(res);
         this.router.navigate(['userhome']);
-        console.log(this.user.email);
-        console.log(this.user.password);
-      })
+        this._flashMessagesService.show('Loggin Success!', { cssClass: 'alert-success', timeout: 5000 });
 
-      .catch((err) => console.log('error: ' + err));
+      });
+
+
   }
 
 
