@@ -24,6 +24,7 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { LbdModule } from './components/lbd/lbd.module';
 import { TablesComponent } from './components/tables/tables.component';
+import { UserComponent } from './components/user/user.component';
 
 
 
@@ -37,7 +38,7 @@ const  applicationRouters:Routes = [
   {path:'userhome',component:DashboardComponent},
   {path:'tables',component:TablesComponent},
   {path:'dashboard',component:DashboardComponent},
-  {path:'',component:HomePageContentComponent},
+  {path:'user',component:UserComponent},
 
 ];
 
@@ -53,6 +54,7 @@ const  applicationRouters:Routes = [
     DashboardComponent,
     SidebarComponent,
     TablesComponent,
+    UserComponent,
 
 
 
