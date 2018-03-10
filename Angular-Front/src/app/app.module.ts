@@ -36,7 +36,7 @@ const  applicationRouters:Routes = [
   {path:'login',component:LoginComponent},
   {path:'userhome',component:DashboardComponent},
   {path:'tables',component:TablesComponent},
-  {path:'',component:HomePageContentComponent},
+  {path:'dashboard',component:DashboardComponent},
   {path:'',component:HomePageContentComponent},
 
 ];
