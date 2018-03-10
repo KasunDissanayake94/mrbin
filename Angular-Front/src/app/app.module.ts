@@ -22,6 +22,7 @@ import {AuthService} from "./services/auth.service";
 import { UserloggedinnavbarComponent } from './components/userloggedinnavbar/userloggedinnavbar.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
+import { LbdModule } from './components/lbd/lbd.module';
 
 
 
@@ -63,7 +64,8 @@ const  applicationRouters:Routes = [
     AngularFireAuthModule,
     BrowserModule,
     FormsModule,
-    RouterModule
+    RouterModule,
+    LbdModule
 
   ],
   providers: [AuthService],
