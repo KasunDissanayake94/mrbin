@@ -21,6 +21,7 @@ import {AngularFireAuthModule} from "angularfire2/auth";
 import {AuthService} from "./services/auth.service";
 import { UserloggedinnavbarComponent } from './components/userloggedinnavbar/userloggedinnavbar.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
+import { SidebarComponent } from './components/sidebar/sidebar.component';
 
 
 
@@ -31,9 +32,8 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
 
 const  applicationRouters:Routes = [
   {path:'login',component:LoginComponent},
-  {path:'userhome',component:UserloggedinnavbarComponent},
+  {path:'userhome',component:DashboardComponent},
   {path:'',component:HomePageContentComponent},
-  { path: 'userhome/dashboard',      component: DashboardComponent },
 
 ];
 
@@ -47,6 +47,7 @@ const  applicationRouters:Routes = [
     CarouselComponent,
     UserloggedinnavbarComponent,
     DashboardComponent,
+    SidebarComponent,
 
 
 
