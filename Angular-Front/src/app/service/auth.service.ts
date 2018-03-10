@@ -3,6 +3,9 @@ import { Router } from "@angular/router";
 import { AngularFireAuth } from 'angularfire2/auth';
 import * as firebase from 'firebase/app';
 import { Observable } from 'rxjs/Observable';
+import {tokenNotExpired} from 'angular2-jwt';
+
+
 @Injectable()
 export class AuthService {
   private user: Observable<firebase.User>;
@@ -40,10 +43,15 @@ export class AuthService {
     this._firebaseAuth.auth.signOut()
       .then((res) => this.router.navigate(['/']));
   }
+//Maintain Sessions
+
   signInRegular(email, password) {
-    console.log(password);
-    console.log(email);
+
     const credential = firebase.auth.EmailAuthProvider.credential( email, password );
     return this._firebaseAuth.auth.signInWithEmailAndPassword(email, password);
+  }
+
+  loggedIn() {
+    return this.userDetails;
   }
 }

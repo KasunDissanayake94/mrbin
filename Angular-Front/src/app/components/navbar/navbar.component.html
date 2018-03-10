@@ -23,7 +23,8 @@
     </ul>
 
 
-    <a [routerLink]="['/login']"><button class="btn btn-secondary my-2 my-sm-0" type="submit" >Login</button></a>
+    <a [routerLink]="['/login']"><button *ngIf="authService.loggedIn()==null"  class="btn btn-secondary my-2 my-sm-0" type="submit" >Login</button></a>
+    <button *ngIf="authService.loggedIn()" class="btn btn-secondary my-2 my-sm-0" type="submit" (click)="logoutbtn()">Logout</button>
 
 
 
