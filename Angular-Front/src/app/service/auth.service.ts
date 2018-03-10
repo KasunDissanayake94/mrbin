@@ -10,13 +10,15 @@ import {tokenNotExpired} from 'angular2-jwt';
 export class AuthService {
   private user: Observable<firebase.User>;
   private userDetails: firebase.User = null;
+  private userEmail :String;
   constructor(private _firebaseAuth: AngularFireAuth, private router: Router) {
     this.user = _firebaseAuth.authState;
     this.user.subscribe(
       (user) => {
         if (user) {
           this.userDetails = user;
-          console.log(this.userDetails);
+          this.userEmail = this.userDetails.email;
+          console.log("Logged in as ",this.userDetails.email);
         }
         else {
           this.userDetails = null;
@@ -25,13 +27,14 @@ export class AuthService {
     );
   }
 
-
+//sign in with GMail Option
   signInWithGoogle() {
 
     return this._firebaseAuth.auth.signInWithPopup(
       new firebase.auth.GoogleAuthProvider()
     )
   }
+  //check whether user logged in to the system or not
   isLoggedIn() {
     if (this.userDetails == null ) {
       return false;
@@ -39,19 +42,23 @@ export class AuthService {
       return true;
     }
   }
+  //User Logout
   logout() {
     this._firebaseAuth.auth.signOut()
       .then((res) => this.router.navigate(['/']));
   }
-//Maintain Sessions
 
+//sign in with typing email and password
   signInRegular(email, password) {
 
     const credential = firebase.auth.EmailAuthProvider.credential( email, password );
     return this._firebaseAuth.auth.signInWithEmailAndPassword(email, password);
   }
-
+//check the current user and update the navbar
   loggedIn() {
     return this.userDetails;
+  }
+  getEmail(){
+    return this.userEmail;
   }
 }
