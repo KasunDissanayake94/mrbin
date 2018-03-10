@@ -23,7 +23,7 @@ export class LoginComponent implements OnInit {
   signInWithGoogle() {
     this.authService.signInWithGoogle()
       .then((res) => {
-        this.router.navigate(['dashboard'])
+        this.router.navigate(['userhome'])
       })
       .catch((err) => console.log(err));
   }
