@@ -39,9 +39,17 @@ export class LoginComponent implements OnInit {
     this.authService.signInRegular(this.user.email, this.user.password)
 
       .then((res) => {
-        this.router.navigate(['userhome']);
-        this._flashMessagesService.show('Loggin Success!', { cssClass: 'alert-success', timeout: 5000 });
+        if(res){
+          this.router.navigate(['userhome']);
+          this._flashMessagesService.show('Loggin Success!', { cssClass: 'alert-success', timeout: 5000 });
+        }else{
 
+        }
+
+
+      })
+      .catch(reject => {
+        this._flashMessagesService.show('Loggin Failed!', { cssClass: 'alert alert-danger', timeout: 5000 });
       });
 
 
