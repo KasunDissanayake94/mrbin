@@ -26,6 +26,7 @@ import { LbdModule } from './components/lbd/lbd.module';
 import { TablesComponent } from './components/tables/tables.component';
 import { UserComponent } from './components/user/user.component';
 import { FlashMessagesModule } from 'angular2-flash-messages';
+import { DriversComponent } from './components/drivers/drivers.component';
 
 
 
@@ -56,7 +57,8 @@ const  applicationRouters:Routes = [
     DashboardComponent,
     SidebarComponent,
     TablesComponent,
-    UserComponent
+    UserComponent,
+    DriversComponent
 
 
 
