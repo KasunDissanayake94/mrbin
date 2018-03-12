@@ -35,13 +35,17 @@ import { DriversComponent } from './components/drivers/drivers.component';
 
 
 
+
 const  applicationRouters:Routes = [
+  //add all components links here
   {path:'',component:HomePageContentComponent},
   {path:'login',component:LoginComponent},
   {path:'userhome',component:DashboardComponent},
   {path:'tables',component:TablesComponent},
   {path:'dashboard',component:DashboardComponent},
   {path:'user',component:UserComponent},
+  {path:'drivers',component:DriversComponent},
+
 
 ];
 
@@ -58,7 +62,8 @@ const  applicationRouters:Routes = [
     SidebarComponent,
     TablesComponent,
     UserComponent,
-    DriversComponent
+    DriversComponent,
+
 
 
 
