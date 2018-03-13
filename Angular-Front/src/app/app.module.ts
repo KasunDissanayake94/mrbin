@@ -9,17 +9,13 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { HomePageContentComponent } from './components/home-page-content/home-page-content.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { LoginComponent } from './components/login/login.component';
-//import { RegisterComponent } from './components/register/register.component';
 import { Ng2CarouselamosModule } from 'ng2-carouselamos';
 import { CarouselComponent } from './components/carousel/carousel.component';
-
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireDatabaseModule } from 'angularfire2/database-deprecated';
-
 import { environment } from '../environments/environment';
 import {AngularFireAuthModule} from "angularfire2/auth";
 import {AuthService} from "./service/auth.service";
-import { UserloggedinnavbarComponent } from './components/userloggedinnavbar/userloggedinnavbar.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { LbdModule } from './components/lbd/lbd.module';
@@ -27,10 +23,8 @@ import { TablesComponent } from './components/tables/tables.component';
 import { UserComponent } from './components/user/user.component';
 import { FlashMessagesModule } from 'angular2-flash-messages';
 import { DriversComponent } from './components/drivers/drivers.component';
+import {FilledbinsComponent} from "./components/filledbins/filledbins.component";
 import { CustomerFeedbackReportComponent } from './components/customer-feedback-report/customer-feedback-report.component';
-
-
-
 
 
 
@@ -45,6 +39,7 @@ const  applicationRouters:Routes = [
   {path:'tables',component:TablesComponent},
   {path:'dashboard',component:DashboardComponent},
   {path:'user',component:UserComponent},
+  {path:'bins',component:FilledbinsComponent},
   {path:'drivers',component:DriversComponent},
   {path:'customer-feedback-report',component:CustomerFeedbackReportComponent}
 
@@ -59,13 +54,15 @@ const  applicationRouters:Routes = [
     FooterComponent,
     LoginComponent,
     CarouselComponent,
-    UserloggedinnavbarComponent,
     DashboardComponent,
     SidebarComponent,
     TablesComponent,
     UserComponent,
     DriversComponent,
     CustomerFeedbackReportComponent,
+    DriversComponent,
+    FilledbinsComponent,
+
 
 
 
@@ -84,7 +81,8 @@ const  applicationRouters:Routes = [
     FormsModule,
     RouterModule,
     LbdModule,
-    FlashMessagesModule.forRoot()
+    FlashMessagesModule.forRoot(),
+
 
   ],
   providers: [AuthService],

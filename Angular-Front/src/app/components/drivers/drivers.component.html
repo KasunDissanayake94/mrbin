@@ -11,42 +11,23 @@
         <tr>
           <th scope="col">Driver ID</th>
           <th scope="col">Driver name</th>
+          <th scope="col">Mobile Number</th>
+          <th scope="col">Truck No</th>
           <th scope="col">Edit</th>
           <th scope="col">Delete</th>
         </tr>
         </thead>
         <tbody>
 
-        <tr>
-          <th scope="row">001</th>
-          <td>Lal Perera</td>
+        <tr *ngFor="let item of driver_obj | async" >
+          <th scope="row">{{item.$key}}</th>
+          <td>{{item.name}}</td>
+          <td>{{item.mobile_no}}</td>
+          <td>{{item.truck_no}}</td>
           <td><button class="btn btn-danger">Edit</button></td>
           <td><button class="btn btn-info">Delete</button></td>
         </tr>
-        <tr>
-          <th scope="row">002</th>
-          <td>Thisura Senadeera</td>
-          <td><button class="btn btn-danger">Edit</button></td>
-          <td><button class="btn btn-info">Delete</button></td>
-        </tr>
-        <tr>
-          <th scope="row">003</th>
-          <td>Ravi Silva</td>
-          <td><button class="btn btn-danger">Edit</button></td>
-          <td><button class="btn btn-info">Delete</button></td>
-        </tr>
-        <tr>
-          <th scope="row">004</th>
-          <td>Lal Perera</td>
-          <td><button class="btn btn-danger">Edit</button></td>
-          <td><button class="btn btn-info">Delete</button></td>
-        </tr>
-        <tr>
-          <th scope="row">005</th>
-          <td>Lal Perera</td>
-          <td><button class="btn btn-danger">Edit</button></td>
-          <td><button class="btn btn-info">Delete</button></td>
-        </tr>
+
 
         </tbody>
       </table>

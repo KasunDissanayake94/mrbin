@@ -12,6 +12,8 @@
   "dependencies": {
     "@angular2-material/sidenav": "^2.0.0-alpha.8-3",
     "express": "^4.16.2",
-    "mongoose": "^5.0.7"
+    "mongoose": "^5.0.7",
+    "ng-editable-table": "^0.3.15",
+    "ng2-bootstrap-modal": "^1.0.1"
   }
 }
