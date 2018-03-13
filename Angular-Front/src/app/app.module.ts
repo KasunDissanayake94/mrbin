@@ -27,6 +27,7 @@ import { TablesComponent } from './components/tables/tables.component';
 import { UserComponent } from './components/user/user.component';
 import { FlashMessagesModule } from 'angular2-flash-messages';
 import { DriversComponent } from './components/drivers/drivers.component';
+import { CustomerFeedbackReportComponent } from './components/customer-feedback-report/customer-feedback-report.component';
 
 
 
@@ -45,6 +46,7 @@ const  applicationRouters:Routes = [
   {path:'dashboard',component:DashboardComponent},
   {path:'user',component:UserComponent},
   {path:'drivers',component:DriversComponent},
+  {path:'customer-feedback-report',component:CustomerFeedbackReportComponent}
 
 
 ];
@@ -63,6 +65,7 @@ const  applicationRouters:Routes = [
     TablesComponent,
     UserComponent,
     DriversComponent,
+    CustomerFeedbackReportComponent,
 
 
 
