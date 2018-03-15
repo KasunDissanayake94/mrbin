@@ -8,33 +8,11 @@
         <app-linechart></app-linechart>
       </div>
       <div class="col-md-8">
-        <lbd-chart
-          [title]="'Users Behavior'"
-          [subtitle]="'24 Hours performance'"
-          [chartType]="hoursChartType"
-          [chartData]="hoursChartData"
-          [chartOptions]="hoursChartOptions"
-          [chartResponsive]="hoursChartResponsive"
-          [legendItems]="hoursChartLegendItems"
-          [withHr]="true"
-          [footerIconClass]="'fa fa-history'"
-          [footerText]="'Updated 3 minutes ago'">
-        </lbd-chart>
+        <app-barchart></app-barchart>
       </div>
       <div class="row">
         <div class="col-md-6">
-          <lbd-chart
-            [title]="'2014 Sales'"
-            [subtitle]="'All products including Taxes'"
-            [chartType]="activityChartType"
-            [chartData]="activityChartData"
-            [chartOptions]="activityChartOptions"
-            [chartResponsive]="activityChartResponsive"
-            [legendItems]="activityChartLegendItems"
-            [withHr]="true"
-            [footerIconClass]="'fa fa-check'"
-            [footerText]="'Data information certified'">
-          </lbd-chart>
+          <app-doughnutchart></app-doughnutchart>
         </div>
         <div class="col-md-6">
           <div class="card text-white bg-primary mb-3" >
