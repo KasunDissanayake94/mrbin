@@ -43,7 +43,7 @@ const  applicationRouters:Routes = [
   {path:'',component:HomePageContentComponent},
   {path:'login',component:LoginComponent},
   {path:'userhome',component:DashboardComponent},
-  {path:'tables',component:GoogleMapComponent},
+  {path:'tables',component:DashboardComponent},
   {path:'dashboard',component:DashboardComponent},
   {path:'user',component:UserComponent},
   {path:'about',component:AboutComponent},
