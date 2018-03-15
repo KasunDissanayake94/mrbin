@@ -30,7 +30,9 @@ import { ChartsModule } from 'ng2-charts';
 import { LinechartComponent } from './components/charts/linechart/linechart.component';
 import { BarchartComponent } from './components/charts/barchart/barchart.component';
 import { DoughnutchartComponent } from './components/charts/doughnutchart/doughnutchart.component';
-
+//Import Google Maps
+import { AgmCoreModule } from '@agm/core';
+import { GoogleMapComponent } from './components/google-map/google-map.component';
 
 
 
@@ -41,7 +43,7 @@ const  applicationRouters:Routes = [
   {path:'',component:HomePageContentComponent},
   {path:'login',component:LoginComponent},
   {path:'userhome',component:DashboardComponent},
-  {path:'tables',component:TablesComponent},
+  {path:'tables',component:GoogleMapComponent},
   {path:'dashboard',component:DashboardComponent},
   {path:'user',component:UserComponent},
   {path:'about',component:AboutComponent},
@@ -75,12 +77,7 @@ const  applicationRouters:Routes = [
     LinechartComponent,
     BarchartComponent,
     DoughnutchartComponent,
-
-
-
-
-
-
+    GoogleMapComponent,
 
   ],
   imports: [
@@ -96,7 +93,10 @@ const  applicationRouters:Routes = [
     RouterModule,
     LbdModule,
     FlashMessagesModule.forRoot(),
-    ChartsModule
+    ChartsModule,
+    AgmCoreModule.forRoot({
+      apiKey: environment.firebase.googleMapsKey
+    })
 
 
   ],

@@ -11,6 +11,7 @@ export const environment = {
     databaseURL: 'https://groupproject-1ea89.firebaseio.com',
     projectId: 'groupproject-1ea89',
     storageBucket: 'groupproject-1ea89.appspot.com',
-    messagingSenderId: '185152605115'
+    messagingSenderId: '185152605115',
+    googleMapsKey: 'AIzaSyBxP4M1VWbdCkzgDMDjINhvln5MSs5dy34'
   }
 };
