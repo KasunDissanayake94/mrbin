@@ -25,7 +25,9 @@ import { ContactComponent } from './components/contact/contact.component';
 import { DriversComponent } from './components/drivers/drivers.component';
 import {FilledbinsComponent} from "./components/filledbins/filledbins.component";
 import { CustomerFeedbackReportComponent } from './components/customer-feedback-report/customer-feedback-report.component';
-
+//import component lib for charts
+import { ChartsModule } from 'ng2-charts';
+import { LinechartComponent } from './components/charts/linechart/linechart.component';
 
 
 
@@ -68,6 +70,7 @@ const  applicationRouters:Routes = [
     CustomerFeedbackReportComponent,
     DriversComponent,
     FilledbinsComponent,
+    LinechartComponent,
 
 
 
@@ -89,6 +92,7 @@ const  applicationRouters:Routes = [
     RouterModule,
     LbdModule,
     FlashMessagesModule.forRoot(),
+    ChartsModule
 
 
   ],
