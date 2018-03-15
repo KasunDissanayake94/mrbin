@@ -1,38 +1,70 @@
-<app-sidebar></app-sidebar>
+
 <div class="jumbotron" style="margin-left: 50px">
-  <h1 class="display-3">Contact Us</h1>
+  <!--<h1 class="display-3">Contact Us</h1>-->
+  <img src="assets/img/contact.jpg" width="1480px">
   <hr class="my-4">
   <div class="container-fluid" >
     <div class="row">
-      <div class="card border-primary mb-9" style="width: 60rem;">
+      <div class="card border-primary mb-9" style="width: 65rem;">
 
         <div class="card-body">
-          <div class="form-group">
-            <label>Name</label>
-            <input type="text" class="form-control" id="exampleInputName1" aria-describedby="emailHelp" placeholder="Enter Name">
+          <h5>
+            <div class="form-group">
 
-          </div>
-          <div class="form-group">
-            <label for="exampleInputEmail1">Email address</label>
-            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+              <label>Name</label>
+              <input type="text" class="form-control" id="exampleInputName1" aria-describedby="emailHelp" placeholder="Enter Name">
 
-          </div>
-          <div class="form-group">
-            <label for="exampleTextarea">Message</label>
-            <textarea class="form-control" id="exampleTextarea" rows="3"></textarea>
-          </div>
-          <div class="form-group">
-            <button type="submit" class="btn btn-primary">Submit</button>
-          </div>
+            </div>
+            <div class="form-group">
+              <label for="exampleInputEmail1">Email address</label>
+              <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+
+            </div>
+            <div class="form-group">
+              <label for="exampleTextarea">Message</label>
+              <textarea class="form-control" id="exampleTextarea" rows="3"></textarea>
+            </div>
+            <div class="form-group">
+              <button type="submit" class="btn btn-primary">Submit</button>
+            </div>
+          </h5>
         </div>
       </div>
-      <div style="width: 5rem;"></div>
-      <div class="card border-primary mb-3" style="width: 20rem;">
+      <div style="width: 2rem;"></div>
+      <div class="card border-primary mb-3" style="width: 25rem;">
 
         <div class="card-body">
-          <h4 class="card-title">Primary card title</h4>
-          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+          <h4 class="card-title"><b>Colombo Municipal Council</b></h4>
+          <br>
+          <table class="table primary" border="0">
+            <h5>
+              <tr>
+                <td>Tel </td>
+                <td>(011) 2684290</td>
+              </tr>
+              <tr>
+                <td>Address </td>
+                <td>Town Hall,
+                  Colombo 07.</td>
+              </tr>
+
+              <tr>
+                <td>Email </td>
+                <td>munici@slt.lk</td>
+              </tr>
+              <tr>
+                <td>Web </td>
+                <td><a href="http://colombo.mc.gov.lk/">http://colombo.mc.gov.lk/</a></td>
+              </tr>
+            </h5>
+          </table>
+          <br><br>
+          <a [routerLink]="['/urbanContacts']"> <button type="button" class="btn btn-outline-primary">View more contacts</button></a>
+
+
         </div>
+        <br>
+        <br>
       </div>
     </div>
 
