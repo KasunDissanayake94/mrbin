@@ -28,6 +28,8 @@ import { CustomerFeedbackReportComponent } from './components/customer-feedback-
 //import component lib for charts
 import { ChartsModule } from 'ng2-charts';
 import { LinechartComponent } from './components/charts/linechart/linechart.component';
+import { BarchartComponent } from './components/charts/barchart/barchart.component';
+import { DoughnutchartComponent } from './components/charts/doughnutchart/doughnutchart.component';
 
 
 
@@ -71,6 +73,8 @@ const  applicationRouters:Routes = [
     DriversComponent,
     FilledbinsComponent,
     LinechartComponent,
+    BarchartComponent,
+    DoughnutchartComponent,
 
 
 
