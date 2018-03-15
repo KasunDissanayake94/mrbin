@@ -11,6 +11,12 @@ class Items {
 class Drivers{
   constructor(){}
 }
+//Get the bin Details
+class Bin{
+  constructor(){
+
+  }
+}
 
 @Component({
   selector: 'app-root',
@@ -20,9 +26,13 @@ class Drivers{
 export class AppComponent {
   public items: FirebaseListObservable<Items[]>;
   public drivers: FirebaseListObservable<Drivers[]>;
+  public bins: FirebaseListObservable<Bin[]>;
+
+
   constructor(db: AngularFireDatabase) {
     this.items = db.list('/bin');
     this.drivers = db.list('/driver');
+    this.bins = db.list('/bin');
 
   }
 

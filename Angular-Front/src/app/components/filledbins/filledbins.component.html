@@ -18,12 +18,13 @@
         </thead>
         <tbody>
 
-        <tr>
-          <th scope="row">001</th>
-          <td>Primary Section dust bin</td>
-          <td>ABC College, Dehiwala</td>
+        <tr *ngFor="let item of bin_obj | async" >
+          <th scope="row">{{item.$key}}</th>
+          <td>{{item.location}}</td>
+          <td>{{item.description}}</td>
           <td><button class="btn btn-info">Assign a driver</button></td>
         </tr>
+
 
 
         </tbody>
