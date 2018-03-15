@@ -5,17 +5,7 @@
   <div class="container-fluid" >
     <div class="row">
       <div class="col-md-4" >
-        <lbd-chart
-          [title]="'Email Statistics'"
-          [subtitle]="'Last Campaign Performance'"
-          [chartClass]="'ct-perfect-fourth'"
-          [chartType]="emailChartType"
-          [chartData]="emailChartData"
-          [legendItems]="emailChartLegendItems"
-          [withHr]="true"
-          [footerIconClass]="'fa fa-clock-o'"
-          [footerText]="'Campaign sent 2 days ago'">
-        </lbd-chart>
+        <app-linechart></app-linechart>
       </div>
       <div class="col-md-8">
         <lbd-chart
