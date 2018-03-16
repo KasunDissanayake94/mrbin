@@ -33,9 +33,6 @@ import { DoughnutchartComponent } from './components/charts/doughnutchart/doughn
 
 
 
-
-
-
 const  applicationRouters:Routes = [
   //add all components links here
   {path:'',component:HomePageContentComponent},
