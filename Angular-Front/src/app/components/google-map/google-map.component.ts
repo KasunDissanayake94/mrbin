@@ -14,7 +14,7 @@ import { GeoService } from '../../service/geo.service'
     <app-sidebar></app-sidebar>
     <div *ngIf="lat && lng">
 
-      <agm-map [latitude]="lat" [longitude]="lng" [zoom]="15">
+      <agm-map [latitude]="lat" [longitude]="lng" [zoom]="13">
 
         <agm-marker [latitude]="lat" [longitude]="lng">
 
