@@ -33,6 +33,7 @@ import { DoughnutchartComponent } from './components/charts/doughnutchart/doughn
 //Import Google Maps
 import { AgmCoreModule } from '@agm/core';
 import { GoogleMapComponent } from './components/google-map/google-map.component';
+import { GeoService } from './service/geo.service';
 
 
 const  applicationRouters:Routes = [
@@ -47,6 +48,7 @@ const  applicationRouters:Routes = [
   {path:'contact',component:ContactComponent},
   {path:'bins',component:FilledbinsComponent},
   {path:'drivers',component:DriversComponent},
+  {path:'maps',component:GoogleMapComponent},
   {path:'customer-feedback-report',component:CustomerFeedbackReportComponent}
 
 
@@ -97,7 +99,7 @@ const  applicationRouters:Routes = [
 
 
   ],
-  providers: [AuthService],
+  providers: [AuthService, GeoService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
