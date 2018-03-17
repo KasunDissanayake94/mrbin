@@ -11,6 +11,7 @@ import { AppComponent } from '../../app.component';
 export class DriversComponent implements OnInit {
 public driver_obj:any;
   display='none';
+  dsplay='none';
 
   constructor(app:AppComponent) {
     //This Component get from the AppComponent
@@ -24,6 +25,15 @@ public driver_obj:any;
   onCloseHandled(){
     this.display='none';
   }
+
+  openEditDri(){
+    this.dsplay="block";
+  }
+  //Close button on Modal
+  onCloseEditDri(){
+    this.dsplay='none';
+  }
+
 
 
   ngOnInit() {

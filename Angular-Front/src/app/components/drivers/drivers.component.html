@@ -24,7 +24,7 @@
           <td>{{item.name}}</td>
           <td>{{item.mobile_no}}</td>
           <td>{{item.truck_no}}</td>
-          <td><button class="btn btn-danger">Edit</button></td>
+          <td><button class="btn btn-danger" (click)="openEditDri()">Edit</button></td>
           <td><button class="btn btn-info">Delete</button></td>
         </tr>
 
@@ -91,6 +91,59 @@
 
       <div class="modal-footer">
         <button type="button" class="btn btn-default" (click)="onCloseHandled()" >Close</button>
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal !-->
+
+<!-- When clicked edit this opens-->
+
+<div class="backdrop" [ngStyle]="{'display':dsplay}"></div>
+<div class="modal" tabindex="-1" role="dialog"  [ngStyle]="{'display':dsplay}">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title">Edit Driver</h4>
+        <button type="button" class="close" aria-label="Close" (click)="onCloseEditDri()"><span aria-hidden="true">&times;</span></button>
+      </div>
+      <div class="modal-body container">
+
+        <!-- Form body -->
+
+        <form name="" method="post" #formCtrl="">
+          <fieldset>
+
+            <div class="form-group">
+              <label for="exampleInputEmail1">Driver ID</label>
+              <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="did"  placeholder="Enter driver ID" disabled="true">
+            </div>
+            <div class="form-group">
+              <label for="exampleInputPassword1">Driver name</label>
+              <input type="text" class="form-control" id="exampleInputPassword1" name="dnm" placeholder="Driver name">
+            </div>
+            <div class="form-group">
+              <label for="exampleInputPassword1">Mobile Number</label>
+              <input type="text" class="form-control" id="exampleInputPassword1" name="mbno" placeholder="Driver name">
+            </div>
+            <div class="form-group">
+              <label for="exampleInputPassword1">Truck No</label>
+              <input type="text" class="form-control" id="exampleInputPassword1" name="tno" placeholder="Truck no">
+            </div>
+
+            <div align="center">
+              <button type="submit" class="btn btn-success">Edit</button>
+            </div>
+
+          </fieldset>
+
+
+
+        </form>
+
+      </div>
+
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" (click)="onCloseEditDri()">Close</button>
       </div>
     </div><!-- /.modal-content -->
   </div><!-- /.modal-dialog -->
