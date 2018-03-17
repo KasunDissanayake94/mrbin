@@ -46,7 +46,7 @@ export class GoogleMapComponent implements OnInit {
 
   lat: number;
   lng: number;
-
+//latitude and logitude
   public markers =  [
     [6.916905, 79.867740],
     [6.935570, 79.847956],
