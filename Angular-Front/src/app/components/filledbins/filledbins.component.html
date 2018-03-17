@@ -1,7 +1,7 @@
 <app-sidebar></app-sidebar>
 
 <div class="jumbotron" style="margin-left: 50px">
-  <h1 class="display-3">Drivers details</h1>
+  <h1 class="display-3">Bin details</h1>
   <hr class="my-4">
   <div class="container-fluid" >
     <div class="row">
@@ -22,7 +22,7 @@
           <th scope="row">{{item.$key}}</th>
           <td>{{item.location}}</td>
           <td>{{item.description}}</td>
-          <td><button class="btn btn-info">Assign a driver</button></td>
+          <td><button class="btn btn-info" (click)="openModal()">Assign a driver</button></td>
         </tr>
 
 
@@ -36,7 +36,57 @@
   </div>
 
   <div class="container" align="center">
-    <button class="btn btn-success">Add a new Bin</button>
+    <button class="btn btn-success" (click)="openmyModal()">Add a new Bin</button>
   </div>
 
 </div>
+
+<!--Model here.Default this is hidden from the page-->
+
+<div class="backdrop" [ngStyle]="{'display':display}"></div>
+<div class="modal" tabindex="-1" role="dialog"  [ngStyle]="{'display':display}">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title">Add new Bin</h4>
+        <button type="button" class="close" aria-label="Close" (click)="onCloseHandled()"><span aria-hidden="true">&times;</span></button>
+      </div>
+      <div class="modal-body container">
+
+        <!-- Form body -->
+
+        <form name="" method="post" #formCtrl="">
+          <fieldset>
+            <legend>Login Page</legend>
+
+            <div class="form-group">
+              <label for="exampleInputEmail1">Bin ID</label>
+              <input type="text" class="form-control" id="exampleInputEmail1" name="bid"  placeholder="Enter Bin ID">
+            </div>
+            <div class="form-group">
+              <label for="exampleInputPassword1">Description</label>
+              <input type="text" class="form-control" id="exampleInputPassword1" name="dnm" placeholder="Descripton">
+            </div>
+            <div class="form-group">
+              <label for="exampleInputPassword1">Location</label>
+              <input type="text" class="form-control" id="exampleInputPassword1" name="tno" placeholder="Location">
+            </div>
+
+            <div align="center">
+              <button type="submit" class="btn btn-success">Submit</button>
+            </div>
+          </fieldset>
+
+
+
+        </form>
+
+      </div>
+
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" (click)="onCloseHandled()" >Close</button>
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal !-->
+
