@@ -12,8 +12,10 @@ import { CarouselComponent } from './components/carousel/carousel.component';
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireDatabaseModule } from 'angularfire2/database-deprecated';
 import { environment } from '../environments/environment';
-import {AngularFireAuthModule} from "angularfire2/auth";
-import {AuthService} from "./service/auth.service";
+import { AngularFireAuthModule} from "angularfire2/auth";
+import { AuthService} from "./service/auth.service";
+import { AuthGuard } from "./service/auth.guard"
+//components
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { LbdModule } from './components/lbd/lbd.module';
@@ -40,15 +42,15 @@ const  applicationRouters:Routes = [
   //add all components links here
   {path:'',component:HomePageContentComponent},
   {path:'login',component:LoginComponent},
-  {path:'userhome',component:DashboardComponent},
-  {path:'tables',component:DashboardComponent},
-  {path:'dashboard',component:DashboardComponent},
-  {path:'user',component:UserComponent},
+  {path:'userhome',component:DashboardComponent,canActivate: [AuthGuard]},
+  {path:'tables',component:DashboardComponent,canActivate: [AuthGuard]},
+  {path:'dashboard',component:DashboardComponent,canActivate: [AuthGuard]},
+  {path:'user',component:UserComponent,canActivate: [AuthGuard]},
   {path:'about',component:AboutComponent},
   {path:'contact',component:ContactComponent},
-  {path:'bins',component:FilledbinsComponent},
-  {path:'drivers',component:DriversComponent},
-  {path:'maps',component:GoogleMapComponent},
+  {path:'bins',component:FilledbinsComponent,canActivate: [AuthGuard]},
+  {path:'drivers',component:DriversComponent,canActivate: [AuthGuard]},
+  {path:'maps',component:GoogleMapComponent,canActivate: [AuthGuard]},
   {path:'customer-feedback-report',component:CustomerFeedbackReportComponent}
 
 
@@ -99,7 +101,7 @@ const  applicationRouters:Routes = [
 
 
   ],
-  providers: [AuthService, GeoService],
+  providers: [AuthService, GeoService,AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
