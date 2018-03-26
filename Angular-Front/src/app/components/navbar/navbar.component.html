@@ -28,7 +28,7 @@
 
 
       <a [routerLink]="['/login']"><button *ngIf="authService.loggedIn()==null"  class="btn btn-secondary my-2 my-sm-0" type="submit" >Login</button></a>
-      <p *ngIf="authService.loggedIn()" style="color: white; margin: 5px">You logged in as {{authService.userEmail}}</p>
+      <p *ngIf="authService.loggedIn()" style="color: white; margin: 5px">Hello  {{authService.userEmail}}</p>
       <button *ngIf="authService.loggedIn()" class="btn btn-secondary my-2 my-sm-0" type="submit" (click)="logoutbtn()">Logout</button>
 
 
