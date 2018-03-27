@@ -9,6 +9,7 @@
       <table class="table table-hover">
         <thead>
         <tr>
+          <th scope="col">Feedback ID</th>
           <th scope="col">User ID</th>
           <th scope="col">User name</th>
           <th scope="col">Date of Feedback</th>
@@ -18,49 +19,23 @@
         </thead>
         <tbody>
 
-        <tr>
-          <th scope="row">001</th>
-          <td>Lal Perera</td>
-          <td>13-03-2018</td>
-          <td>Bin no 1598 hasn't collected by 3 days</td>
-          <td><button class="btn btn-success">Resolved</button></td>
-        </tr>
-        <tr>
-          <th scope="row">002</th>
-          <td>Thisura Senadeera</td>
-          <td>14-03-2018</td>
-          <td>Bin no 1696 hasn't collected by 2 days</td>
-          <td><button class="btn btn-success">Resolved</button></td>
-        </tr>
-        <tr>
-          <th scope="row">003</th>
-          <td>Ravi Silva</td>
-          <td>14-03-2018</td>
-          <td>Bin 3423 is not identifying the garbage level</td>
-          <td><button class="btn btn-success">Resolved</button></td>
-        </tr>
-        <tr>
-          <th scope="row">004</th>
-          <td>Kumar Perera</td>
-          <td>18-03-2018</td>
-          <td>Bin no 1598 hasn't collected by 3 days</td>
-          <td><button class="btn btn-success">Resolved</button></td>
-        </tr>
-        <tr>
-          <th scope="row">005</th>
-          <td>Kasun Somaratne</td>
-          <td>18-03-2018</td>
-          <td>Bin no 1598 has to be repaired</td>
-          <td><button class="btn btn-success">Resolved</button></td>
-        </tr>
-        <tr>
-          <th scope="row">006</th>
-          <td>Sisira Fernando</td>
-          <td>18-03-2018</td>
-          <td>Bin no 1598 hasn't collected by 2 days</td>
-          <td><button class="btn btn-success">Resolved</button></td>
+        <tr *ngFor="let item of feedback_obj | async" >
+          <th scope="row">{{item.$key}}</th>
+          <td>{{item.user_id}}</td>
+          <td>{{item.username}}</td>
+          <td>{{item.date_of_feedback}}</td>
+          <td>{{item.feedback}}</td>
+          <td><button class="btn btn-success" (click)="openResolve()">Resolved</button></td>
         </tr>
 
+        <tr>
+          <td>007</td>
+          <td>007</td>
+          <td>adsd</td>
+          <td>fwegrht</td>
+          <td>sbfdngf</td>
+          <td><button class="btn btn-success" (click)="openResolve()">Resolved</button></td>
+        </tr>
 
         </tbody>
       </table>
@@ -73,3 +48,27 @@
 </div>
 
 
+<!--Identify resolved-->
+
+<div class="backdrop" [ngStyle]="{'display':display}"></div>
+<div class="modal" tabindex="-1" role="dialog"  [ngStyle]="{'display':display}">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title">Success message</h4>
+        <button type="button" class="close" aria-label="Close" (click)="onCloseHandled()"><span aria-hidden="true">&times;</span></button>
+      </div>
+      <div class="modal-body container">
+
+        <!-- Form body -->
+
+        Successfully resolved
+
+      </div>
+
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" (click)="onCloseHandled()" >Close</button>
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal !-->

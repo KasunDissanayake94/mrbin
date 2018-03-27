@@ -25,6 +25,12 @@ class LoginUser{
   }
 }
 
+//Get the feedback
+class FeedBack{
+  constructor(){
+  }
+}
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -34,6 +40,7 @@ export class AppComponent {
   public items: FirebaseListObservable<Items[]>;
   public drivers: FirebaseListObservable<Drivers[]>;
   public bins: FirebaseListObservable<Bin[]>;
+  public feedbck: FirebaseListObservable<FeedBack[]>;
   public loginuser: FirebaseListObservable<LoginUser[]>;
 
 
@@ -42,6 +49,7 @@ export class AppComponent {
     this.drivers = db.list('/driver');
     this.bins = db.list('/bin');
     this.loginuser = db.list('/user');
+    this.feedbck = db.list('/feedback_details');
 
   }
 
