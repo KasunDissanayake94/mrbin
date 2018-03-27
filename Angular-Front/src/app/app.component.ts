@@ -25,7 +25,7 @@ class LoginUser{
   }
 }
 
-//Get the feedback
+//Get the feedback table from firebase
 class FeedBack{
   constructor(){
   }

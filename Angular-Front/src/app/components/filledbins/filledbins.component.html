@@ -22,10 +22,8 @@
           <th scope="row">{{item.$key}}</th>
           <td>{{item.location}}</td>
           <td>{{item.description}}</td>
-          <td><button class="btn btn-info" (click)="openModal()">Assign a driver</button></td>
+          <td><button class="btn btn-info" (click)="openAssign()">Assign a driver</button></td>
         </tr>
-
-
 
         </tbody>
       </table>
@@ -90,3 +88,48 @@
   </div><!-- /.modal-dialog -->
 </div><!-- /.modal !-->
 
+
+<!-- Assign driver modal-->
+
+<div class="backdrop" [ngStyle]="{'display':dsply}"></div>
+<div class="modal" tabindex="-1" role="dialog"  [ngStyle]="{'display':dsply}">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title">Assigning driver</h4>
+        <button type="button" class="close" aria-label="Close" (click)="closeAssign()"><span aria-hidden="true">&times;</span></button>
+      </div>
+      <div class="modal-body container">
+
+        <!-- Form body -->
+
+        <form name="" method="post" #formCtrl="">
+          <fieldset>
+
+
+            <div class="form-group">
+              <label for="exampleInputEmail1">Bin ID</label>
+              <input disabled type="text" class="form-control" id="exampleInputEmail1" name="bid"  placeholder="Enter Bin ID">
+            </div>
+            <div class="form-group">
+              <label for="exampleInputPassword1">Driver ID</label>
+              <input type="text" class="form-control" id="exampleInputPassword1" name="dnm" placeholder="Driver ID">
+            </div>
+
+            <div align="center">
+              <button type="submit" class="btn btn-info">Assign</button>
+            </div>
+          </fieldset>
+
+
+
+        </form>
+
+      </div>
+
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" (click)="closeAssign()" >Close</button>
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal !-->

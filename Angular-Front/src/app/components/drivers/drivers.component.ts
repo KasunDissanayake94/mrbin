@@ -12,6 +12,7 @@ export class DriversComponent implements OnInit {
 public driver_obj:any;
   display='none';
   dsplay='none';
+  dsplay2 = 'none';
 
   constructor(app:AppComponent) {
     //This Component get from the AppComponent
@@ -27,11 +28,21 @@ public driver_obj:any;
   }
 
   openEditDri(){
-    this.dsplay="block";
-  }
+  this.dsplay="block";
+}
   //Close button on Modal
   onCloseEditDri(){
     this.dsplay='none';
+  }
+
+  //Open dlt driver
+
+  openDltDri(){
+    this.dsplay2="block";
+  }
+  //Close button on Modal
+  closeDltDri(){
+    this.dsplay2='none';
   }
 
 

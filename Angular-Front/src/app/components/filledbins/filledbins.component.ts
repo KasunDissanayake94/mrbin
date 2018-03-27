@@ -10,6 +10,7 @@ import { AppComponent } from '../../app.component';
 export class FilledbinsComponent implements OnInit {
   public bin_obj:any;
   display='none';
+  dsply = 'none';
 
   constructor(app:AppComponent) {
     //This component get from the AppComponent
@@ -23,6 +24,14 @@ export class FilledbinsComponent implements OnInit {
   //Close button on Modal
   onCloseHandled(){
     this.display='none';
+  }
+
+  //After Clicking Assign a driver this Model will be called
+  openAssign(){
+    this.dsply="block";
+  }
+  closeAssign(){
+    this.dsply='none';
   }
 
   ngOnInit() {
