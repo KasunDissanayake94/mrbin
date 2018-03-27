@@ -20,8 +20,8 @@
 
         <tr *ngFor="let item of bin_obj | async" >
           <th scope="row">{{item.$key}}</th>
-          <td>{{item.location}}</td>
           <td>{{item.description}}</td>
+          <td>{{item.location}}</td>
           <td><button class="btn btn-info" (click)="openModal()">Assign a driver</button></td>
         </tr>
 
@@ -61,19 +61,19 @@
 
             <div class="form-group">
               <label for="exampleInputEmail1">Bin ID</label>
-              <input type="text" class="form-control" id="exampleInputEmail1" name="bid"  placeholder="Enter Bin ID">
+              <input type="text" class="form-control" id="exampleInputEmail1" name="bid"  placeholder="Enter Bin ID" [(ngModel)]="bin.bin_id">
             </div>
             <div class="form-group">
               <label for="exampleInputPassword1">Description</label>
-              <input type="text" class="form-control" id="exampleInputPassword1" name="dnm" placeholder="Descripton">
+              <input type="text" class="form-control" id="exampleInputPassword1" name="dnm" placeholder="Descripton" [(ngModel)]="bin.description">
             </div>
             <div class="form-group">
               <label for="exampleInputPassword1">Location</label>
-              <input type="text" class="form-control" id="exampleInputPassword1" name="tno" placeholder="Location">
+              <input type="text" class="form-control" id="exampleInputPassword1" name="tno" placeholder="Location" [(ngModel)]="bin.location">
             </div>
 
             <div align="center">
-              <button type="submit" class="btn btn-success">Submit</button>
+              <button type="submit" class="btn btn-success" (click)="add_new_bin()">Submit</button>
             </div>
           </fieldset>
 
