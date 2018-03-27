@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { AppComponent } from '../../app.component';
+
 
 @Component({
   selector: 'app-customer-feedback-report',
@@ -7,7 +9,23 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CustomerFeedbackReportComponent implements OnInit {
 
-  constructor() { }
+  public feedback_obj:any;
+  display='none';
+
+  constructor(app:AppComponent) {
+    //This Component get from the AppComponent
+    this.feedback_obj = app.feedbck;
+  }
+
+  openResolve(){
+    this.display="block";
+  }
+  //Close button on Modal
+  onCloseHandled(){
+    this.display='none';
+  }
+
+
 
   ngOnInit() {
   }
