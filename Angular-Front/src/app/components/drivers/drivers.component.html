@@ -25,9 +25,8 @@
           <td>{{item.mobile_no}}</td>
           <td>{{item.truck_no}}</td>
           <td><button class="btn btn-danger" (click)="openEditDri()">Edit</button></td>
-          <td><button class="btn btn-info">Delete</button></td>
+          <td><button class="btn btn-info" (click)="openDltDri()" >Delete</button></td>
         </tr>
-
 
         </tbody>
       </table>
@@ -144,6 +143,32 @@
 
       <div class="modal-footer">
         <button type="button" class="btn btn-default" (click)="onCloseEditDri()">Close</button>
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal !-->
+
+
+<!-- When clicked delete this opens-->
+
+<div class="backdrop" [ngStyle]="{'display':dsplay2}"></div>
+<div class="modal" tabindex="-1" role="dialog"  [ngStyle]="{'display':dsplay2}">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title">Delete Driver</h4>
+        <button type="button" class="close" aria-label="Close" (click)="closeDltDri()"><span aria-hidden="true">&times;</span></button>
+      </div>
+      <div class="modal-body container">
+
+        <!-- Form body -->
+
+        Driver deleted successfully..
+
+      </div>
+
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" (click)="closeDltDri()">Close</button>
       </div>
     </div><!-- /.modal-content -->
   </div><!-- /.modal-dialog -->

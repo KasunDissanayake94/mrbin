@@ -10,6 +10,7 @@ import { AppComponent } from '../../app.component';
 export class FilledbinsComponent implements OnInit {
   public bin_obj:any;
   display='none';
+  dsply = 'none';
 
   bin = {
     bin_id: '',
@@ -36,6 +37,14 @@ export class FilledbinsComponent implements OnInit {
   add_new_bin(){
     this.bin_obj.push(this.bin);
     this.onCloseHandled();
+  }
+
+  //After Clicking Assign a driver this Model will be called
+  openAssign(){
+    this.dsply="block";
+  }
+  closeAssign(){
+    this.dsply='none';
   }
 
   ngOnInit() {
