@@ -6,12 +6,12 @@
 export const environment = {
   production: false,
   firebase: {
-    apiKey: 'AIzaSyDsIOzzv-pnwlkFGeMezjK0JV8ZYhjkL0E',
-    authDomain: 'groupproject-1ea89.firebaseapp.com',
-    databaseURL: 'https://groupproject-1ea89.firebaseio.com',
-    projectId: 'groupproject-1ea89',
-    storageBucket: 'groupproject-1ea89.appspot.com',
-    messagingSenderId: '185152605115',
-    googleMapsKey: 'AIzaSyBxP4M1VWbdCkzgDMDjINhvln5MSs5dy34'
+    apiKey: "AIzaSyBFR1gb7N-_PwxE8Y0VR4afjiNP4SbLaSw",
+    authDomain: "mrbin-981d3.firebaseapp.com",
+    databaseURL: "https://mrbin-981d3.firebaseio.com",
+    projectId: "mrbin-981d3",
+    storageBucket: "mrbin-981d3.appspot.com",
+    messagingSenderId: "632086240438",
+    googleMapsKey: '7kTOsJ3FzzjmVWShkrhfjlsUsjcI36ErybqiGa0U'
   }
 };

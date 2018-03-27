@@ -36,6 +36,7 @@ import { DoughnutchartComponent } from './components/charts/doughnutchart/doughn
 import { AgmCoreModule } from '@agm/core';
 import { GoogleMapComponent } from './components/google-map/google-map.component';
 import { GeoService } from './service/geo.service';
+import { ErrorComponent } from './components/error/error.component';
 
 
 const  applicationRouters:Routes = [
@@ -51,7 +52,8 @@ const  applicationRouters:Routes = [
   {path:'bins',component:FilledbinsComponent,canActivate: [AuthGuard]},
   {path:'drivers',component:DriversComponent,canActivate: [AuthGuard]},
   {path:'maps',component:GoogleMapComponent,canActivate: [AuthGuard]},
-  {path:'customer-feedback-report',component:CustomerFeedbackReportComponent}
+  {path:'customer-feedback-report',component:CustomerFeedbackReportComponent},
+  {path:'error',component:ErrorComponent},
 
 
 
@@ -79,6 +81,7 @@ const  applicationRouters:Routes = [
     BarchartComponent,
     DoughnutchartComponent,
     GoogleMapComponent,
+    ErrorComponent,
 
   ],
   imports: [
