@@ -15,7 +15,7 @@
               <div class="row">
                 <div class="col-md-5">
                   <div class="form-group">
-                    <label>Company (disabled)</label>
+                    <label>Organization Name</label>
                     <input type="text" class="form-control" disabled placeholder="Company" value="Creative Code Inc.">
                   </div>
                 </div>
@@ -33,20 +33,7 @@
                 </div>
               </div>
 
-              <div class="row">
-                <div class="col-md-6">
-                  <div class="form-group">
-                    <label>First Name</label>
-                    <input type="text" class="form-control" placeholder="Company" value="Mike">
-                  </div>
-                </div>
-                <div class="col-md-6">
-                  <div class="form-group">
-                    <label>Last Name</label>
-                    <input type="text" class="form-control" placeholder="Last Name" value="Andrew">
-                  </div>
-                </div>
-              </div>
+
 
               <div class="row">
                 <div class="col-md-12">
@@ -56,43 +43,45 @@
                   </div>
                 </div>
               </div>
-
-              <div class="row">
-                <div class="col-md-4">
-                  <div class="form-group">
-                    <label>City</label>
-                    <input type="text" class="form-control" placeholder="City" value="Mike">
-                  </div>
-                </div>
-                <div class="col-md-4">
-                  <div class="form-group">
-                    <label>Country</label>
-                    <input type="text" class="form-control" placeholder="Country" value="Andrew">
-                  </div>
-                </div>
-                <div class="col-md-4">
-                  <div class="form-group">
-                    <label>Postal Code</label>
-                    <input type="number" class="form-control" placeholder="ZIP Code">
-                  </div>
-                </div>
-              </div>
-
               <div class="row">
                 <div class="col-md-12">
                   <div class="form-group">
-                    <label>About Me</label>
-                    <textarea rows="5" class="form-control" placeholder="Here can be your description" value="Mike">Lamborghini Mercy, Your chick she so thirsty, I'm in that two seat Lambo.</textarea>
+                    <label>Contact Number</label>
+                    <input type="text" class="form-control" placeholder="Company" value="Mike">
                   </div>
+
                 </div>
               </div>
+              <div class="row">
+                <div class="col-md-12">
+                  <div class="form-group">
+                    <label>Edit Profile Picture</label>
+                    <input type="file" class="form-control">
+                  </div>
+
+                </div>
+              </div>
+              <div class="row">
+
+              </div>
+
+              <div class="row">
+
+              </div>
               <button type="submit" class="btn btn-info btn-fill pull-right">Update Profile</button>
+
+              <div class="row">
+
+              </div>
               <div class="clearfix"></div>
             </form>
           </div>
         </div>
       </div>
       <div class="col-md-4">
+        <div class="card border-primary mb-3" >
+          <button type="submit" class="btn btn-info btn-fill pull-right"  (click)="openmyModal()">Add New User</button>
+        </div>
         <div class="card border-primary mb-3" >
           <div class="image">
 
@@ -108,17 +97,12 @@
                 </h4>
               </a>
             </div>
-            <p class="card-text"> "Lamborghini Mercy <br>
-              Your chick she so thirsty <br>
-              I'm in that two seat Lambo"
-            </p>
+
 
           </div>
 
         </div>
-        <div class="card border-primary mb-3" >
-          <button type="submit" class="btn btn-info btn-fill pull-right"  (click)="show_all_users">Show all Users</button>
-        </div>
+
 
 
       </div>
@@ -131,3 +115,73 @@
   </div>
 
 </div>
+
+<!--Model here.Default this is hidden from the page-->
+
+<div class="backdrop" [ngStyle]="{'display':display}"></div>
+<div class="modal" tabindex="-1" role="dialog"  [ngStyle]="{'display':display}">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title">Add New User</h4>
+        <button type="button" class="close" aria-label="Close" (click)="onCloseHandled()"><span aria-hidden="true">&times;</span></button>
+      </div>
+      <div class="modal-body container">
+
+        <!-- Form body -->
+
+        <form name="" method="post" #formCtrl="">
+          <fieldset>
+
+            <div class="form-group">
+              <label for="exampleInputEmail1">Organization Name</label>
+              <input type="text" class="form-control" id="exampleInputEmail1" name="org_name"  placeholder="Organization Name">
+            </div>
+            <!--<div class="form-group">-->
+            <!--<label for="exampleInputEmail1">First Name</label>-->
+            <!--<input type="text" class="form-control" id="exampleInputEmail1" name="fname"  placeholder="First Name">-->
+            <!--</div>-->
+            <!--<div class="form-group">-->
+            <!--<label for="exampleInputEmail1">Last Name</label>-->
+            <!--<input type="text" class="form-control" id="exampleInputEmail1" name="lname"  placeholder="Last Name">-->
+            <!--</div>-->
+            <div class="form-group">
+              <label for="exampleInputEmail1">User Name</label>
+              <input type="text" class="form-control" id="exampleInputEmail1" name="uname"  placeholder="User Name">
+            </div>
+            <div class="form-group">
+              <label for="exampleInputEmail1">Email</label>
+              <input type="email" class="form-control" id="exampleInputEmail1" name="email"  placeholder="Email">
+            </div>
+            <div class="form-group">
+              <label for="exampleInputPassword1">Address</label>
+              <input type="textarea" class="form-control" id="exampleInputPassword1" name="dnm" placeholder="Address">
+            </div>
+            <div class="form-group">
+              <label for="exampleInputPassword1">Contact Number</label>
+              <input type="text" class="form-control" id="exampleInputPassword1" name="tno" placeholder="Contact Number">
+            </div>
+            <div class="form-group">
+              <label for="exampleInputPassword1">Upload Profile Picture</label>
+              <input type="file" class="form-control" id="exampleInputPassword1" name="image" >
+            </div>
+
+          </fieldset>
+
+
+
+        </form>
+
+      </div>
+
+      <div class="modal-footer">
+        <div align="right">
+          <button type="submit" class="btn btn-success">Submit</button>
+        </div>
+        <button type="button" class="btn btn-default" (click)="onCloseHandled()" >Close</button>
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal !-->
+
+
