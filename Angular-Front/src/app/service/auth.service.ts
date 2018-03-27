@@ -3,13 +3,21 @@ import { Router } from "@angular/router";
 import { AngularFireAuth } from 'angularfire2/auth';
 import * as firebase from 'firebase/app';
 import { Observable } from 'rxjs/Observable';
+import {BehaviorSubject} from "rxjs/BehaviorSubject";
+import {Subject} from "rxjs/Subject";
 
 
 @Injectable()
 export class AuthService {
-  private user: Observable<firebase.User>;
+  user: Observable<firebase.User>;
   private userDetails: firebase.User = null;
-  private userEmail :String;
+  userEmail :String;
+  public authState = new Subject();
+  redirectUrl: string;
+  // BehaviorSubjects have an initial value.
+  // isLoggedIn is property (not function) now:
+  isLoggedIn = new BehaviorSubject<boolean>(false);
+
   constructor(private _firebaseAuth: AngularFireAuth, private router: Router) {
     this.user = _firebaseAuth.authState;
     this.user.subscribe(
@@ -17,10 +25,15 @@ export class AuthService {
         if (user) {
           this.userDetails = user;
           this.userEmail = this.userDetails.email;
-          console.log("Logged in as ",this.userDetails.email);
+          this.isLoggedIn.next(true);
+          console.log(this.isLoggedIn);
+          if(this.redirectUrl) {
+            this.router.navigate([this.redirectUrl]);
+          }
         }
         else {
           this.userDetails = null;
+          this.isLoggedIn.next(false);
         }
       }
     );
@@ -33,14 +46,7 @@ export class AuthService {
       new firebase.auth.GoogleAuthProvider()
     )
   }
-  //check whether user logged in to the system or not
-  isLoggedIn() {
-    if (this.userDetails == null ) {
-      return false;
-    } else {
-      return true;
-    }
-  }
+
   //User Logout
   logout() {
     this._firebaseAuth.auth.signOut()

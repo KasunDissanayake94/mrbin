@@ -6,22 +6,12 @@
 export const environment = {
   production: false,
   firebase: {
-    /*apiKey: 'AIzaSyBFR1gb7N-_PwxE8Y0VR4afjiNP4SbLaSw',
-    authDomain: 'mrbin-981d3.firebaseapp.com',
-    //databaseURL: 'https://groupproject-1ea89.firebaseio.com',
-    databaseURL: 'https://mrbin-981d3.firebaseio.com',
-
-    //projectId: 'groupproject-1ea89',
-    projectId: 'mrbin-981d3',
-    storageBucket: 'gs://mrbin-981d3.appspot.com',
-    messagingSenderId: '185152605115',*/
-
     apiKey: "AIzaSyBFR1gb7N-_PwxE8Y0VR4afjiNP4SbLaSw",
     authDomain: "mrbin-981d3.firebaseapp.com",
     databaseURL: "https://mrbin-981d3.firebaseio.com",
     projectId: "mrbin-981d3",
     storageBucket: "mrbin-981d3.appspot.com",
     messagingSenderId: "632086240438",
-    googleMapsKey: 'AIzaSyBxP4M1VWbdCkzgDMDjINhvln5MSs5dy34'
+    googleMapsKey: '7kTOsJ3FzzjmVWShkrhfjlsUsjcI36ErybqiGa0U'
   }
 };
