@@ -61,23 +61,23 @@
 
             <div class="form-group">
               <label for="exampleInputEmail1">Driver ID</label>
-              <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="did"  placeholder="Enter driver ID">
+              <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="did"  placeholder="Enter driver ID" [(ngModel)]="driver_set.driver_id">
             </div>
             <div class="form-group">
               <label for="exampleInputPassword1">Driver name</label>
-              <input type="text" class="form-control" id="exampleInputPassword1" name="dnm"placeholder="Driver name">
+              <input type="text" class="form-control" id="exampleInputPassword1" name="dnm" placeholder="Driver name" [(ngModel)]="driver_set.name">
             </div>
             <div class="form-group">
               <label for="exampleInputPassword1">Mobile Number</label>
-              <input type="text" class="form-control" id="exampleInputPassword1" name="mbno"placeholder="Driver name">
+              <input type="text" class="form-control" id="exampleInputPassword1" name="mbno" placeholder="Driver name" [(ngModel)]="driver_set.mobile_no">
             </div>
             <div class="form-group">
               <label for="exampleInputPassword1">Truck No</label>
-              <input type="text" class="form-control" id="exampleInputPassword1" name="tno" placeholder="Truck no">
+              <input type="text" class="form-control" id="exampleInputPassword1" name="tno" placeholder="Truck no" [(ngModel)]="driver_set.truck_no">
             </div>
 
             <div align="center">
-              <button type="submit" class="btn btn-success">Submit</button>
+              <button type="submit" class="btn btn-success" (click)="addDriver()">Submit</button>
             </div>
 
           </fieldset>

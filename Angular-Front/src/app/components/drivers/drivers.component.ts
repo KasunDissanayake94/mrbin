@@ -14,10 +14,18 @@ public driver_obj:any;
   dsplay='none';
   dsplay2 = 'none';
 
+  driver_set = {
+    driver_id: '',
+    name: '',
+    mobile_no: '',
+    truck_no: ''
+  };
+
   constructor(app:AppComponent) {
     //This Component get from the AppComponent
     this.driver_obj = app.drivers;
   }
+
 //After Clicking Add Driver Button this Model will be called
   openModal(){
     this.display="block";
@@ -25,6 +33,13 @@ public driver_obj:any;
   //Close button on Modal
   onCloseHandled(){
     this.display='none';
+  }
+
+  //add driver method execution
+
+  addDriver(){
+    this.driver_obj.push(this.driver_set);
+    this.onCloseHandled();
   }
 
   openEditDri(){

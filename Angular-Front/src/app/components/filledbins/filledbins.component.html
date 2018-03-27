@@ -21,6 +21,7 @@
         <tr *ngFor="let item of bin_obj | async" >
           <th scope="row">{{item.$key}}</th>
           <td>{{item.description}}</td>
+          <td>{{item.location}}</td>
           <td><button class="btn btn-info" (click)="openAssign()">Assign a driver</button></td>
         </tr>
 
