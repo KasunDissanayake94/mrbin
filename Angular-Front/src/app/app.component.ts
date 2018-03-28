@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { FirebaseListObservable } from 'angularfire2/database-deprecated';
 import { AngularFireDatabase } from 'angularfire2/database-deprecated';
+import {Observable} from "rxjs/Observable";
 
 
 //Get the Bin Details
@@ -45,7 +46,7 @@ export class AppComponent {
 
 
   constructor(db: AngularFireDatabase) {
-    this.items = db.list('/bin');
+    this.items = db.list('/');
     this.drivers = db.list('/driver');
     this.bins = db.list('/bin');
     this.loginuser = db.list('/user');

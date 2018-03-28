@@ -5,19 +5,20 @@ import { Observable } from 'rxjs/Observable';
 import { AuthService } from './auth.service';
 
 @Injectable()
-export class AuthGuard implements CanActivate {
+export class AuthGuarduser implements CanActivate {
 
 
-  isLoggedIn$: Observable<boolean>;
+  isLoggedInUser$: Observable<boolean>;
   logstatus : boolean;
 
   constructor(private _auth: AuthService, private _router: Router, private _firebaseAuth: AngularFireAuth) {
-    this.isLoggedIn$ = _auth.isLoggedIn();
+    this.isLoggedInUser$ = _auth.isLoggedIn();
 
-    this.isLoggedIn$.subscribe(res => {
+    this.isLoggedInUser$.subscribe(res => {
       if(res){
         this.logstatus = true;
         console.log('user  signed in');
+        this._router.navigate(['dashboard'])
       }else{
         this.logstatus = false;
         console.log('user not signed in');
@@ -27,11 +28,10 @@ export class AuthGuard implements CanActivate {
   }
 
   canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<boolean> | Promise<boolean> | boolean {
-    if (this.isLoggedIn$){
+    if (this.isLoggedInUser$){
       return true;
     }else{
-      this._router.navigate(['']);
-      return false;
+      return true;
     }
   }
 }

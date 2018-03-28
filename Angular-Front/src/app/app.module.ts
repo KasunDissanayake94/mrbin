@@ -15,6 +15,7 @@ import { environment } from '../environments/environment';
 import { AngularFireAuthModule} from "angularfire2/auth";
 import { AuthService} from "./service/auth.service";
 import { AuthGuard } from "./service/auth.guard"
+import { AuthGuarduser } from "./service/auth.guarduser"
 //components
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
@@ -41,7 +42,7 @@ import { ErrorComponent } from './components/error/error.component';
 
 const  applicationRouters:Routes = [
   //add all components links here
-  {path:'',component:HomePageContentComponent},
+  {path:'',component:HomePageContentComponent,canActivate:[AuthGuarduser]},
   {path:'login',component:LoginComponent},
   {path:'userhome',component:DashboardComponent,canActivate: [AuthGuard]},
   {path:'tables',component:DashboardComponent,canActivate: [AuthGuard]},
@@ -104,7 +105,7 @@ const  applicationRouters:Routes = [
 
 
   ],
-  providers: [AuthService, GeoService,AuthGuard],
+  providers: [AuthService, GeoService,AuthGuard,AuthGuarduser],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

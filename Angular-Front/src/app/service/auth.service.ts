@@ -3,8 +3,7 @@ import { Router } from "@angular/router";
 import { AngularFireAuth } from 'angularfire2/auth';
 import * as firebase from 'firebase/app';
 import { Observable } from 'rxjs/Observable';
-import {BehaviorSubject} from "rxjs/BehaviorSubject";
-import {Subject} from "rxjs/Subject";
+import {AppComponent} from "../app.component";
 
 
 @Injectable()
@@ -12,28 +11,25 @@ export class AuthService {
   user: Observable<firebase.User>;
   private userDetails: firebase.User = null;
   userEmail :String;
-  public authState = new Subject();
-  redirectUrl: string;
-  // BehaviorSubjects have an initial value.
-  // isLoggedIn is property (not function) now:
-  isLoggedIn = new BehaviorSubject<boolean>(false);
-
+  userId : String;
+  logginstatus : boolean = false;
   constructor(private _firebaseAuth: AngularFireAuth, private router: Router) {
     this.user = _firebaseAuth.authState;
     this.user.subscribe(
       (user) => {
         if (user) {
+          //get the user object
           this.userDetails = user;
+          //user Email details
           this.userEmail = this.userDetails.email;
-          this.isLoggedIn.next(true);
-          console.log(this.isLoggedIn);
-          if(this.redirectUrl) {
-            this.router.navigate([this.redirectUrl]);
-          }
+          //get user Id
+          this.userId = this.userDetails.uid;
+          //maintain user loggin in status
+          this.loggedIn()
+
         }
         else {
           this.userDetails = null;
-          this.isLoggedIn.next(false);
         }
       }
     );
@@ -46,11 +42,21 @@ export class AuthService {
       new firebase.auth.GoogleAuthProvider()
     )
   }
-
+  //check whether user logged in to the system or not
+  isLoggedIn(): Observable<boolean> {
+    return this._firebaseAuth.authState.map((auth) =>  {
+      if(auth == null) {
+        return false;
+      } else {
+        return true;
+      }
+    });
+  }
   //User Logout
   logout() {
     this._firebaseAuth.auth.signOut()
       .then((res) => this.router.navigate(['/']));
+
   }
 
 //sign in with typing email and password
