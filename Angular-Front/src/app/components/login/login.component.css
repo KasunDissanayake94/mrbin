@@ -60,9 +60,11 @@
   color: #66512c;
 }
 .alert-danger {
-  color: #a94442;
+  color: #EEEEEE;
   background-color: #f2dede;
   border-color: #ebccd1;
+  width: 40%;
+  float: right;
 }
 .alert-danger hr {
   border-top-color: #e4b9c0;
