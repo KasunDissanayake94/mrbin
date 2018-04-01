@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AppComponent } from '../../app.component';
+import {$} from "protractor";
 
 
 
@@ -28,8 +29,13 @@ public driver_obj:any;
 
   }
 
-//After Clicking Add Driver Button this Model will be called
+//Add Modal here -------------------------
+
   openModal(){
+    this.driver_set.driver_id = null;
+    this.driver_set.name = null;
+    this.driver_set.mobile_no = null;
+    this.driver_set.truck_no = null;
     this.display="block";
   }
   //Close button on Modal
@@ -43,8 +49,13 @@ public driver_obj:any;
     this.driver_obj.push(this.driver_set);
     this.onCloseHandled();
   }
-//Edit Driver Model here
+//Edit Driver Model here -------------------
   openEditDri(item:any){
+    console.log(item.$name);
+    this.driver_set.driver_id = item.$key;
+    this.driver_set.name = item.name;
+    this.driver_set.mobile_no = item.mobile_no;
+    this.driver_set.truck_no = item.truck_no;
   this.dsplay="block";
 }
   //Close button on Modal
@@ -53,24 +64,22 @@ public driver_obj:any;
   }
 
 
-  // Delete driver modal here
+  // Delete driver modal here ------------------------
 
   openDltDri(item:any){
     this.delete_item = item;
     this.dsplay2="block";
   }
-  //Yes and close button on Modal
+  //Yes button on Modal
   yesDltDri(){
     this.driver_obj.remove(this.delete_item).then(console.log("Data Deleted"));
     this.dsplay2='none';
   }
 
-  //No and close button on Modal
+  //No button on Modal
   noDltDri(){
     this.dsplay2='none';
   }
-
-
 
   ngOnInit() {
   }
