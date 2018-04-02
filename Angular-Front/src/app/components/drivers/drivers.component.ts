@@ -56,7 +56,8 @@ public driver_obj:any;
     this.driver_set.name = item.name;
     this.driver_set.mobile_no = item.mobile_no;
     this.driver_set.truck_no = item.truck_no;
-  this.dsplay="block";
+    this.dsplay="block";
+
 }
   //Close button on Modal
   onCloseEditDri(){

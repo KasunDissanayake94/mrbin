@@ -32,6 +32,12 @@ class FeedBack{
   }
 }
 
+//Get the assigned drivers table from firebase
+class Assigned_drivers{
+  constructor(){
+  }
+}
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -43,6 +49,7 @@ export class AppComponent {
   public bins: FirebaseListObservable<Bin[]>;
   public feedbck: FirebaseListObservable<FeedBack[]>;
   public loginuser: FirebaseListObservable<LoginUser[]>;
+  public assign_a_driver: FirebaseListObservable<Assigned_drivers[]>;
 
 
   constructor(db: AngularFireDatabase) {
@@ -51,6 +58,7 @@ export class AppComponent {
     this.bins = db.list('/bin');
     this.loginuser = db.list('/user');
     this.feedbck = db.list('/feedback_details');
+    this.assign_a_driver = db.list('/assigned_drivers');
 
   }
 

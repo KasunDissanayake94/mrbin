@@ -22,7 +22,7 @@
           <th scope="row">{{item.$key}}</th>
           <td>{{item.description}}</td>
           <td>{{item.location}}</td>
-          <td><button class="btn btn-info" (click)="openAssign()">Assign a driver</button></td>
+          <td><button class="btn btn-info" (click)="openAssign(item)">Assign a driver</button></td>
         </tr>
 
         </tbody>
@@ -109,15 +109,33 @@
 
             <div class="form-group">
               <label for="exampleInputEmail1">Bin ID</label>
-              <input disabled type="text" class="form-control" id="exampleInputEmail1" name="bid"  placeholder="Enter Bin ID">
+              <input disabled type="text" class="form-control" id="exampleInputEmail1" name="bid" value="{{bin.bin_id}}" placeholder="Enter Bin ID" [(ngModel)]="this.assigned_drivers1.bin_id">
             </div>
             <div class="form-group">
+              <label for="exampleInputEmail1">Location</label>
+              <input disabled type="text" class="form-control" id="exampleInputEmail1" name="blct" value="{{bin.location}}" placeholder="location" [(ngModel)]="this.assigned_drivers1.location">
+            </div>
+            <!--div class="form-group">
               <label for="exampleInputPassword1">Driver ID</label>
               <input type="text" class="form-control" id="exampleInputPassword1" name="dnm" placeholder="Driver ID">
+            </div-->
+
+            <div class="form-group">
+              <label for="exampleSelect1">Select driver id </label>
+
+              <br>
+
+              <select  class="form-control" name="dnm" id="exampleSelect1" [(ngModel)]="assigned_drivers1.assigned_dri_id">
+                <!--to select driver id from drivers table -->
+                <option *ngFor="let itm of drivers_obj | async">
+                  {{itm.$key}} &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                </option>
+
+              </select>
             </div>
 
             <div align="center">
-              <button type="submit" class="btn btn-info">Assign</button>
+              <button type="submit" class="btn btn-info" (click)="assignNow()">Assign</button>
             </div>
           </fieldset>
 

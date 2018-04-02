@@ -9,6 +9,9 @@ import { AppComponent } from '../../app.component';
 })
 export class FilledbinsComponent implements OnInit {
   public bin_obj:any;
+  public drivers_obj:any;
+  public assigned_obj:any;
+
   display='none';
   dsply = 'none';
 
@@ -16,12 +19,23 @@ export class FilledbinsComponent implements OnInit {
     bin_id: '',
     description: '',
     location: ''
+
   };
+
+  assigned_drivers1 = {
+    bin_id: '',
+    location: '',
+    assigned_dri_id: ''
+  };
+
+
 
 
   constructor(app:AppComponent) {
     //This component get from the AppComponent
     this.bin_obj = app.bins;
+    this.drivers_obj = app.drivers;
+    this.assigned_obj = app.assign_a_driver;
   }
 
   //After Clicking Add Bin Button this Model will be called
@@ -40,11 +54,26 @@ export class FilledbinsComponent implements OnInit {
   }
 
   //After Clicking Assign a driver this Model will be called
-  openAssign(){
+  openAssign(item:any){
     this.dsply="block";
+    this.bin.bin_id = item.$key;
+    this.bin.location = item.location;
+
+    this.assigned_drivers1.location = item.location;
+    this.assigned_drivers1.assigned_dri_id = null;
+    this.assigned_drivers1.bin_id = item.$key;
+
   }
   closeAssign(){
     this.dsply='none';
+  }
+  //After select assign on assign a driver
+  assignNow(){
+    console.log(this.assigned_drivers1);
+    console.log(this.assigned_drivers1.bin_id);
+
+    this.assigned_obj.push(this.assigned_drivers1);
+    this.closeAssign();
   }
 
   ngOnInit() {
