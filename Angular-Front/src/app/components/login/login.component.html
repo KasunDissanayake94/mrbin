@@ -1,35 +1,40 @@
+<body background="assets/img/imm3.jpg">
+<div class="bdy">
+  <div class="container">
 
-<div class="container">
 
-  <form name="userform" method="post" #formCtrl="ngForm">
-    <fieldset>
-      <legend>Login Page</legend>
+    <form name="userform" method="post" #formCtrl="ngForm">
+      <fieldset>
+        <p align="center">Login</p>
 
-      <div class="form-group">
-        <label for="exampleInputEmail1">Email address</label>
-        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="email" [(ngModel)]="user.email" placeholder="Enter email">
-        <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+        <div class="form-group" align="center">
+
+          <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="email" [(ngModel)]="user.email" placeholder="Enter email">
+
+        </div>
+        <div class="form-group" align="center">
+
+          <input type="password" class="form-control" id="exampleInputPassword1" name="password" [(ngModel)]="user.password" placeholder="Enter Password">
+        </div>
+        <div align="center">
+          <button type="submit" class="btn1"  (click)="signInWithEmail()">Login</button>
+        </div>
+      </fieldset>
+      <br>
+      <hr>
+      <div class="form-group" align="center">
+        <button type="button" class="btn2" (click)="signInWithFacebook()">
+
+          Login with Facebook
+        </button><br><br>
+
+        <button type="button" class="btn2" (click)="signInWithGoogle()">
+          <i class="fa fa-google" aria-hidden="true"></i>
+          Login with Google
+        </button>
       </div>
-      <div class="form-group">
-        <label for="exampleInputPassword1">Password</label>
-        <input type="password" class="form-control" id="exampleInputPassword1" name="password" [(ngModel)]="user.password" placeholder="Password">
-      </div>
-      <button type="submit" class="btn btn-primary" (click)="signInWithEmail()">Login</button>
-    </fieldset>
-    <br>
-
-    <div class="form-group">
-      <button type="buton" class="btn btn-block" (click)="signInWithFacebook()">
-        <i class="fa fa-facebook" aria-hidden="true"></i>
-        Login with Facebook
-      </button>
-
-      <button type="button" class="btn btn-block" (click)="signInWithGoogle()">
-        <i class="fa fa-google" aria-hidden="true"></i>
-        Login with Google
-      </button>
-    </div>
-  </form>
-  <hr class="my-4">
+    </form>
+    <hr class="my-4">
+  </div>
 </div>
-
+</body>
