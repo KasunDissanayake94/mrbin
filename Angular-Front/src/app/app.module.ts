@@ -39,6 +39,8 @@ import { GoogleMapComponent } from './components/google-map/google-map.component
 import { GeoService } from './service/geo.service';
 import { ErrorComponent } from './components/error/error.component';
 
+//added for live search
+import { Ng2SearchPipeModule } from "ng2-search-filter";
 
 const  applicationRouters:Routes = [
   //add all components links here
@@ -88,6 +90,7 @@ const  applicationRouters:Routes = [
   imports: [
     BrowserModule,
     Ng2CarouselamosModule,
+    Ng2SearchPipeModule,
     FormsModule,
     RouterModule.forRoot(applicationRouters),
     AngularFireModule.initializeApp(environment.firebase),

@@ -6,14 +6,20 @@ import { AppComponent } from '../../app.component';
   selector: 'app-filledbins',
   templateUrl: './filledbins.component.html',
   styleUrls: ['./filledbins.component.css']
+
+
 })
 export class FilledbinsComponent implements OnInit {
   public bin_obj:any;
   public drivers_obj:any;
   public assigned_obj:any;
 
+
+
   display='none';
   dsply = 'none';
+
+
 
   bin = {
     bin_id: '',
@@ -56,6 +62,7 @@ export class FilledbinsComponent implements OnInit {
   //After Clicking Assign a driver this Model will be called
   openAssign(item:any){
     this.dsply="block";
+
     this.bin.bin_id = item.$key;
     this.bin.location = item.location;
 
@@ -75,6 +82,11 @@ export class FilledbinsComponent implements OnInit {
     this.assigned_obj.push(this.assigned_drivers1);
     this.closeAssign();
   }
+
+  searchIt(){
+    console.log('found items');
+  }
+
 
   ngOnInit() {
   }

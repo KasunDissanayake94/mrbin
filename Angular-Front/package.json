@@ -39,7 +39,9 @@
     "ng2-charts": "^1.6.0",
     "ng2-expanding-table": "^1.5.2",
     "ng2-modal": "0.0.25",
+    "ng2-search-filter": "^0.4.7",
     "ng2-sidebar": "^1.8.2",
+    "npm": "^5.8.0",
     "rxjs": "^5.5.6",
     "zone.js": "^0.8.19"
   },
