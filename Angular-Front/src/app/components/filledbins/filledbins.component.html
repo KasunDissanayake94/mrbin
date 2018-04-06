@@ -4,25 +4,36 @@
   <h1 class="display-3">Bin details</h1>
   <hr class="my-4">
 
-  <form class="form-inline my-2 my-lg-0">
+  <div class="row">
+    <div class="col-lg-9">
+      <form class="form-inline my-2 my-lg-0">
 
-    <!-- added search bar for filled bin-->
+      <!-- added search bar for filled bin-->
 
-    <input class="form-control mr-sm-2" type="text" placeholder="Search">
+      <input class="form-control mr-sm-2" type="text" placeholder="Search">
 
-    <!--div>
+      <!--div>
 
-      <input class="form-control mr-sm-2" type="text" [(ngModel)]="srchitm" placeholder="Search">
-      <div *ngFor = "let item2 of bin_obj | filter: srchitm" >
-        <p>
-          {{item2.$key}}
-        </p>
-      </div>
+        <input class="form-control mr-sm-2" type="text" [(ngModel)]="srchitm" placeholder="Search">
+        <div *ngFor = "let item2 of bin_obj | filter: srchitm" >
+          <p>
+            {{item2.$key}}
+          </p>
+        </div>
 
-    </div-->
+      </div-->
 
-    <button class="btn btn-secondary my-2 my-sm-0" type="submit" (click)="searchIt()">Search</button>
-  </form>
+      <button class="btn btn-secondary my-2 my-sm-0" type="submit" (click)="searchIt()">Search</button>
+
+
+    </form>
+  </div>
+
+  <div align="right"><button class="btn btn-info my-2 my-sm-0" type="submit">View Assigned Details</button></div>
+
+  </div>
+
+  <br>
 
   <div class="container-fluid" >
     <div class="row">
@@ -33,17 +44,36 @@
           <th scope="col">Bin ID</th>
           <th scope="col">Description</th>
           <th scope="col">Location</th>
+          <th scope="col">Level</th>
           <th scope="col">Action</th>
 
         </tr>
         </thead>
         <tbody>
 
-        <tr *ngFor="let item of bin_obj | async" >
+        <tr *ngFor="let item of bin_obj | async">
+
           <th scope="row">{{item.$key}}</th>
           <td>{{item.description}}</td>
           <td>{{item.location}}</td>
-          <td><button class="btn btn-info" (click)="openAssign(item)">Assign a driver</button></td>
+          <td>{{item.level}}</td>
+
+          <td>
+            <button class="btn btn-info" (click)="openAssign(item)">Assign a driver</button>
+          </td>
+
+          <!--div *ngIf="{{item.level}} == this.Level; then full else notfull"></div-->
+
+
+
+
+
+          <!--ng-template #full>
+
+          </ng-template>
+          <ng-template #notfull>
+            Still filling
+          </ng-template-->
         </tr>
 
         </tbody>
@@ -149,7 +179,7 @@
               <select  class="form-control" name="dnm" id="exampleSelect1" [(ngModel)]="assigned_drivers1.assigned_dri_id">
                 <!--to select driver id from drivers table -->
                 <option *ngFor="let itm of drivers_obj | async">
-                  {{itm.$key}} &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                  {{itm.driver_id}} &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                 </option>
 
               </select>
