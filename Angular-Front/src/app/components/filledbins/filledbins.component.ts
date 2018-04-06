@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AppComponent } from '../../app.component';
+import {_if} from "rxjs/observable/if";
 
 
 @Component({
@@ -21,10 +22,12 @@ export class FilledbinsComponent implements OnInit {
 
 
 
+
   bin = {
     bin_id: '',
     description: '',
-    location: ''
+    location: '',
+    level: 'low'
 
   };
 
@@ -43,6 +46,7 @@ export class FilledbinsComponent implements OnInit {
     this.drivers_obj = app.drivers;
     this.assigned_obj = app.assign_a_driver;
   }
+
 
   //After Clicking Add Bin Button this Model will be called
   openmyModal(){
@@ -68,7 +72,7 @@ export class FilledbinsComponent implements OnInit {
 
     this.assigned_drivers1.location = item.location;
     this.assigned_drivers1.assigned_dri_id = null;
-    this.assigned_drivers1.bin_id = item.$key;
+    this.assigned_drivers1.bin_id = item.bin_id;
 
   }
   closeAssign(){

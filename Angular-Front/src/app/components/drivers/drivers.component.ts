@@ -17,6 +17,7 @@ export class DriversComponent implements OnInit {
   delete_item ='none;'
 
   driver_set = {
+    //pri_key: '',
     driver_id: '',
     name: '',
     mobile_no: '',
@@ -24,7 +25,7 @@ export class DriversComponent implements OnInit {
   };
 
   updt_driver_set = {
-    pri_key: '',
+   // pri_key: '',
     driver_id: '',
     name: '',
     mobile_no: '',
@@ -63,7 +64,9 @@ export class DriversComponent implements OnInit {
 
     //this.openDltDri1(item);
 
-    this.driver_set.driver_id = item.$key;
+    //this.updt_driver_set.driver_id = item.driver_id;
+    //this.driver_set.driver_id = item.$key;
+    this.driver_set.driver_id = item.driver_id;
     this.driver_set.name = item.name;
     this.driver_set.mobile_no = item.mobile_no;
     this.driver_set.truck_no = item.truck_no;
@@ -80,25 +83,34 @@ export class DriversComponent implements OnInit {
 
     console.log(this.driver_set);
 
-    this.updt_driver_set.pri_key = this.driver_set.driver_id;
+
+
+    this.updt_driver_set.driver_id = this.driver_set.driver_id;
     this.updt_driver_set.name = this.driver_set.name;
     this.updt_driver_set.mobile_no = this.driver_set.mobile_no;
     this.updt_driver_set.truck_no = this.driver_set.truck_no;
 
+    console.log('updt_set: ');
     console.log(this.updt_driver_set);
 
-    //this.driver_obj.update(this.updt_driver_set).then(console.log('wade hari'));
-    
+
+    this.driver_obj.update(this.driver_set).then(console.log('wade hari1'));
+
+    //this.driver_obj.push(this.driver_set).then(console.log('wade hari1'));
+    console.log('updt_set: ');
+
+   // this.driver_obj.update(this.updt_driver_set).then(console.log('wade hari'));
+
 
     this.onCloseEditDri();
   }
 
   // used to try xcept for update ------------------------
 
-  /*openDltDri1(item:any){
+  openDltDri1(item:any){
     this.driver_obj.remove(item).then(console.log("Data Deleted"));
 
-  }*/
+  }
 
 
   // Delete driver modal here ------------------------

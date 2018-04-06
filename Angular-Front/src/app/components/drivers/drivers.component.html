@@ -23,7 +23,8 @@
         <tbody>
 
         <tr *ngFor="let item of driver_obj | async" >
-          <th scope="row">{{item.$key}}</th>
+          <!--th scope="row">{{item.$key}}</th-->
+          <th scope="row">{{item.driver_id}}</th>
           <td>{{item.name}}</td>
           <td>{{item.mobile_no}}</td>
           <td>{{item.truck_no}}</td>
