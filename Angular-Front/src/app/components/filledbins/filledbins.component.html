@@ -29,7 +29,7 @@
     </form>
   </div>
 
-  <div align="right"><button class="btn btn-info my-2 my-sm-0" type="submit">View Assigned Details</button></div>
+  <div align="right"><button class="btn btn-info my-2 my-sm-0" type="submit" (click)="showAssigned()">View Assigned Details</button></div>
 
   </div>
 
@@ -198,6 +198,59 @@
 
       <div class="modal-footer">
         <button type="button" class="btn btn-default" (click)="closeAssign()" >Close</button>
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal !-->
+
+
+
+<!-- View Assigned drivers-->
+
+<div class="backdrop" [ngStyle]="{'display':dsply2}"></div>
+<div class="modal" tabindex="-1" role="dialog"  [ngStyle]="{'display':dsply2}">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title">View Assigned Drivers</h4>
+        <button type="button" class="close" aria-label="Close" (click)="clsAssigned()"><span aria-hidden="true">&times;</span></button>
+      </div>
+      <div class="modal-body container">
+
+        <div class="row">
+
+          <table class="table table-hover">
+            <thead>
+            <tr>
+              <th scope="col">Key</th>
+              <th scope="col">Bin ID</th>
+              <th scope="col">Driver ID</th>
+              <th scope="col">Location</th>
+
+
+            </tr>
+            </thead>
+            <tbody>
+
+            <tr *ngFor="let itm2 of assigned_obj | async">
+
+              <th scope="row">{{itm2.$key}}</th>
+              <td>{{itm2.bin_id}}</td>
+              <td>{{itm2.assigned_dri_id}}</td>
+              <td>{{itm2.location}}</td>
+
+
+
+
+            </tr>
+
+            </tbody>
+          </table>
+
+        </div>
+
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" (click)="clsAssigned()" >Close</button>
       </div>
     </div><!-- /.modal-content -->
   </div><!-- /.modal-dialog -->

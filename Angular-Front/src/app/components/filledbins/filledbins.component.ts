@@ -19,8 +19,7 @@ export class FilledbinsComponent implements OnInit {
 
   display='none';
   dsply = 'none';
-
-
+  dsply2 = 'none';
 
 
   bin = {
@@ -89,6 +88,15 @@ export class FilledbinsComponent implements OnInit {
 
   searchIt(){
     console.log('found items');
+  }
+
+  //After Clicking view assigned drivers this Model will be called
+  showAssigned(){
+    this.dsply2="block";
+  }
+  //Close button on Modal
+  clsAssigned(){
+    this.dsply2='none';
   }
 
 
