@@ -126,7 +126,12 @@ button.close {
 /* Demo */
 /*body{
   background-color: #d2ed9a;
+}
+div{
+  position:relative;
+
 }*/
+
 .demo{
   width: 600px;
   overflow: hidden;
