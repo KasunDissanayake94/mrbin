@@ -18,7 +18,7 @@ export class DriversComponent implements OnInit {
 
   driver_set = {
     //pri_key: '',
-    driver_id: '',
+    //driver_id: '',
     name: '',
     mobile_no: '',
     truck_no: ''
@@ -26,7 +26,7 @@ export class DriversComponent implements OnInit {
 
   updt_driver_set = {
    // pri_key: '',
-    driver_id: '',
+    //driver_id: '',
     name: '',
     mobile_no: '',
     truck_no: ''
@@ -41,7 +41,7 @@ export class DriversComponent implements OnInit {
 //Add Modal here -------------------------
 
   openModal(){
-    this.driver_set.driver_id = null;
+    //this.driver_set.driver_id = null;
     this.driver_set.name = null;
     this.driver_set.mobile_no = null;
     this.driver_set.truck_no = null;
@@ -66,7 +66,7 @@ export class DriversComponent implements OnInit {
 
     //this.updt_driver_set.driver_id = item.driver_id;
     //this.driver_set.driver_id = item.$key;
-    this.driver_set.driver_id = item.driver_id;
+    //this.driver_set.driver_id = item.driver_id;
     this.driver_set.name = item.name;
     this.driver_set.mobile_no = item.mobile_no;
     this.driver_set.truck_no = item.truck_no;
@@ -85,7 +85,7 @@ export class DriversComponent implements OnInit {
 
 
 
-    this.updt_driver_set.driver_id = this.driver_set.driver_id;
+    //this.updt_driver_set.driver_id = this.driver_set.driver_id;
     this.updt_driver_set.name = this.driver_set.name;
     this.updt_driver_set.mobile_no = this.driver_set.mobile_no;
     this.updt_driver_set.truck_no = this.driver_set.truck_no;

@@ -38,6 +38,12 @@ class Assigned_drivers{
   }
 }
 
+//Get the requested bin table from firebase
+class Req_bin{
+  constructor(){
+  }
+}
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -50,6 +56,9 @@ export class AppComponent {
   public feedbck: FirebaseListObservable<FeedBack[]>;
   public loginuser: FirebaseListObservable<LoginUser[]>;
   public assign_a_driver: FirebaseListObservable<Assigned_drivers[]>;
+  public req_bins: FirebaseListObservable<Req_bin[]>;
+
+
 
 
   constructor(db: AngularFireDatabase) {
@@ -59,6 +68,7 @@ export class AppComponent {
     this.loginuser = db.list('/user');
     this.feedbck = db.list('/feedback_details');
     this.assign_a_driver = db.list('/assigned_drivers');
+    this.req_bins = db.list('Bin_requests');
 
   }
 

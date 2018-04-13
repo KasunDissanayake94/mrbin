@@ -14,7 +14,7 @@ export class FilledbinsComponent implements OnInit {
   public bin_obj:any;
   public drivers_obj:any;
   public assigned_obj:any;
-
+  public req_bin_obj: any;
 
 
   display='none';
@@ -23,7 +23,8 @@ export class FilledbinsComponent implements OnInit {
 
 
   bin = {
-    bin_id: '',
+    //bin_id: '',
+    user_id: '',
     description: '',
     location: '',
     level: 'low'
@@ -44,6 +45,7 @@ export class FilledbinsComponent implements OnInit {
     this.bin_obj = app.bins;
     this.drivers_obj = app.drivers;
     this.assigned_obj = app.assign_a_driver;
+    this.req_bin_obj = app.req_bins;
   }
 
 
@@ -66,12 +68,12 @@ export class FilledbinsComponent implements OnInit {
   openAssign(item:any){
     this.dsply="block";
 
-    this.bin.bin_id = item.$key;
+    //this.bin.bin_id = item.$key;
     this.bin.location = item.location;
 
     this.assigned_drivers1.location = item.location;
     this.assigned_drivers1.assigned_dri_id = null;
-    this.assigned_drivers1.bin_id = item.bin_id;
+    this.assigned_drivers1.bin_id = item.$key;
 
   }
   closeAssign(){
