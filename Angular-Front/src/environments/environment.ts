@@ -12,6 +12,6 @@ export const environment = {
     projectId: "mrbin-981d3",
     storageBucket: "mrbin-981d3.appspot.com",
     messagingSenderId: "632086240438",
-    googleMapsKey: '7kTOsJ3FzzjmVWShkrhfjlsUsjcI36ErybqiGa0U'
+    googleMapsKey: 'AIzaSyBLYavbKnK5Jj3zj5ymnrad_wbkX4v52Io'
   }
 };
