@@ -27,7 +27,7 @@ import { GeoService } from '../../service/geo.service'
         <agm-marker *ngFor="let marker of markers"
                     [latitude]="marker[0]"
                     [longitude]="marker[1]"
-                    [iconUrl]="'https://cdn1.iconfinder.com/data/icons/designer-s-tools-1/512/Coffee-64.png'">
+                    [iconUrl]="'../../assets/img/map_icon3.png'">
 
           <agm-info-window>
             <h3><strong>Bin Filled</strong></h3>
