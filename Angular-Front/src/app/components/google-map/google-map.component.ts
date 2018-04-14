@@ -24,7 +24,7 @@ import { GeoService } from '../../service/geo.service'
           </agm-info-window>
 
         </agm-marker>
-        <agm-marker *ngFor="let marker of markers"
+        <agm-marker *ngFor="let marker of myarray"
                     [latitude]="marker[0]"
                     [longitude]="marker[1]"
                     [iconUrl]="'../../assets/img/map_icon3.png'">
@@ -46,21 +46,26 @@ export class GoogleMapComponent implements OnInit {
 
   lat: number;
   lng: number;
-//latitude and logitude
-  public markers =  [
-    [6.916905, 79.867740,"Royal College Primary Section"],
-    [6.935570, 79.847956,"Near Public Library"],
-    [6.927391, 79.844995,"Ananda College Primary Section"],
-    [6.923727, 79.882975,"University of Colombo faculty of Science"],
-    [6.871723, 79.879094,"House of Fashion Bin"]
-  ];
+  size: number;
+  public bin_obj:any;
+  public  myarray =[];
+
   subscription: any;
   private geo: GeoService;
 
-  constructor(app:AppComponent) { }
+  constructor(app:AppComponent) {
+    //This component get from the AppComponent
+    this.bin_obj = app.bins;
+  }
 
   ngOnInit() {
     this.getUserLocation()
+    this.bin_obj.forEach(element => {
+      this.size = element.length;
+      for (var i =0 ; i<this.size;i++){
+        this.myarray.push([element[i].location.lat,element[i].location.lon,element[i].description]);
+      }
+    });
 
   }
 
@@ -70,11 +75,11 @@ export class GoogleMapComponent implements OnInit {
       navigator.geolocation.getCurrentPosition(position => {
         this.lat = position.coords.latitude;
         this.lng = position.coords.longitude;
-        console.log(this.lat);
-        console.log(this.lng);
+
 
       });
     }
   }
+
 
 }
