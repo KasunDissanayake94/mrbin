@@ -48,6 +48,7 @@ export class GoogleMapComponent implements OnInit {
   lng: number;
   size: number;
   public bin_obj:any;
+  //Define an multi dimentional array to store bins locations
   public  myarray =[];
 
   subscription: any;
@@ -59,11 +60,16 @@ export class GoogleMapComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.getUserLocation()
+    this.getUserLocation();
+    //Check each and every bin in the system and if garbage level is high it shows in the map
     this.bin_obj.forEach(element => {
       this.size = element.length;
       for (var i =0 ; i<this.size;i++){
-        this.myarray.push([element[i].location.lat,element[i].location.lon,element[i].description]);
+        if(element[i].level == "high"){
+          console.log(element[i].level);
+          this.myarray.push([element[i].location.lat,element[i].location.lon,element[i].description]);
+        }
+
       }
     });
 
