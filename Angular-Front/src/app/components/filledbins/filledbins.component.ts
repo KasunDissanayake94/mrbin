@@ -71,7 +71,7 @@ export class FilledbinsComponent implements OnInit {
     //this.bin.bin_id = item.$key;
     this.bin.location = item.location;
 
-    this.assigned_drivers1.location = item.location;
+    this.assigned_drivers1.location = item.description;
     this.assigned_drivers1.assigned_dri_id = null;
     this.assigned_drivers1.bin_id = item.$key;
 

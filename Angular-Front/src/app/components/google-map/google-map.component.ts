@@ -32,7 +32,7 @@ import { GeoService } from '../../service/geo.service'
           <agm-info-window>
             <h3><strong>Bin Filled</strong></h3>
 
-            <p>{{ marker[3]}} </p>
+            <p>{{ marker[2]}} </p>
           </agm-info-window>
 
         </agm-marker>
@@ -48,11 +48,11 @@ export class GoogleMapComponent implements OnInit {
   lng: number;
 //latitude and logitude
   public markers =  [
-    [6.916905, 79.867740,"bin_1","Royal College Primary Section"],
-    [6.935570, 79.847956,"bin_2","Near Public Library"],
-    [6.927391, 79.844995,"bin_3","Ananda College Primary Section"],
-    [6.923727, 79.882975,"bin_4","University of Colombo faculty of Science"],
-    [6.871723, 79.879094,"bin_5","House of Fashion Bin"]
+    [6.916905, 79.867740,"Royal College Primary Section"],
+    [6.935570, 79.847956,"Near Public Library"],
+    [6.927391, 79.844995,"Ananda College Primary Section"],
+    [6.923727, 79.882975,"University of Colombo faculty of Science"],
+    [6.871723, 79.879094,"House of Fashion Bin"]
   ];
   subscription: any;
   private geo: GeoService;
