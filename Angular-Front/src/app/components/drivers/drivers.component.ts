@@ -15,6 +15,7 @@ export class DriversComponent implements OnInit {
   dsplay='none';
   dsplay2 = 'none';
   delete_item ='none;'
+  drivrid = '';
 
   driver_set = {
     //pri_key: '',
@@ -67,6 +68,7 @@ export class DriversComponent implements OnInit {
     //this.updt_driver_set.driver_id = item.driver_id;
     //this.driver_set.driver_id = item.$key;
     //this.driver_set.driver_id = item.driver_id;
+    this.drivrid = item.$key;
     this.driver_set.name = item.name;
     this.driver_set.mobile_no = item.mobile_no;
     this.driver_set.truck_no = item.truck_no;
