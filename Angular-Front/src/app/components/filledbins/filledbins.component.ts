@@ -26,10 +26,14 @@ export class FilledbinsComponent implements OnInit {
     //bin_id: '',
     user_id: '',
     description: '',
-    location: '',
+    location: {
+      long: null,
+      latt: null
+    },
     level: 'low'
 
   };
+
 
   assigned_drivers1 = {
     bin_id: '',

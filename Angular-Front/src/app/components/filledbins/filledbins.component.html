@@ -136,10 +136,11 @@
               <label for="exampleInputPassword1">Description</label>
               <input type="text" class="form-control" id="exampleInputPassword1" name="dnm" placeholder="Descripton" [(ngModel)]="bin.description">
             </div>
-            <div class="form-group">
+            <!--div class="form-group">
               <label for="exampleInputPassword1">Location</label>
               <input type="text" class="form-control" id="exampleInputPassword1" name="tno" placeholder="Location" [(ngModel)]="bin.location">
-            </div>
+            </div-->
+
 
             <div align="center">
               <button type="submit" class="btn btn-success" (click)="add_new_bin()">Submit</button>
@@ -182,24 +183,24 @@
               <label for="exampleInputEmail1">Bin ID</label>
               <input disabled type="text" class="form-control" id="exampleInputEmail1" name="bid" value="{{assigned_drivers1.bin_id}}" placeholder="Enter Bin ID" [(ngModel)]="this.assigned_drivers1.bin_id">
             </div>
-            <div class="form-group">
+            <!--div class="form-group">
               <label for="exampleInputEmail1">Location</label>
               <input disabled type="text" class="form-control" id="exampleInputEmail1" name="blct" value="{{bin.location}}" placeholder="location" [(ngModel)]="this.assigned_drivers1.location">
-            </div>
+            </div-->
             <!--div class="form-group">
               <label for="exampleInputPassword1">Driver ID</label>
               <input type="text" class="form-control" id="exampleInputPassword1" name="dnm" placeholder="Driver ID">
             </div-->
 
             <div class="form-group">
-              <label for="exampleSelect1">Select driver id </label>
+              <label for="exampleSelect1">Select driver</label>
 
               <br>
 
               <select  class="form-control" name="dnm" id="exampleSelect1" [(ngModel)]="assigned_drivers1.assigned_dri_id">
                 <!--to select driver id from drivers table -->
                 <option *ngFor="let itm of drivers_obj | async">
-                  {{itm.$key}}
+                  {{itm.name}}
                 </option>
 
               </select>
