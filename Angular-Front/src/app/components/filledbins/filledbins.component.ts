@@ -27,8 +27,8 @@ export class FilledbinsComponent implements OnInit {
     user_id: '',
     description: '',
     location: {
-      long: null,
-      latt: null
+      long:'',
+      latt:''
     },
     level: 'low'
 
@@ -64,6 +64,8 @@ export class FilledbinsComponent implements OnInit {
 
   //Add New Bin
   add_new_bin(){
+    console.log(this.bin);
+
     this.bin_obj.push(this.bin);
     this.onCloseHandled();
   }

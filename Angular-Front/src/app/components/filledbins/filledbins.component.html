@@ -118,6 +118,9 @@
               <br>
 
               <select  class="form-control" name="dnm" id="exampleSelect1" [(ngModel)]="bin.user_id">
+
+                <option>Select bin user..</option>
+
                 <!--to select driver id from drivers table -->
                 <option *ngFor="let itmm of req_bin_obj | async">
                   {{itmm.$key}}
@@ -198,6 +201,8 @@
               <br>
 
               <select  class="form-control" name="dnm" id="exampleSelect1" [(ngModel)]="assigned_drivers1.assigned_dri_id">
+
+                <option>Select driver..</option>
                 <!--to select driver id from drivers table -->
                 <option *ngFor="let itm of drivers_obj | async">
                   {{itm.name}}
