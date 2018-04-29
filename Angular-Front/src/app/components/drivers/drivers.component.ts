@@ -59,6 +59,9 @@ export class DriversComponent implements OnInit {
     this.driver_obj.push(this.driver_set);
     this.onCloseHandled();
   }
+
+  //Testing Edit code
+
 //Edit Driver Model here -------------------
   openEditDri(item:any){
     console.log(item.$name);
@@ -81,7 +84,7 @@ export class DriversComponent implements OnInit {
   }
 
   //when click Edit driver on editing modal this works
-  editDriNow(){
+  editDriNow(mykey:any){
 
     console.log(this.driver_set);
 
@@ -96,7 +99,7 @@ export class DriversComponent implements OnInit {
     console.log(this.updt_driver_set);
 
 
-    this.driver_obj.update(this.driver_set).then(console.log('wade hari1'));
+    this.driver_obj.update(mykey, this.driver_set).then(console.log('wade hari1'));
 
     //this.driver_obj.push(this.driver_set).then(console.log('wade hari1'));
     console.log('updt_set: ');
