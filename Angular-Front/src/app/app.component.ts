@@ -43,6 +43,11 @@ class Req_bin{
   constructor(){
   }
 }
+//Get the Solved problems table from firebase
+class Solved_prob{
+  constructor(){
+  }
+}
 
 @Component({
   selector: 'app-root',
@@ -57,6 +62,7 @@ export class AppComponent {
   public loginuser: FirebaseListObservable<LoginUser[]>;
   public assign_a_driver: FirebaseListObservable<Assigned_drivers[]>;
   public req_bins: FirebaseListObservable<Req_bin[]>;
+  public slvdfeedbck: FirebaseListObservable<Solved_prob[]>;
 
 
 
@@ -69,6 +75,7 @@ export class AppComponent {
     this.feedbck = db.list('/feedback_details');
     this.assign_a_driver = db.list('/assigned_drivers');
     this.req_bins = db.list('Bin_requests');
+    this.slvdfeedbck = db.list('solved_problems')
 
   }
 

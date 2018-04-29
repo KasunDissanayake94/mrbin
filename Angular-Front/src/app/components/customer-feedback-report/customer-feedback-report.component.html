@@ -2,6 +2,11 @@
 
 <div class="jumbotron" style="margin-left: 50px">
   <h1 class="display-3">Feedback Details</h1>
+
+  <div align="right">
+    <button class="btn btn-info my-2 my-sm-0" type="submit" (click)="showResolved()">View Resolved Problems</button>
+  </div>
+
   <hr class="my-4">
   <div class="container-fluid" >
     <div class="row">
@@ -25,7 +30,8 @@
           <td>{{item.username}}</td>
           <td>{{item.date_of_feedback}}</td>
           <td>{{item.feedback}}</td>
-          <td><button class="btn btn-success" (click)="openResolve()">Resolved</button></td>
+          <td><button class="btn btn-success" (click)="openResolve(item)">Resolved</button></td>
+
         </tr>
 
         <!--tr>
@@ -39,6 +45,7 @@
 
         </tbody>
       </table>
+
 
 
     </div>
@@ -72,3 +79,50 @@
     </div><!-- /.modal-content -->
   </div><!-- /.modal-dialog -->
 </div><!-- /.modal !-->
+
+<!-- View Resolved problems-->
+
+<div class="backdrop" [ngStyle]="{'display':display2}"></div>
+<div class="modal" tabindex="-1" role="dialog"  [ngStyle]="{'display':display2}">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title">View Assigned Drivers</h4>
+        <button type="button" class="close" aria-label="Close" (click)="closeResolved()"><span aria-hidden="true">&times;</span></button>
+      </div>
+      <div class="modal-body container">
+
+        <div class="row">
+
+          <table class="table table-hover">
+            <thead>
+            <tr>
+              <th scope="col">Problem ID</th>
+              <th scope="col">User ID</th>
+              <th scope="col">Date of Feedback</th>
+              <th scope="col">Feedback</th>
+
+
+            </tr>
+            </thead>
+            <tbody>
+
+            <tr *ngFor="let item of solvedProb_obj | async" >
+              <th scope="row">{{item.$key}}</th>
+              <td>{{item.user_id}}</td>
+              <td>{{item.date_of_feedback}}</td>
+              <td>{{item.feedback}}</td>
+
+            </tr>
+
+            </tbody>
+          </table>
+
+        </div>
+
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" (click)="closeResolved()" >Close</button>
+        </div>
+      </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+  </div><!-- /.modal !-->
