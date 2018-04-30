@@ -41,7 +41,7 @@
       <table class="table table-hover">
         <thead>
         <tr>
-          <th scope="col">Bin ID</th>
+          <th scope="col">Bin No</th>
           <th scope="col">Description</th>
           <th scope="col">Location</th>
           <th scope="col">Level</th>
@@ -51,12 +51,17 @@
         </thead>
         <tbody>
 
-        <tr *ngFor="let item of bin_obj | async">
+        <tr *ngFor="let item of this.myarr">
 
-          <th scope="row">{{item.$key}}</th>
+          <!--th scope="row">{{item.$key}}</th>
           <td>{{item.description}}</td>
           <td>{{item.location.lat}},{{item.location.lon}}</td>
-          <td>{{item.level}}</td>
+          <td>{{item.level}}</td-->
+
+          <th scope="row">{{item[0]}}</th>
+          <td>{{item[1].description}}</td>
+          <td>{{item[1].location.lat}},{{item[1].location.lon}}</td>
+          <td>{{item[1].level}}</td>
 
           <td>
             <button class="btn btn-info" (click)="openAssign(item)">Assign a driver</button>

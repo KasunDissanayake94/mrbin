@@ -16,6 +16,10 @@ export class FilledbinsComponent implements OnInit {
   public assigned_obj:any;
   public req_bin_obj: any;
 
+  //inorder to take size and store on on arrAY
+  size: number;
+  public myarr=[];
+
 
   display='none';
   dsply = 'none';
@@ -75,11 +79,11 @@ export class FilledbinsComponent implements OnInit {
     this.dsply="block";
 
     //this.bin.bin_id = item.$key;
-    this.bin.location = item.location;
+    this.bin.location = item[1].location;
 
-    this.assigned_drivers1.location = item.description;
+    this.assigned_drivers1.location = item[1].description;
     this.assigned_drivers1.assigned_dri_id = null;
-    this.assigned_drivers1.bin_id = item.$key;
+    this.assigned_drivers1.bin_id = item[1].$key;
 
   }
   closeAssign(){
@@ -109,6 +113,21 @@ export class FilledbinsComponent implements OnInit {
 
 
   ngOnInit() {
+
+    //Check each and every bin in the system and if garbage level is high it shows in the map
+    this.bin_obj.forEach(element => {
+      this.size = element.length;
+      for (var i =0 ; i<this.size;i++){
+
+          console.log(element[i].level);
+          this.myarr.push([i+1, element[i]]);
+
+
+      }
+    });
+
+    console.log(this.myarr);
+
   }
 
 }
