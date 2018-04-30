@@ -70,6 +70,7 @@ export class FilledbinsComponent implements OnInit {
   add_new_bin(){
     console.log(this.bin);
 
+    this.req_bin_obj.update(this.bin.user_id, {status: 'solved'})
     this.bin_obj.push(this.bin);
     this.onCloseHandled();
   }
