@@ -41,6 +41,7 @@ import { ErrorComponent } from './components/error/error.component';
 
 //added for live search
 import { Ng2SearchPipeModule } from "ng2-search-filter";
+import { GarbagetrucksComponent } from './components/garbagetrucks/garbagetrucks.component';
 
 const  applicationRouters:Routes = [
   //add all components links here
@@ -57,7 +58,7 @@ const  applicationRouters:Routes = [
   {path:'maps',component:GoogleMapComponent,canActivate: [AuthGuard]},
   {path:'customer-feedback-report',component:CustomerFeedbackReportComponent},
   {path:'error',component:ErrorComponent},
-
+  {path:'garbagetruck',component:GarbagetrucksComponent},
 
 
 ];
@@ -85,6 +86,7 @@ const  applicationRouters:Routes = [
     DoughnutchartComponent,
     GoogleMapComponent,
     ErrorComponent,
+    GarbagetrucksComponent,
 
   ],
   imports: [

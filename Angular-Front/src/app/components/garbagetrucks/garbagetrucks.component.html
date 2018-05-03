@@ -1,0 +1,52 @@
+<app-sidebar></app-sidebar>
+<div class="jumbotron" style="margin-left: 50px">
+  <h1 class="display-3">Garbage Trucks</h1>
+
+  <div align="right">
+    <button class="btn btn-success my-2 my-sm-0" type="submit" (click)="showResolved()">Add New Truck</button>
+  </div>
+  <hr class="my-4">
+  <!--<div class="row">-->
+  <!--<form class="form-inline my-2 my-lg-0">-->
+    <!--<input class="form-control mr-sm-2" type="text" placeholder="Search">-->
+    <!--<button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>-->
+  <!--</form>-->
+  <!--<div class="container" align="center">-->
+    <!--<button class="btn btn-success" (click)="openModal()">Add a new Driver</button>-->
+  <!--</div>-->
+  <!--</div>-->
+  <div class="container-fluid" >
+    <div class="row">
+      <table class="table table-hover">
+        <thead>
+        <tr>
+          <th scope="col">Truck Number</th>
+          <th scope="col">Assigned Driver</th>
+          <th scope="col">Capacity</th>
+
+          <th scope="col">Edit</th>
+          <th scope="col">Delete</th>
+        </tr>
+        </thead>
+        <tbody>
+
+        <!--<tr *ngFor="let item of driver_obj | async" >-->
+          <!--&lt;!&ndash;th scope="row">{{item.$key}}</th&ndash;&gt;-->
+          <!--<th scope="row">{{item.$key}}</th>-->
+          <!--<td>{{item.name}}</td>-->
+          <!--<td>{{item.mobile_no}}</td>-->
+          <!--<td>{{item.truck_no}}</td>-->
+          <!--<td><button class="btn btn-danger" (click)="openEditDri(item)">Edit</button></td>-->
+          <!--<td><button class="btn btn-info" (click)="openDltDri(item.$key)" >Delete</button></td>-->
+        <!--</tr>-->
+
+        </tbody>
+      </table>
+
+
+    </div>
+
+  </div>
+
+
+</div>
