@@ -3,7 +3,7 @@
   <h1 class="display-3">Garbage Trucks</h1>
 
   <div align="right">
-    <button class="btn btn-success my-2 my-sm-0" type="submit" (click)="showResolved()">Add New Truck</button>
+    <button class="btn btn-success my-2 my-sm-0" type="submit" (click)="openModal()">Add New Truck</button>
   </div>
   <hr class="my-4">
   <!--<div class="row">-->
@@ -21,24 +21,23 @@
         <thead>
         <tr>
           <th scope="col">Truck Number</th>
-          <th scope="col">Assigned Driver</th>
           <th scope="col">Capacity</th>
-
+          <th scope="col">Assigned Driver</th>
           <th scope="col">Edit</th>
           <th scope="col">Delete</th>
         </tr>
         </thead>
         <tbody>
 
-        <!--<tr *ngFor="let item of driver_obj | async" >-->
-          <!--&lt;!&ndash;th scope="row">{{item.$key}}</th&ndash;&gt;-->
+        <tr *ngFor="let item of garbage_truck | async" >
+          <!--th scope="row">{{item.$key}}</th-->
           <!--<th scope="row">{{item.$key}}</th>-->
-          <!--<td>{{item.name}}</td>-->
-          <!--<td>{{item.mobile_no}}</td>-->
-          <!--<td>{{item.truck_no}}</td>-->
-          <!--<td><button class="btn btn-danger" (click)="openEditDri(item)">Edit</button></td>-->
-          <!--<td><button class="btn btn-info" (click)="openDltDri(item.$key)" >Delete</button></td>-->
-        <!--</tr>-->
+          <td>{{item.truck_no}}</td>
+          <td>{{item.capacity}}</td>
+          <td>-</td>
+          <td><button class="btn btn-danger" (click)="openEdittruck(item)">Edit</button></td>
+          <td><button class="btn btn-info" (click)="openDlttruck(item.$key)" >Delete</button></td>
+        </tr>
 
         </tbody>
       </table>
@@ -48,5 +47,137 @@
 
   </div>
 
+  <!--//delete-->
+  <!-- When clicked delete model opens-->
+
+  <div class="backdrop" [ngStyle]="{'display':dsplay2}"></div>
+  <div class="modal" tabindex="-1" role="dialog"  [ngStyle]="{'display':dsplay2}">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title">Delete Garbage Truck</h4>
+          <button type="button" class="close" aria-label="Close" (click)="noDltDri()"><span aria-hidden="true">&times;</span></button>
+        </div>
+        <div class="modal-body container">
+
+          <!-- Form body -->
+
+          Are you sure you want to Delete this Truck???
+
+        </div>
+
+        <div class="modal-footer">
+          <button type="button" class="btn btn-danger" (click)="yesDlttruck()">Yes</button>
+          <button type="button" class="btn btn-default" (click)="noDlttruck()">No</button>
+        </div>
+      </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+  </div><!-- /.modal !-->
 
 </div>
+
+
+<!--Add New truck Model here.Default this is hidden from the page-->
+
+<div class="backdrop" [ngStyle]="{'display':display}"></div>
+<div class="modal" tabindex="-1" role="dialog"  [ngStyle]="{'display':display}">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title">Add new Garbage Truck</h4>
+        <button type="button" class="close" aria-label="Close" (click)="onCloseHandled()"><span aria-hidden="true">&times;</span></button>
+      </div>
+      <div class="modal-body container">
+
+        <!-- Form body -->
+
+        <form name="" method="post" #formCtrl="">
+          <fieldset>
+
+            <!--div class="form-group">
+              <label for="exampleInputEmail1">Driver ID</label>
+              <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="did" value=""  placeholder="Enter driver ID" [(ngModel)]="driver_set.driver_id">
+            </div-->
+            <div class="form-group">
+              <label for="exampleInputPassword1">Truck Number</label>
+              <input type="text" class="form-control" id="exampleInputPassword1" name="dnm" placeholder="Truck Number (WP NC-XXXX)" value="" [(ngModel)]="gar_truck.truck_no">
+            </div>
+            <!--<div class="form-group">-->
+              <!--<label for="exampleInputPassword1">Assigned Driver</label>-->
+              <!--<input type="text" class="form-control" id="exampleInputPassword1" name="mbno" placeholder="Assigned Driver" value="" [(ngModel)]="driver_set.mobile_no">-->
+            <!--</div>-->
+            <div class="form-group">
+              <label for="exampleInputPassword1">Capacity</label>
+              <input type="text" class="form-control" id="exampleInputPassword1" name="tno" placeholder="Capacity" value="" [(ngModel)]="gar_truck.capacity">
+            </div>
+            <div class="form-group">
+              <label for="exampleInputPassword1">Image</label>
+              <input type="file" class="form-control" id="exampleInputPassword1" name="tno" placeholder="Capacity" value="" [(ngModel)]="gar_truck.image">
+            </div>
+            <div align="center">
+              <button type="submit" class="btn btn-success" (click)="addTruck()">Submit</button>
+            </div>
+
+          </fieldset>
+
+
+
+        </form>
+
+      </div>
+
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" (click)="onCloseHandled()" >Close</button>
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal !-->
+
+<!-- Edit Drivere Model here-->
+
+<div class="backdrop" [ngStyle]="{'display':dsplay}"></div>
+<div class="modal" tabindex="-1" role="dialog"  [ngStyle]="{'display':dsplay}">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title">Edit Garbage Truck</h4>
+        <button type="button" class="close" aria-label="Close" (click)="onCloseEdittruck()"><span aria-hidden="true">&times;</span></button>
+      </div>
+      <div class="modal-body container">
+
+        <!-- Form body -->
+
+        <form name="" method="post" #formCtrl="">
+          <fieldset>
+
+
+            <!--<div class="form-group">-->
+              <!--<label for="exampleInputEmail1">Truck ID</label>-->
+              <!--<input type="text" class="form-control"  aria-describedby="emailHelp" name="did" value={{this.truckid}} placeholder="Truck ID" disabled="true">-->
+            <!--</div>-->
+            <!--<div class="form-group">-->
+              <!--<label for="exampleInputPassword1"Truck Capacity</label>-->
+              <!--<input type="text" class="form-control" id="exampleInputPassword1" name="mbno" value={{gar_truck.truck_no}} [(ngModel)]="gar_truck.truck_no" placeholder="Driver name">-->
+            <!--</div>-->
+            <!--<div class="form-group">-->
+              <!--<label for="exampleInputPassword1">Truck No</label>-->
+              <!--<input type="text" class="form-control" id="exampleInputPassword1" name="tno" value={{gar_truck.capacity}} [(ngModel)]="gar_truck.capacity" placeholder="Truck no">-->
+            <!--</div>-->
+
+            <!--<div align="center">-->
+              <!--<button type="submit" class="btn btn-success" (click)="editDriNow(this.truckid)">Edit Driver</button>-->
+            <!--</div>-->
+
+          </fieldset>
+        </form>
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" (click)="onCloseEditDri()">Close</button>
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal !-->
+
+
+

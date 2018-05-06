@@ -49,6 +49,15 @@ class Solved_prob{
   }
 }
 
+//trial
+class newTBL{
+  constructor(){}
+}
+//Get Garbage Trucks from
+class Garbage_Truck{
+  constructor(){
+  }
+}
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -63,6 +72,9 @@ export class AppComponent {
   public assign_a_driver: FirebaseListObservable<Assigned_drivers[]>;
   public req_bins: FirebaseListObservable<Req_bin[]>;
   public slvdfeedbck: FirebaseListObservable<Solved_prob[]>;
+  public garbage_truck: FirebaseListObservable<Garbage_Truck[]>;
+
+  public nwtblobj: FirebaseListObservable<newTBL[]>
 
 
 
@@ -75,7 +87,9 @@ export class AppComponent {
     this.feedbck = db.list('/feedback_details');
     this.assign_a_driver = db.list('/assigned_drivers');
     this.req_bins = db.list('Bin_requests');
-    this.slvdfeedbck = db.list('solved_problems')
+    this.slvdfeedbck = db.list('solved_problems');
+    this.garbage_truck = db.list('garbage_truck');
+    this.nwtblobj = db.list('newtbl0');
 
   }
 
