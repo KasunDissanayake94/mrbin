@@ -1,6 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import { AppComponent } from '../../app.component';
+import { GeoService } from '../../service/geo.service'
 import {_if} from "rxjs/observable/if";
+
+
 
 
 @Component({
@@ -10,11 +13,16 @@ import {_if} from "rxjs/observable/if";
 
 
 })
+
 export class FilledbinsComponent implements OnInit {
+
   public bin_obj:any;
   public drivers_obj:any;
   public assigned_obj:any;
   public req_bin_obj: any;
+  lat_location: number ;
+  lng_location: number ;
+  zoom: number= 15;
 
   //inorder to take size and store on on arrAY
   size: number;
@@ -24,6 +32,7 @@ export class FilledbinsComponent implements OnInit {
   display='none';
   dsply = 'none';
   dsply2 = 'none';
+  dsply4 = 'none';
 
 
   bin = {
@@ -74,6 +83,17 @@ export class FilledbinsComponent implements OnInit {
     this.bin_obj.push(this.bin);
     this.onCloseHandled();
   }
+  //Showing the Actual Location of the bin
+  showLocation(lat,lon){
+    this.dsply4="block";
+    this.lat_location = lat;
+    this.lng_location = lon;
+
+}
+closeshowLocation(){
+  this.dsply4='none';
+}
+
 
   //After Clicking Assign a driver this Model will be called
   openAssign(item:any){
@@ -115,6 +135,7 @@ export class FilledbinsComponent implements OnInit {
 
   ngOnInit() {
 
+
     //Check each and every bin in the system and if garbage level is high it shows in the map
     this.bin_obj.forEach(element => {
       this.size = element.length;
@@ -129,6 +150,9 @@ export class FilledbinsComponent implements OnInit {
 
     console.log(this.myarr);
 
+
   }
+
+
 
 }
