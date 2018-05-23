@@ -1,6 +1,14 @@
 import numpy as np
 import skfuzzy as fuzz
 import matplotlib.pyplot as plt
+import sys
+import json
+
+#get parameter values
+
+#Get pass data to variables
+service_value =  json.loads(sys.argv[1])
+food_quality = json.loads(sys.argv[2])
 
 # Generate universe variables
 #   * Quality and service on subjective ranges [0, 10]
@@ -60,8 +68,9 @@ def activate(quality,service):
     # Calculate defuzzified result
     tip = fuzz.defuzz(x_tip, aggregated, 'centroid')
 
+    #pass result to requesting page
     print(tip)
 
 #Calling method with parameteres
-activate(6,9)
-
+activate(service_value,food_quality)
+sys.stdout.flush()
