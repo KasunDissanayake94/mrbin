@@ -4,6 +4,12 @@ const path =  require("path");
 const user = require('./routes/users');
 //const mongoose =require('mongoose');
 const config = require('./config/database');
+//Convert html body to json
+const bodyParser = require('body-parser');
+const cors = require('cors');
+
+
+
 
 
 //Create the connection
@@ -16,12 +22,14 @@ if (connection){
 
 
 const app = express();
+app.use(cors());
 
-
+app.use(bodyParser.urlencoded({extended :false}));
+app.use(bodyParser.json());
 //Static Files
 app.use(express.static(path.join(__dirname,"public")));
 
-app.use('/user',user);
+app.use('/',user);
 
 
 app.listen(3000,function () {

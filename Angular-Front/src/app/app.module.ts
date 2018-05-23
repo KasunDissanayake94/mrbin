@@ -16,6 +16,7 @@ import { AngularFireAuthModule} from "angularfire2/auth";
 import { AuthService} from "./service/auth.service";
 import { AuthGuard } from "./service/auth.guard"
 import { AuthGuarduser } from "./service/auth.guarduser"
+import { HttpModule } from '@angular/http';
 //components
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
@@ -102,6 +103,7 @@ const  applicationRouters:Routes = [
     FormsModule,
     RouterModule,
     LbdModule,
+    HttpModule,
     FlashMessagesModule.forRoot(),
     ChartsModule,
     AgmCoreModule.forRoot({

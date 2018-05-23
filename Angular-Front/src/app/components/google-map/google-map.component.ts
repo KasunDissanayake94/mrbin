@@ -1,6 +1,8 @@
 import { Component, OnInit ,OnDestroy } from '@angular/core';
 import { AppComponent } from '../../app.component';
 import { GeoService } from '../../service/geo.service'
+import { Headers , Http } from '@angular/http';
+import 'rxjs/add/operator/map';
 
 @Component({
   selector: 'app-google-map',
@@ -54,7 +56,7 @@ export class GoogleMapComponent implements OnInit {
   subscription: any;
   private geo: GeoService;
 
-  constructor(app:AppComponent) {
+  constructor(private http:Http,app:AppComponent) {
     //This component get from the AppComponent
     this.bin_obj = app.bins;
   }
@@ -67,6 +69,14 @@ export class GoogleMapComponent implements OnInit {
       for (var i =0 ; i<this.size;i++){
         if(element[i].level == "high"){
           console.log(element[i].level);
+          console.log("come");
+          //Get the Optimal Solution
+          let headers = new Headers();
+          headers.append('Content-Type','application/json');
+          this.http.post('http://localhost:3000/maps',{level:34},{headers:headers}).map(res=>res.json()).subscribe(res=>{
+            console.log(res);
+            console.log("come");
+          });
           this.myarray.push([element[i].location.lat,element[i].location.lon,element[i].description]);
         }
 
