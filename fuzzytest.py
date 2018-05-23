@@ -72,5 +72,5 @@ def activate(quality,service):
     print(tip)
 
 #Calling method with parameteres
-activate(service_value,food_quality)
+activate(food_quality,service_value)
 sys.stdout.flush()
