@@ -36,6 +36,7 @@ import { BarchartComponent } from './components/charts/barchart/barchart.compone
 import { DoughnutchartComponent } from './components/charts/doughnutchart/doughnutchart.component';
 //Import Google Maps
 import { AgmCoreModule } from '@agm/core';
+import { AgmDirectionModule } from 'agm-direction';
 import { GoogleMapComponent } from './components/google-map/google-map.component';
 import { GeoService } from './service/geo.service';
 import { ErrorComponent } from './components/error/error.component';
@@ -108,7 +109,8 @@ const  applicationRouters:Routes = [
     ChartsModule,
     AgmCoreModule.forRoot({
       apiKey: environment.firebase.googleMapsKey
-    })
+    }),
+    AgmDirectionModule
 
 
   ],

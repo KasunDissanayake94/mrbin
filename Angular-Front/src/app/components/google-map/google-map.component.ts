@@ -37,7 +37,10 @@ import 'rxjs/add/operator/map';
             <p>{{ marker[2]}} </p>
           </agm-info-window>
 
-        </agm-marker>
+        </agm-marker>        
+
+        <agm-direction *ngFor="let marker of myarray;let i=index"
+                       [origin]="dir.origin" [destination]="{ lat:(marker[0]), lng: (marker[1]) }"></agm-direction>
 
       </agm-map>
 
@@ -52,9 +55,10 @@ export class GoogleMapComponent implements OnInit {
   public bin_obj:any;
   //Define an multi dimentional array to store bins locations
   public  myarray =[];
-
   subscription: any;
   private geo: GeoService;
+  dir:any;
+
 
   constructor(private http:Http,app:AppComponent) {
     //This component get from the AppComponent
@@ -62,6 +66,11 @@ export class GoogleMapComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.dir = {
+      origin: { lat: 6.915810, lng: 79.863773 },
+    }
+
+
     this.getUserLocation();
     //Check each and every bin in the system and if garbage level is high it shows in the map
     this.bin_obj.forEach(element => {
@@ -69,18 +78,17 @@ export class GoogleMapComponent implements OnInit {
       for (var i =0 ; i<this.size;i++){
         if(element[i].level == "high"){
           console.log(element[i].level);
-          console.log("come");
           //Get the Optimal Solution
           let headers = new Headers();
           headers.append('Content-Type','application/json');
           this.http.post('http://localhost:3000/maps',{level:34},{headers:headers}).map(res=>res.json()).subscribe(res=>{
             console.log(res);
-            console.log("come");
           });
           this.myarray.push([element[i].location.lat,element[i].location.lon,element[i].description]);
         }
-
       }
+      //console.log(this.myarray)
+
     });
 
   }
