@@ -36,21 +36,3 @@ app.listen(3000,function () {
     console.log("Listen to the port");
 });
 
-//Dynamically Pass data here
-var spawn = require("child_process").spawn;
-var quality = 4;
-var service = 6;
-var dir = spawn('python', ['fuzzytest.py',quality,service]);
-
-dir.stdout.on("data", function(data) {
-    console.log('stdout: ' + data);
-});
-
-dir.stderr.on('data', function (data) {
-    //throw errors
-    console.log('stderr: ' + data);
-});
-
-dir.on('close', function (code) {
-    console.log('child process exited with code ' + code);
-});

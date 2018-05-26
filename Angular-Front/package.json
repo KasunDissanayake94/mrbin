@@ -25,6 +25,7 @@
     "@angular/platform-browser": "^5.2.0",
     "@angular/platform-browser-dynamic": "^5.2.0",
     "@angular/router": "^5.2.0",
+    "@types/angular": "^1.6.45",
     "agm-direction": "^0.5.4",
     "angular2-flash-messages": "^2.0.5",
     "angular2-jwt": "^0.2.3",
@@ -45,6 +46,7 @@
     "npm": "^5.8.0",
     "python-shell": "^0.5.0",
     "rxjs": "^5.5.6",
+    "sort-json-array": "^0.1.7",
     "zone.js": "^0.8.19"
   },
   "devDependencies": {

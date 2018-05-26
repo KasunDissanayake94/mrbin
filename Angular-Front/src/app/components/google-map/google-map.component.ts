@@ -3,6 +3,7 @@ import { AppComponent } from '../../app.component';
 import { GeoService } from '../../service/geo.service'
 import { Headers , Http } from '@angular/http';
 import 'rxjs/add/operator/map';
+import {resolve} from "q";
 
 @Component({
   selector: 'app-google-map',
@@ -58,6 +59,10 @@ export class GoogleMapComponent implements OnInit {
   subscription: any;
   private geo: GeoService;
   dir:any;
+  public  path_array : any;
+
+
+
 
 
   constructor(private http:Http,app:AppComponent) {
@@ -67,29 +72,42 @@ export class GoogleMapComponent implements OnInit {
 
   ngOnInit() {
     this.dir = {
+      //The Origin of the process should be started
       origin: { lat: 6.915810, lng: 79.863773 },
     }
 
 
     this.getUserLocation();
+    const sortJsonArray = require('sort-json-array');
     //Check each and every bin in the system and if garbage level is high it shows in the map
     this.bin_obj.forEach(element => {
       this.size = element.length;
       for (var i =0 ; i<this.size;i++){
         if(element[i].level == "high"){
-          console.log(element[i].level);
+          //Define lockdata object for calculation
+          const lockdata  ={
+            bin_id:element[i].$key,
+            level:6,
+            priority:element[i].location.priority
+          };
           //Get the Optimal Solution
           let headers = new Headers();
           headers.append('Content-Type','application/json');
-          this.http.post('http://localhost:3000/maps',{level:34},{headers:headers}).map(res=>res.json()).subscribe(res=>{
-            console.log(res);
+          this.http.post('http://localhost:3000/maps',lockdata,{headers:headers}).map(res=>res.json()).subscribe(data=>{
+            //Push data responce data to the array
+            this.path_array.push(data);
           });
+          console.log(this.path_array);
+
+
           this.myarray.push([element[i].location.lat,element[i].location.lon,element[i].description]);
+
         }
       }
-      //console.log(this.myarray)
 
     });
+    //console.log(sortJsonArray(this.path_array, 'msg','asc'));
+
 
   }
 
