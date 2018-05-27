@@ -3,7 +3,7 @@ import { AppComponent } from '../../app.component';
 import { GeoService } from '../../service/geo.service'
 import { Headers , Http } from '@angular/http';
 import 'rxjs/add/operator/map';
-import {resolve} from "q";
+import * as _ from 'lodash';
 
 @Component({
   selector: 'app-google-map',
@@ -40,14 +40,16 @@ import {resolve} from "q";
 
         </agm-marker>        
 
-        <agm-direction *ngFor="let marker of myarray;let i=index"
-                       [origin]="dir.origin" [destination]="{ lat:(marker[0]), lng: (marker[1]) }"></agm-direction>
+        <agm-direction *ngFor="let marker of push_array;let i=index"
+                       [origin]="dir.origin" [destination]="{ lat:(marker.lat), lng: (marker.lon) }"></agm-direction>
 
       </agm-map>
 
       </div>
   `
 })
+
+
 export class GoogleMapComponent implements OnInit {
 
   lat: number;
@@ -59,8 +61,8 @@ export class GoogleMapComponent implements OnInit {
   subscription: any;
   private geo: GeoService;
   dir:any;
-  public  path_array : any;
-
+  private push_array= [];
+  private new_array= [];
 
 
 
@@ -77,39 +79,43 @@ export class GoogleMapComponent implements OnInit {
     }
 
 
+
     this.getUserLocation();
     const sortJsonArray = require('sort-json-array');
     //Check each and every bin in the system and if garbage level is high it shows in the map
     this.bin_obj.forEach(element => {
       this.size = element.length;
       for (var i =0 ; i<this.size;i++){
-        if(element[i].level == "high"){
+        if(element[i].level == "high") {
           //Define lockdata object for calculation
-          const lockdata  ={
-            bin_id:element[i].$key,
-            level:6,
-            priority:element[i].location.priority
+          const lockdata = {
+            bin_id: element[i].$key,
+            level: 6,
+            priority: element[i].location.priority,
+            description: element[i].description,
+            longit: element[i].location.lon,
+            latti: element[i].location.lat
           };
-          //Get the Optimal Solution
+          //Pass lockdata to backend and get optimal solution as response
           let headers = new Headers();
-          headers.append('Content-Type','application/json');
-          this.http.post('http://localhost:3000/maps',lockdata,{headers:headers}).map(res=>res.json()).subscribe(data=>{
-            //Push data responce data to the array
-            this.path_array.push(data);
-          });
-          console.log(this.path_array);
+          headers.append('Content-Type', 'application/json');
+          this.http.post('http://localhost:3000/maps', lockdata, {headers: headers}).map(response => response.json())
+            .subscribe((data) => {
+              this.push_array.push({msg:data.msg,bin_id:data.id,description:data.description,lon:data.lon,lat:data.lat});
+              //this.new_array.push([data.lat,data.lon]);
+              //console.log(this.new_array);
+              sortJsonArray(this.push_array,'msg','des');
+              //console.log(this.push_array);
 
-
-          this.myarray.push([element[i].location.lat,element[i].location.lon,element[i].description]);
-
+            });
+          this.myarray.push([element[i].location.lat, element[i].location.lon, element[i].description]);
         }
-      }
-
+        }
     });
-    //console.log(sortJsonArray(this.path_array, 'msg','asc'));
-
-
+    //console.log(sortJsonArray(this.push_array,'msg','asc'));
   }
+
+
 
   private getUserLocation() {
     /// locate the user
