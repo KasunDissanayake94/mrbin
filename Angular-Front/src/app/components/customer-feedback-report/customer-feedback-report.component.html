@@ -1,7 +1,7 @@
 <app-sidebar></app-sidebar>
 
 <div class="jumbotron" style="margin-left: 50px">
-  <h1 class="display-3">Feedback Details</h1>
+  <h2 class="display-3">Customer Complaint Report</h2>
 
   <div align="right">
     <button class="btn btn-info my-2 my-sm-0" type="submit" (click)="showResolved()">View Resolved Problems</button>
@@ -13,13 +13,13 @@
 
       <table class="table table-hover">
         <thead>
-        <tr>
-          <th scope="col">Feedback ID</th>
+        <tr class="table-success">
+          <th scope="col">Report ID</th>
           <th scope="col">User ID</th>
-          <th scope="col">User name</th>
-          <th scope="col">Date of Feedback</th>
-          <th scope="col">Feedback</th>
-          <th scope="col">Resolve</th>
+          <th scope="col">Date</th>
+          <th scope="col">Description</th>
+          <th scope="col">User mobile</th>
+          <th scope="col">Status</th>
         </tr>
         </thead>
         <tbody>
@@ -27,10 +27,13 @@
         <tr *ngFor="let item of feedback_obj | async" >
           <th scope="row">{{item.$key}}</th>
           <td>{{item.user_id}}</td>
-          <td>{{item.username}}</td>
           <td>{{item.date_of_feedback}}</td>
           <td>{{item.feedback}}</td>
+          <td>{{item.telephone}}
+            <button class="btn btn-success" (click)="openResolve(item)"><i class="fa fa-phone fa-1x"></i></button>
+            <button class="btn btn-success" (click)="openResolve(item)"><i class="fa fa-envelope fa-1x"></i></button> </td>
           <td><button class="btn btn-success" (click)="openResolve(item)">Resolved</button></td>
+
 
         </tr>
 
