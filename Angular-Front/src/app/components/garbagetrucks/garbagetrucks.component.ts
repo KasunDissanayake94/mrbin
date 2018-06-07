@@ -9,36 +9,31 @@ import { AppComponent } from '../../app.component';
 })
 export class GarbagetrucksComponent implements OnInit {
 
-  public truck_obj:any;
+  // public truck_obj:any;
   display='none';
   dsplay='none';
   dsplay2 = 'none';
   delete_item ='none;'
   truckid = '';
-
-  public tblObj1: any;
+  display_success='none';
+  //
+  // public tblObj1: any;
   public garbage_truck: any;
-
-  driver_set = {
-    //pri_key: '',
-    //driver_id: '',
-    name: '',
-    mobile_no: '',
-    truck_no: ''
-  };
-
-  mydataset = {
-    datarow1: 'Maneesha',
-    datarow2: '12345',
-    datarow3: 'svrdhba'
-   // datarow4: 'svrdhba',
-  };
 
   gar_truck = {
     truck_no : '',
     capacity : '',
     image:'',
   }
+
+  // Edit truck set
+  updt_truck_set = {
+    // pri_key: '',
+    //driver_id: '',
+    truck_no : '',
+    capacity : '',
+    image:'',
+  };
 
 
   constructor(app:AppComponent) {
@@ -87,10 +82,40 @@ export class GarbagetrucksComponent implements OnInit {
     this.dsplay="block";
 
   }
+
+  //when click Edit driver on editing modal this works
+  editTruckNow(mykey:any){
+
+    console.log(this.gar_truck);
+
+
+
+    //this.updt_driver_set.driver_id = this.driver_set.driver_id;
+    this.updt_truck_set.truck_no = this.gar_truck.truck_no;
+    this.updt_truck_set.capacity = this.gar_truck.capacity;
+    this.updt_truck_set.image = this.gar_truck.image;
+
+    console.log('updt_set: ');
+    console.log(this.updt_truck_set);
+
+
+    this.garbage_truck.update(mykey, this.gar_truck).then(console.log('done'));
+
+    //this.driver_obj.push(this.driver_set).then(console.log('wade hari1'));
+    console.log('updt_set: ');
+
+    // this.driver_obj.update(this.updt_driver_set).then(console.log('wade hari'));
+
+
+    this.succesModal();
+  }
   //Close button on Modal
   onCloseEdittruck(){
     this.dsplay='none';
+
   }
+
+
 
   //delete truck
   openDlttruck(item:any){
@@ -106,6 +131,18 @@ export class GarbagetrucksComponent implements OnInit {
   //No button on Modal
   noDlttruck(){
     this.dsplay2='none';
+  }
+
+  // add success modal
+  succesModal(){
+    this.dsplay='none';
+    this.display_success='block';
+
+  }
+
+  //Close Success Modal
+  closeSuccess(){
+    this.display_success='none';
   }
 
 }
