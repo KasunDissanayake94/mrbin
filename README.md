@@ -6,9 +6,9 @@ Mobile Application - >https://github.com/KasunDissanayake94/Smart-Garbage-Manage
 Fuzzy rules implementation - >https://github.com/KasunDissanayake94/FuzzyRulesImplementation
 <br>
 <p float="left">
-  <img src="https://github.com/KasunDissanayake94/mrbin/blob/master/homepage.JPG" width="200" height="200" />
-  <img src="https://github.com/KasunDissanayake94/mrbin/blob/master/DashboardActivity.JPG" width="200" height="200" /> 
-  <img src="https://github.com/KasunDissanayake94/mrbin/blob/master/filledbinsActivity.JPG" width="200" />
-  <img src="https://github.com/KasunDissanayake94/mrbin/blob/master/mapActivityJPG.JPG" width="200" />
+  <img src="https://github.com/KasunDissanayake94/mrbin/blob/master/homepage.JPG" width="400"/>
+  <img src="https://github.com/KasunDissanayake94/mrbin/blob/master/DashboardActivity.JPG" width="400"  /> 
+  <img src="https://github.com/KasunDissanayake94/mrbin/blob/master/filledbinsActivity.JPG" width="400" />
+  <img src="https://github.com/KasunDissanayake94/mrbin/blob/master/mapActivityJPG.JPG" width="400" />
   
 </p>
