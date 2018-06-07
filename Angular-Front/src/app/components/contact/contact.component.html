@@ -1,72 +1,175 @@
 
-<div class="jumbotron" style="margin-left: 50px">
-  <!--<h1 class="display-3">Contact Us</h1>-->
-  <img src="assets/img/contact.jpg" width="1480px">
-  <hr class="my-4">
-  <div class="container-fluid" >
-    <div class="row">
-      <div class="card border-primary mb-9" style="width: 65rem;">
+<!--<div class="jumbotron" style="margin-left: 50px">-->
+<!--&lt;!&ndash;<h1 class="display-3">Contact Us</h1>&ndash;&gt;-->
+<!--<img src="assets/img/contact.jpg" width="1480px">-->
+<!--<hr class="my-4">-->
+<!--<div class="container-fluid" >-->
+<!--<div class="row">-->
+<!--<div class="card border-primary mb-9" style="width: 65rem;">-->
 
-        <div class="card-body">
-          <h5>
-            <div class="form-group">
+<!--<div class="card-body">-->
+<!--<h5>-->
+<!--<div class="form-group">-->
 
-              <label>Name</label>
-              <input type="text" class="form-control" id="exampleInputName1" aria-describedby="emailHelp" placeholder="Enter Name">
+<!--<label>Name</label>-->
+<!--<input type="text" class="form-control" id="exampleInputName1" aria-describedby="emailHelp" placeholder="Enter Name">-->
 
-            </div>
-            <div class="form-group">
-              <label for="exampleInputEmail1">Email address</label>
-              <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+<!--</div>-->
+<!--<div class="form-group">-->
+<!--<label for="exampleInputEmail1">Email address</label>-->
+<!--<input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">-->
 
-            </div>
-            <div class="form-group">
-              <label for="exampleTextarea">Message</label>
-              <textarea class="form-control" id="exampleTextarea" rows="3"></textarea>
-            </div>
-            <div class="form-group">
-              <button type="submit" class="btn btn-primary">Submit</button>
-            </div>
-          </h5>
-        </div>
-      </div>
-      <div style="width: 2rem;"></div>
-      <div class="card border-primary mb-3" style="width: 25rem;">
+<!--</div>-->
+<!--<div class="form-group">-->
+<!--<label for="exampleTextarea">Message</label>-->
+<!--<textarea class="form-control" id="exampleTextarea" rows="3"></textarea>-->
+<!--</div>-->
+<!--<div class="form-group">-->
+<!--<button type="submit" class="btn btn-primary">Submit</button>-->
+<!--</div>-->
+<!--</h5>-->
+<!--</div>-->
+<!--</div>-->
+<!--<div style="width: 2rem;"></div>-->
+<!--<div class="card border-primary mb-3" style="width: 25rem;">-->
 
-        <div class="card-body">
-          <h4 class="card-title"><b>Colombo Municipal Council</b></h4>
-          <br>
-          <table class="table primary" border="0">
-            <h5>
-              <tr>
-                <td>Tel </td>
-                <td>(011) 2684290</td>
-              </tr>
-              <tr>
-                <td>Address </td>
-                <td>Town Hall,
-                  Colombo 07.</td>
-              </tr>
+<!--<div class="card-body">-->
+<!--<h4 class="card-title"><b>Colombo Municipal Council</b></h4>-->
+<!--<br>-->
+<!--<table class="table primary" border="0">-->
+<!--<h5>-->
+<!--<tr>-->
+<!--<td>Tel </td>-->
+<!--<td>(011) 2684290</td>-->
+<!--</tr>-->
+<!--<tr>-->
+<!--<td>Address </td>-->
+<!--<td>Town Hall,-->
+<!--Colombo 07.</td>-->
+<!--</tr>-->
 
-              <tr>
-                <td>Email </td>
-                <td>munici@slt.lk</td>
-              </tr>
-              <tr>
-                <td>Web </td>
-                <td><a href="http://colombo.mc.gov.lk/">http://colombo.mc.gov.lk/</a></td>
-              </tr>
-            </h5>
-          </table>
-          <br><br>
-          <a [routerLink]="['/urbanContacts']"> <button type="button" class="btn btn-outline-primary">View more contacts</button></a>
+<!--<tr>-->
+<!--<td>Email </td>-->
+<!--<td>munici@slt.lk</td>-->
+<!--</tr>-->
+<!--<tr>-->
+<!--<td>Web </td>-->
+<!--<td><a href="http://colombo.mc.gov.lk/">http://colombo.mc.gov.lk/</a></td>-->
+<!--</tr>-->
+<!--</h5>-->
+<!--</table>-->
+<!--<br><br>-->
+<!--<a [routerLink]="['/urbanContacts']"> <button type="button" class="btn btn-outline-primary">View more contacts</button></a>-->
 
 
-        </div>
-        <br>
-        <br>
-      </div>
-    </div>
+<!--</div>-->
+<!--<br>-->
+<!--<br>-->
+<!--</div>-->
+<!--</div>-->
+
+<!--</div>-->
+<!--</div>-->
+
+<div class="section">
+  <div class="top-border left"></div>
+  <div class="top-border right"></div>
+  <h1>CONTACT US</h1>
+
+  <br>
+  <img src="assets/img/townhall.png" width="225px">
+  <br>
+  <br>
+  <h4><u>Colombo Municipal Council</u></h4>
+
+  <h6>Tel : (011) 2684290</h6>
+  <h6>Address : Town Hall, Colombo 07.</h6>
+  <h6>Email : munici@slt.lk</h6>
+  <h6><a href="http://colombo.mc.gov.lk/">http://colombo.mc.gov.lk/</a></h6>
+
+  <button (click)="openModal()" type="submit">CONTACT US</button>
+  <div class="row">
+
 
   </div>
+
 </div>
+<!--&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;-->
+
+
+
+<!--Add New truck Model here.Default this is hidden from the page-->
+
+<div class="backdrop" [ngStyle]="{'display':display}"></div>
+<div class="modal" tabindex="-1" role="dialog"  [ngStyle]="{'display':display}">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+
+        <button type="button" class="close" aria-label="Close" (click)="onCloseHandled()"><span aria-hidden="true">&times;</span></button>
+      </div>
+      <div class="modal-body container">
+
+        <form name="" method="post" #formCtrl="">
+          <fieldset>
+
+            <!--div class="form-group">
+              <label for="exampleInputEmail1">Driver ID</label>
+              <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="did" value=""  placeholder="Enter driver ID" [(ngModel)]="driver_set.driver_id">
+            </div-->
+            <div class="form-group">
+              <label for="exampleInputPassword1">Name</label>
+              <input type="text" class="form-control" id="exampleInputPassword1" name="dnm" placeholder="Your Name" value="" [(ngModel)]="contact_set.name">
+            </div>
+            <div class="form-group">
+              <label for="exampleInputPassword1">Email</label>
+              <input type="email" class="form-control" id="exampleInputPassword1" name="mbno" placeholder="Email" value="" [(ngModel)]="contact_set.email">
+            </div>
+            <div class="form-group">
+              <label for="exampleInputPassword1">Message</label>
+              <input type="textarea" class="form-control" id="exampleInputPassword1" name="tno" placeholder="Your Message" value="" [(ngModel)]="contact_set.message">
+            </div>
+
+            <div align="center">
+              <button type="submit" class="btn btn-success" (click)="addContact()">Submit</button>
+            </div>
+
+          </fieldset>
+
+
+
+        </form>
+
+      </div>
+
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" (click)="onCloseHandled()" >Close</button>
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal !-->
+
+<!-- When clicked success model opens-->
+
+<div class="backdrop" [ngStyle]="{'display':dsplay2}"></div>
+<div class="modal" tabindex="-1" role="dialog"  [ngStyle]="{'display':dsplay2}">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+
+        <button type="button" class="close" aria-label="Close" (click)="closeSuccess()"><span aria-hidden="true">&times;</span></button>
+      </div>
+      <div class="modal-body container">
+
+        <!-- Form body -->
+
+        Your Message is successfully sent to MrBin.
+      </div>
+
+      <div class="modal-footer">
+
+        <button type="button" class="btn btn-default" (click)="closeSuccess()">OK</button>
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal !-->

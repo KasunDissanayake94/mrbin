@@ -1,3 +1,4 @@
+
 import { Component } from '@angular/core';
 import { FirebaseListObservable } from 'angularfire2/database-deprecated';
 import { AngularFireDatabase } from 'angularfire2/database-deprecated';
@@ -57,6 +58,12 @@ class newTBL{
 class Garbage_Truck{
   constructor(){
   }
+
+}
+
+//contact page
+class contact{
+  constructor(){}
 }
 @Component({
   selector: 'app-root',
@@ -75,6 +82,8 @@ export class AppComponent {
   public garbage_truck: FirebaseListObservable<Garbage_Truck[]>;
 
   public nwtblobj: FirebaseListObservable<newTBL[]>
+  public contact_obj: FirebaseListObservable<contact[]>
+
 
 
 
@@ -90,6 +99,7 @@ export class AppComponent {
     this.slvdfeedbck = db.list('solved_problems');
     this.garbage_truck = db.list('garbage_truck');
     this.nwtblobj = db.list('newtbl0');
+    this.contact_obj = db.list('contact');
 
   }
 
