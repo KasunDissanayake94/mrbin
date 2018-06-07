@@ -14,6 +14,7 @@ export class CustomerFeedbackReportComponent implements OnInit {
   display='none';
   display2='none';
 
+
   constructor(app:AppComponent) {
     //This Component get from the AppComponent
     this.feedback_obj = app.feedbck;
@@ -22,9 +23,18 @@ export class CustomerFeedbackReportComponent implements OnInit {
 
   openResolve(rslv:any){
     this.display="block";
+
     this.feedback_obj.update(rslv.$key, {status:'Problem solved'}).then(console.log('solve una'));
-    this.feedback_obj.remove(rslv);
-    this.solvedProb_obj.push(rslv).then(console.log('serama hariyoooo'));
+    //this.feedback_obj.remove(rslv);
+
+    //console.log(rslv1);
+    //console.log(this.rslv);
+    this.finalReslv(rslv);
+  }
+
+  finalReslv(rsl:any){
+    this.solvedProb_obj.push(rsl).then(console.log('serama hariyoooo'));
+    console.log(rsl);
   }
   //Close button on Modal
   onCloseHandled(){
