@@ -33,7 +33,8 @@
           <!--th scope="row">{{item.$key}}</th-->
           <th scope="row">{{item.$key}}</th>
           <td>{{item.name}}</td>
-          <td>{{item.mobile_no}}</td>
+          <td>{{item.mobile_no}}
+            <button class="btn btn-success" (click)="openResolve(item)"><i class="fa fa-phone fa-1x"></i></button></td>
           <td>{{item.truck_no}}</td>
           <td><button class="btn btn-danger" (click)="openEditDri(item)">Edit</button></td>
           <td><button class="btn btn-info" (click)="openDltDri(item.$key)" >Delete</button></td>
