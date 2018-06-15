@@ -22,6 +22,7 @@ export class GarbagetrucksComponent implements OnInit {
 
   gar_truck = {
     truck_no : '',
+    truck_type : '',
     capacity : '',
     image:'',
   }
@@ -31,6 +32,7 @@ export class GarbagetrucksComponent implements OnInit {
     // pri_key: '',
     //driver_id: '',
     truck_no : '',
+    truck_type : '',
     capacity : '',
     image:'',
   };
@@ -50,6 +52,7 @@ export class GarbagetrucksComponent implements OnInit {
     // this.driver_set.mobile_no = null;
     // this.driver_set.truck_no = null;
     this.gar_truck.truck_no = null;
+    this.gar_truck.truck_type = null;
     this.gar_truck.capacity = null;
     this.gar_truck.image = null;
     this.display="block";
@@ -78,6 +81,7 @@ export class GarbagetrucksComponent implements OnInit {
     this.truckid  = item.$key;
 
     this.gar_truck.truck_no = item.truck_no;
+    this.gar_truck.truck_type = item.truck_type;
     this.gar_truck.capacity = item.capacity;
     this.dsplay="block";
 
@@ -92,6 +96,7 @@ export class GarbagetrucksComponent implements OnInit {
 
     //this.updt_driver_set.driver_id = this.driver_set.driver_id;
     this.updt_truck_set.truck_no = this.gar_truck.truck_no;
+    this.updt_truck_set.truck_type = this.gar_truck.truck_type;
     this.updt_truck_set.capacity = this.gar_truck.capacity;
     this.updt_truck_set.image = this.gar_truck.image;
 

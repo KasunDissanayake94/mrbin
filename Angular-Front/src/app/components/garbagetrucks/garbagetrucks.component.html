@@ -21,6 +21,7 @@
         <thead>
         <tr>
           <th scope="col">Truck Number</th>
+          <th scope="col">Truck Type</th>
           <th scope="col">Capacity</th>
           <th scope="col">Assigned Driver</th>
           <th scope="col">Edit</th>
@@ -33,6 +34,7 @@
           <!--th scope="row">{{item.$key}}</th-->
           <!--<th scope="row">{{item.$key}}</th>-->
           <td>{{item.truck_no}}</td>
+          <td>{{item.truck_type}}</td>
           <td>{{item.capacity}}</td>
           <td>-</td>
           <td><button class="btn btn-danger" (click)="openEdittruck(item)">Edit</button></td>
@@ -48,7 +50,7 @@
   </div>
 
   <!--//delete-->
-  <!-- When clicked delete model opens-->
+  <!-- When clicked delete model opens---------------------------------------------------------------------------------------------->
 
   <div class="backdrop" [ngStyle]="{'display':dsplay2}"></div>
   <div class="modal" tabindex="-1" role="dialog"  [ngStyle]="{'display':dsplay2}">
@@ -56,13 +58,13 @@
       <div class="modal-content">
         <div class="modal-header">
           <h4 class="modal-title">Delete Garbage Truck</h4>
-          <button type="button" class="close" aria-label="Close" (click)="noDltDri()"><span aria-hidden="true">&times;</span></button>
+          <button type="button" class="close" aria-label="Close" (click)="noDlttruck()"><span aria-hidden="true">&times;</span></button>
         </div>
         <div class="modal-body container">
 
           <!-- Form body -->
 
-          Are you sure you want to Delete this Truck???
+          Are you sure you want to Delete this Truck ?
 
         </div>
 
@@ -77,7 +79,7 @@
 </div>
 
 
-<!--Add New truck Model here.Default this is hidden from the page-->
+<!--Add New truck Model here.Default this is hidden from the page------------------------------------------------------------------->
 
 <div class="backdrop" [ngStyle]="{'display':display}"></div>
 <div class="modal" tabindex="-1" role="dialog"  [ngStyle]="{'display':display}">
@@ -107,15 +109,31 @@
             <!--<input type="text" class="form-control" id="exampleInputPassword1" name="mbno" placeholder="Assigned Driver" value="" [(ngModel)]="driver_set.mobile_no">-->
             <!--</div>-->
             <div class="form-group">
+              <label for="exampleInputPassword13">Truck Type</label>
+              <select  class="form-control" name="dnm" id="exampleInputPassword13" [(ngModel)]="gar_truck.truck_type">
+
+                <option>-- Select Truck Type --</option>
+
+                <option >Garbage Truck</option>
+                <option >Garbage Tractor</option>
+
+                <!--to select driver id from drivers table -->
+
+
+
+
+              </select>
+               </div>
+            <div class="form-group">
               <label for="exampleInputPassword1">Capacity</label>
-              <input type="text" class="form-control" id="exampleInputPassword1" name="tno" placeholder="Capacity" value="" [(ngModel)]="gar_truck.capacity">
+              <input type="number" class="form-control" id="exampleInputPassword1" name="tno" placeholder="Capacity" value="" [(ngModel)]="gar_truck.capacity">
             </div>
             <!--<div class="form-group">-->
             <!--<label for="exampleInputPassword1">Image</label>-->
             <!--<input type="file" class="form-control" id="exampleInputPassword1" name="tno" placeholder="Capacity" value="" [(ngModel)]="gar_truck.image">-->
             <!--</div>-->
             <div align="center">
-              <button type="submit" class="btn btn-success" (click)="addTruck()">Submit</button>
+              <button type="submit" class="btn btn-success" (click)="addTruck()">Add Truck</button>
             </div>
 
           </fieldset>
@@ -133,7 +151,7 @@
   </div><!-- /.modal-dialog -->
 </div><!-- /.modal !-->
 
-<!-- Edit Drivere Model here-->
+<!-- Edit Drivere Model here------------------------------------------------------------------------------------------------------>
 
 <div class="backdrop" [ngStyle]="{'display':dsplay}"></div>
 <div class="modal" tabindex="-1" role="dialog"  [ngStyle]="{'display':dsplay}">
@@ -160,12 +178,20 @@
               <input type="text" class="form-control" id="exampleInputPassword1" name="mbno" value={{gar_truck.truck_no}} [(ngModel)]="gar_truck.truck_no" placeholder="Driver name">
             </div>
             <div class="form-group">
+              <label for="exampleInputPassword13">Truck Type</label>
+              <select  class="form-control" name="dnm" id="exampleInputPassword13" value={{gar_truck.truck_type}} [(ngModel)]="gar_truck.truck_type">
+                <option>-- Select Truck Type --</option>
+                <option >Garbage Truck</option>
+                <option >Garbage Tractor</option>
+              </select>
+            </div>
+            <div class="form-group">
               <label for="exampleInputPassword12">Truck Capacity</label>
               <input type="text" class="form-control" id="exampleInputPassword12" name="tno" value={{gar_truck.capacity}} [(ngModel)]="gar_truck.capacity" placeholder="Truck no">
             </div>
 
             <div align="center">
-              <button type="submit" class="btn btn-success" (click)="editTruckNow(this.truckid)">Edit Driver</button>
+              <button type="submit" class="btn btn-success" (click)="editTruckNow(this.truckid)">Edit Truck</button>
             </div>
 
           </fieldset>
@@ -180,21 +206,21 @@
 </div><!-- /.modal !-->
 
 
-<!-- When clicked success model opens-->
+<!-- When clicked success model opens---------------------------------------------------------------------------------------------->
 
 <div class="backdrop" [ngStyle]="{'display':display_success}"></div>
 <div class="modal" tabindex="-1" role="dialog"  [ngStyle]="{'display':display_success}">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-
+        <h4 class="modal-title">Succesfull</h4>
         <button type="button" class="close" aria-label="Close" (click)="closeSuccess()"><span aria-hidden="true">&times;</span></button>
       </div>
       <div class="modal-body container">
 
         <!-- Form body -->
 
-        Your Have successfully edited truck Details
+        Your Have successfully edited truck Details.
 
       </div>
 
