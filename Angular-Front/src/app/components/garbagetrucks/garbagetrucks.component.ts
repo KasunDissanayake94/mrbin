@@ -16,6 +16,7 @@ export class GarbagetrucksComponent implements OnInit {
   delete_item ='none;'
   truckid = '';
   display_success='none';
+  display_addsuccess='none';
   //
   // public tblObj1: any;
   public garbage_truck: any;
@@ -144,6 +145,7 @@ export class GarbagetrucksComponent implements OnInit {
     this.display_success='block';
 
   }
+
 
   //Close Success Modal
   closeSuccess(){
