@@ -22,6 +22,10 @@ export class GarbagetrucksComponent implements OnInit {
   public garbage_truck: any;
   public drivers_obj: any;
 
+  //inorder to take size and store on on arrAY
+  size: number;
+  public myarr=[];
+
 
   gar_truck = {
     truck_no : '',
@@ -49,6 +53,16 @@ export class GarbagetrucksComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.garbage_truck.forEach(element => {
+      this.size = element.length;
+      for (var i =0 ; i<this.size;i++){
+
+        console.log(element[i].level);
+        this.myarr.push([i+1, element[i]]);
+
+
+      }
+    });
   }
   //Add Modal here -------------------------
 

@@ -24,15 +24,15 @@
         </thead>
         <tbody>
 
-        <tr *ngFor="let item of feedback_obj | async" >
-          <th scope="row">{{item.$key}}</th>
-          <td>{{item.user_id}}</td>
-          <td>{{item.date_of_feedback}}</td>
-          <td>{{item.feedback}}</td>
-          <td>{{item.telephone}}
+        <tr *ngFor="let item of this.myarr" >
+          <th scope="row">{{item[0]}}</th>
+          <td>{{item[1].user_id}}</td>
+          <td>{{item[1].date_of_feedback}}</td>
+          <td>{{item[1].feedback}}</td>
+          <td>{{item[1].telephone}}
             <button class="btn btn-success"><i class="fa fa-phone fa-1x"></i></button>
             <button class="btn btn-success"><i class="fa fa-envelope fa-1x"></i></button> </td>
-          <td><button class="btn btn-success" (click)="openResolve(item)">Resolved</button></td>
+          <td><button class="btn btn-success" (click)="openResolve(item[1])">Resolved</button></td>
 
 
         </tr>

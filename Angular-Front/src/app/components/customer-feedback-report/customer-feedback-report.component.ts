@@ -14,6 +14,10 @@ export class CustomerFeedbackReportComponent implements OnInit {
   display='none';
   display2='none';
 
+  //inorder to take size and store on on arrAY
+  size: number;
+  public myarr=[];
+
 
   constructor(app:AppComponent) {
     //This Component get from the AppComponent
@@ -53,6 +57,17 @@ export class CustomerFeedbackReportComponent implements OnInit {
 
 
   ngOnInit() {
+    //Check each and every bin in the system and if garbage level is high it shows in the map
+    this.feedback_obj.forEach(element => {
+      this.size = element.length;
+      for (var i =0 ; i<this.size;i++){
+
+        console.log(element[i].level);
+        this.myarr.push([i+1, element[i]]);
+
+
+      }
+    });
   }
 
 }

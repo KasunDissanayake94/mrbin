@@ -22,6 +22,7 @@
       <table class="table table-hover">
         <thead>
         <tr>
+          <th scope="col">Truck id</th>
           <th scope="col">Truck Number</th>
           <th scope="col">Truck Type</th>
           <th scope="col">Capacity</th>
@@ -32,15 +33,15 @@
         </thead>
         <tbody>
 
-        <tr *ngFor="let item of garbage_truck | async" >
+        <tr *ngFor="let item of this.myarr" >
           <!--th scope="row">{{item.$key}}</th-->
-          <!--<th scope="row">{{item.$key}}</th>-->
-          <td>{{item.truck_no}}</td>
-          <td>{{item.truck_type}}</td>
-          <td>{{item.capacity}}</td>
-          <td>{{item.drivername}}</td>
-          <td><button class="btn btn-danger" (click)="openEdittruck(item)">Edit</button></td>
-          <td><button class="btn btn-info" (click)="openDlttruck(item.$key)" >Delete</button></td>
+          <td scope="row">{{item[0]}}</td>
+          <td>{{item[1].truck_no}}</td>
+          <td>{{item[1].truck_type}}</td>
+          <td>{{item[1].capacity}}</td>
+          <td>{{item[1].drivername}}</td>
+          <td><button class="btn btn-danger" (click)="openEdittruck(item[1])">Edit</button></td>
+          <td><button class="btn btn-info" (click)="openDlttruck(item[1].$key)" >Delete</button></td>
         </tr>
 
         </tbody>
