@@ -125,7 +125,7 @@ export class DriversComponent implements OnInit {
   // Delete driver modal here ------------------------
 
   openDltDri(item:any){
-    this.delete_item = item;
+    this.delete_item = item[1].$key;
     this.dsplay2="block";
   }
   //Yes button on Modal

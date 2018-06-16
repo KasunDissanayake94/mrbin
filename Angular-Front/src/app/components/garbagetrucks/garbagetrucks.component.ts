@@ -20,13 +20,16 @@ export class GarbagetrucksComponent implements OnInit {
   //
   // public tblObj1: any;
   public garbage_truck: any;
+  public drivers_obj: any;
+
 
   gar_truck = {
     truck_no : '',
     truck_type : '',
     capacity : '',
     image:'',
-  }
+    drivername:''
+  };
 
   // Edit truck set
   updt_truck_set = {
@@ -36,11 +39,13 @@ export class GarbagetrucksComponent implements OnInit {
     truck_type : '',
     capacity : '',
     image:'',
+    drivername:''
   };
 
 
   constructor(app:AppComponent) {
     this.garbage_truck = app.garbage_truck;
+    this.drivers_obj = app.drivers;
   }
 
   ngOnInit() {
@@ -56,6 +61,7 @@ export class GarbagetrucksComponent implements OnInit {
     this.gar_truck.truck_type = null;
     this.gar_truck.capacity = null;
     this.gar_truck.image = null;
+    this.gar_truck.drivername = null;
     this.display="block";
   }
 
@@ -100,6 +106,7 @@ export class GarbagetrucksComponent implements OnInit {
     this.updt_truck_set.truck_type = this.gar_truck.truck_type;
     this.updt_truck_set.capacity = this.gar_truck.capacity;
     this.updt_truck_set.image = this.gar_truck.image;
+    this.updt_truck_set.drivername = this.gar_truck.drivername;
 
     console.log('updt_set: ');
     console.log(this.updt_truck_set);
