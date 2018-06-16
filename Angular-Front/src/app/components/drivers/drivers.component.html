@@ -28,16 +28,17 @@
         </tr>
         </thead>
         <tbody>
+        <tr *ngFor="let item of this.myarr">
 
-        <tr *ngFor="let item of driver_obj | async" >
+        <!--tr *ngFor="let item of driver_obj | async" -->
           <!--th scope="row">{{item.$key}}</th-->
-          <th scope="row">{{item.$key}}</th>
-          <td>{{item.name}}</td>
-          <td>{{item.mobile_no}}
-            <button class="btn btn-success" (click)="openResolve(item)"><i class="fa fa-phone fa-1x"></i></button></td>
-          <td>{{item.truck_no}}</td>
+          <th scope="row">{{item[0]}}</th>
+          <td>{{item[1].name}}</td>
+          <td>{{item[1].mobile_no}}
+            <button class="btn btn-success"><i class="fa fa-phone fa-1x"></i></button></td>
+          <td>{{item[1].truck_no}}</td>
           <td><button class="btn btn-danger" (click)="openEditDri(item)">Edit</button></td>
-          <td><button class="btn btn-info" (click)="openDltDri(item.$key)" >Delete</button></td>
+          <td><button class="btn btn-info" (click)="openDltDri(item[1].$key)" >Delete</button></td>
         </tr>
 
         </tbody>

@@ -17,6 +17,10 @@ export class DriversComponent implements OnInit {
   delete_item ='none;'
   drivrid = '';
 
+  //inorder to take size and store on on arrAY
+  size: number;
+  public myarr=[];
+
   driver_set = {
     //pri_key: '',
     //driver_id: '',
@@ -64,17 +68,17 @@ export class DriversComponent implements OnInit {
 
 //Edit Driver Model here -------------------
   openEditDri(item:any){
-    console.log(item.$name);
+    console.log(item[1].$name);
 
     //this.openDltDri1(item);
 
     //this.updt_driver_set.driver_id = item.driver_id;
     //this.driver_set.driver_id = item.$key;
     //this.driver_set.driver_id = item.driver_id;
-    this.drivrid = item.$key;
-    this.driver_set.name = item.name;
-    this.driver_set.mobile_no = item.mobile_no;
-    this.driver_set.truck_no = item.truck_no;
+    this.drivrid = item[1].$key;
+    this.driver_set.name = item[1].name;
+    this.driver_set.mobile_no = item[1].mobile_no;
+    this.driver_set.truck_no = item[1].truck_no;
     this.dsplay="block";
 
 }
@@ -136,6 +140,19 @@ export class DriversComponent implements OnInit {
   }
 
   ngOnInit() {
+    //Check each and every bin in the system and if garbage level is high it shows in the map
+    this.driver_obj.forEach(element => {
+      this.size = element.length;
+      for (var i =0 ; i<this.size;i++){
+
+        console.log(element[i].level);
+        this.myarr.push([i+1, element[i]]);
+
+
+      }
+    });
+
+    console.log(this.myarr);
   }
 
 }

@@ -41,9 +41,11 @@ export class FilledbinsComponent implements OnInit {
     description: '',
     location: {
       long:'',
-      latt:''
+      latt:'',
+      priority:1
     },
-    level: 'low'
+    //level: 'low'
+    level: 1
 
   };
 
