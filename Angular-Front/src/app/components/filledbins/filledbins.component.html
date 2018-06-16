@@ -195,7 +195,7 @@
 
             <div class="form-group">
               <label for="exampleInputEmail1">Bin ID</label>
-              <input disabled type="text" class="form-control" id="exampleInputEmail1" name="bid" value="{{assigned_drivers1.bin_id}}" placeholder="Enter Bin ID" [(ngModel)]="this.assigned_drivers1.bin_id">
+              <input disabled type="text" class="form-control" id="exampleInputEmail1" name="bid" value="{{assigned_drivers1.bin_id}}" placeholder="Enter Bin ID" [(ngModel)]="this.assigned_drivers1.bin_id" required>
             </div>
             <!--div class="form-group">
               <label for="exampleInputEmail1">Location</label>
@@ -211,7 +211,7 @@
 
               <br>
 
-              <select  class="form-control" name="dnm" id="exampleSelect1" [(ngModel)]="assigned_drivers1.assigned_dri_id">
+              <select  class="form-control" name="dnm" id="exampleSelect1" [(ngModel)]="assigned_drivers1.assigned_dri_id" required>
 
                 <option>Select driver..</option>
                 <!--to select driver id from drivers table -->

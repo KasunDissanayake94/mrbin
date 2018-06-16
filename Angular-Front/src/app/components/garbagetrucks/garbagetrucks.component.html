@@ -105,12 +105,12 @@
             </div-->
             <div class="form-group">
               <label for="exampleInputPassword1">Truck Number</label>
-              <input type="text" class="form-control" id="exampleInputPassword1" name="dnm" placeholder="Truck Number (WP NC-XXXX)" value="" [(ngModel)]="gar_truck.truck_no">
+              <input type="text" class="form-control" id="exampleInputPassword1" name="dnm" placeholder="Truck Number (WP NC-XXXX)" value="" [(ngModel)]="gar_truck.truck_no" required>
             </div>
 
             <div class="form-group">
               <label for="exampleSelect1">Driver name</label>
-              <select  class="form-control" name="dnm" id="exampleSelect1" [(ngModel)]="gar_truck.drivername">
+              <select  class="form-control" name="dnm" id="exampleSelect1" [(ngModel)]="gar_truck.drivername"  required>
 
                 <option>Select driver..</option>
 
@@ -124,7 +124,7 @@
 
             <div class="form-group">
               <label for="exampleInputPassword13">Truck Type</label>
-              <select  class="form-control" name="dnm" id="exampleInputPassword13" [(ngModel)]="gar_truck.truck_type">
+              <select  class="form-control" name="dnm" id="exampleInputPassword13" [(ngModel)]="gar_truck.truck_type"  required>
 
                 <option>-- Select Truck Type --</option>
 
@@ -140,7 +140,7 @@
                </div>
             <div class="form-group">
               <label for="exampleInputPassword1">Capacity</label>
-              <input type="number" class="form-control" id="exampleInputPassword1" name="tno" placeholder="Capacity" value="" [(ngModel)]="gar_truck.capacity">
+              <input type="number" class="form-control" id="exampleInputPassword1" name="tno" placeholder="Capacity" value="" [(ngModel)]="gar_truck.capacity" required>
             </div>
             <!--<div class="form-group">-->
             <!--<label for="exampleInputPassword1">Image</label>-->
@@ -189,11 +189,11 @@
             </div>
             <div class="form-group">
               <label for="exampleInputPassword1">Truck No</label>
-              <input type="text" class="form-control" id="exampleInputPassword1" name="mbno" value={{gar_truck.truck_no}} [(ngModel)]="gar_truck.truck_no" placeholder="Driver name">
+              <input type="text" class="form-control" id="exampleInputPassword1" name="mbno" value={{gar_truck.truck_no}} [(ngModel)]="gar_truck.truck_no" placeholder="Driver name"  required>
             </div>
             <div class="form-group">
               <label for="exampleSelect1">Driver name</label>
-              <select  class="form-control" name="dnm" id="exampleSelect1" value={{gar_truck.drivername}} [(ngModel)]="gar_truck.drivername">
+              <select  class="form-control" name="dnm" id="exampleSelect1" value={{gar_truck.drivername}} [(ngModel)]="gar_truck.drivername"  required>
 
                 <option>Select driver..</option>
 
@@ -206,7 +206,7 @@
             </div>
             <div class="form-group">
               <label for="exampleInputPassword13">Truck Type</label>
-              <select  class="form-control" name="dnm" id="exampleInputPassword13" value={{gar_truck.truck_type}} [(ngModel)]="gar_truck.truck_type">
+              <select  class="form-control" name="dnm" id="exampleInputPassword13" value={{gar_truck.truck_type}} [(ngModel)]="gar_truck.truck_type" required>
                 <option>-- Select Truck Type --</option>
                 <option >Garbage Truck</option>
                 <option >Garbage Tractor</option>
@@ -214,7 +214,7 @@
             </div>
             <div class="form-group">
               <label for="exampleInputPassword12">Truck Capacity</label>
-              <input type="text" class="form-control" id="exampleInputPassword12" name="tno" value={{gar_truck.capacity}} [(ngModel)]="gar_truck.capacity" placeholder="Truck no">
+              <input type="text" class="form-control" id="exampleInputPassword12" name="tno" value={{gar_truck.capacity}} [(ngModel)]="gar_truck.capacity" placeholder="Truck no"  required>
             </div>
 
             <div align="center">

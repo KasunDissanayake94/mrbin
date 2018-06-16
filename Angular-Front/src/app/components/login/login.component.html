@@ -15,12 +15,12 @@
 
         <div class="form-group" align="center">
 
-          <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="email" [(ngModel)]="user.email" placeholder="Enter email">
+          <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="email" [(ngModel)]="user.email" placeholder="Enter email" required>
 
         </div>
         <div class="form-group" align="center">
 
-          <input type="password" class="form-control" id="exampleInputPassword1" name="password" [(ngModel)]="user.password" placeholder="Enter Password">
+          <input type="password" class="form-control" id="exampleInputPassword1" name="password" [(ngModel)]="user.password" placeholder="Enter Password" required>
         </div>
         <div align="center">
           <button type="submit" class="btn1"  (click)="signInWithEmail()">Login</button>
