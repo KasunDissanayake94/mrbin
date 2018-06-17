@@ -41,7 +41,7 @@ export class CustomerFeedbackReportComponent implements OnInit {
     this.feedback_obj.update(rslv[1].$key, {status:'Problem solved'}).then(console.log('solve una'));
     //this.updtkey = this.feedback_obj.select(rslv[1].$key);
 
-    //this.feedback_obj.remove(rslv);
+    this.feedback_obj.remove(rslv);
 
     this.solved_prob.date_of_feedback = rslv[1].date_of_feedback;
     this.solved_prob.feedback = rslv[1].feedback;

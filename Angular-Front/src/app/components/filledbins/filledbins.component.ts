@@ -80,10 +80,14 @@ export class FilledbinsComponent implements OnInit {
   //Add New Bin
   add_new_bin(){
     console.log(this.bin);
+    this.onCloseHandled();
 
     this.req_bin_obj.update(this.bin.user_id, {status: 'solved'})
-    this.bin_obj.push(this.bin);
-    this.onCloseHandled();
+    let binId = this.bin_obj.push(this.bin).key;
+
+    this.bin_obj.update(binId, {user_id: this.req_bin_obj.$key});
+
+
   }
   //Showing the Actual Location of the bin
   showLocation(lat,lon){
