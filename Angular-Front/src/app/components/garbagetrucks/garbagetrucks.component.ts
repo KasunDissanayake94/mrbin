@@ -13,6 +13,7 @@ export class GarbagetrucksComponent implements OnInit {
   display='none';
   dsplay='none';
   dsplay2 = 'none';
+  dsplay3 = 'none';
   delete_item ='none;'
   truckid = '';
   display_success='none';
@@ -158,6 +159,18 @@ export class GarbagetrucksComponent implements OnInit {
   //No button on Modal
   noDlttruck(){
     this.dsplay2='none';
+  }
+
+  //View truck
+  openViewtruck(item:any){
+    this.delete_item = item;
+    this.dsplay3="block";
+  }
+
+
+  //No button on Modal
+  noViewtruck(){
+    this.dsplay3='none';
   }
 
   // add success modal
