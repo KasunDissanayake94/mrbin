@@ -29,7 +29,7 @@
           <th scope="col">Assigned Driver</th>
           <th scope="col">Edit</th>
           <th scope="col">Delete</th>
-          <th scope="col">View Vehicle</th>
+          <th scope="col">View Truck</th>
         </tr>
         </thead>
         <tbody>
@@ -43,7 +43,7 @@
           <td>{{item[1].drivername}}</td>
           <td><button class="btn btn-danger" (click)="openEdittruck(item[1])">Edit</button></td>
           <td><button class="btn btn-info" (click)="openDlttruck(item[1].$key)" >Delete</button></td>
-          <td><button class="btn btn-success" (click)="openViewtruck(item[1].$key)" >View</button></td>
+          <td><button class="btn btn-info" (click)="openViewtruck(item[1].truck_no)" >View</button></td>
         </tr>
 
         </tbody>
@@ -82,7 +82,28 @@
   </div><!-- /.modal !-->
 
 </div>
+<!--//View truck-->
 
+<div class="backdrop" [ngStyle]="{'display':dsplay3}"></div>
+<div class="modal" tabindex="-1" role="dialog"  [ngStyle]="{'display':dsplay3}">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title">View Vehicle</h4>
+        <button type="button" class="close" aria-label="Close" (click)="noViewtruck()"><span aria-hidden="true">&times;</span></button>
+      </div>
+      <div class="modal-body container">
+        <img style="height: 300px; width: 100%; display: block;" src="../../../assets/img/trucks/{{view_truck_no}}.jpg" alt="Card image">
+
+
+      </div>
+
+      <div class="modal-footer">
+        <button type="button" class="btn btn-success" (click)="noViewtruck()">Okay</button>
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal !-->
 
 <!--Add New truck Model here.Default this is hidden from the page------------------------------------------------------------------->
 
@@ -144,10 +165,10 @@
               <label for="exampleInputPassword1">Capacity</label>
               <input type="number" class="form-control" id="exampleInputPassword1" name="tno" placeholder="Capacity" value="" [(ngModel)]="gar_truck.capacity" required>
             </div>
-            <!--<div class="form-group">-->
-            <!--<label for="exampleInputPassword1">Image</label>-->
-            <!--<input type="file" class="form-control" id="exampleInputPassword1" name="tno" placeholder="Capacity" value="" [(ngModel)]="gar_truck.image">-->
-            <!--</div>-->
+            <div class="form-group">
+            <label for="exampleInputPassword1">Image</label>
+            <input type="file" class="form-control" id="exampleInputPassword1" name="tno" placeholder="Capacity" value="" [(ngModel)]="gar_truck.image">
+            </div>
             <div align="center">
               <button type="submit" class="btn btn-success" (click)="addTruck()">Add Truck</button>
             </div>
@@ -234,27 +255,6 @@
   </div><!-- /.modal-dialog -->
 </div><!-- /.modal !-->
 
-<!--//View-->
-<!-- When clicked view model opens---------------------------------------------------------------------------------------------->
-
-<div class="backdrop" [ngStyle]="{'display':dsplay3}"></div>
-<div class="modal" tabindex="-1" role="dialog"  [ngStyle]="{'display':dsplay3}">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h4 class="modal-title">View Garbage Truck</h4>
-        <button type="button" class="close" aria-label="Close" (click)="noViewtruck()"><span aria-hidden="true">&times;</span></button>
-      </div>
-      <div class="modal-body container">
-        <!-- Form body -->
-        <img style="height: 300px; width: 100%; display: block;" src="../../../assets/img/trucks/truck.jpg" alt="Card image">
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-default" (click)="noViewtruck()">OK</button>
-      </div>
-    </div><!-- /.modal-content -->
-  </div><!-- /.modal-dialog -->
-</div><!-- /.modal !-->
 
 <!-- When clicked success model opens---------------------------------------------------------------------------------------------->
 
@@ -267,6 +267,10 @@
         <button type="button" class="close" aria-label="Close" (click)="closeSuccess()"><span aria-hidden="true">&times;</span></button>
       </div>
       <div class="modal-body container">
+
+        <!-- Form body -->
+
+        Your Have successfully edited truck Details.
 
       </div>
 

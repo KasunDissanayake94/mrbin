@@ -44,6 +44,8 @@ import { ErrorComponent } from './components/error/error.component';
 //added for live search
 import { Ng2SearchPipeModule } from "ng2-search-filter";
 import { GarbagetrucksComponent } from './components/garbagetrucks/garbagetrucks.component';
+//upload image
+import { ImageUploadModule } from "angular2-image-upload";
 
 const  applicationRouters:Routes = [
   //add all components links here
@@ -98,6 +100,7 @@ const  applicationRouters:Routes = [
     FormsModule,
     RouterModule.forRoot(applicationRouters),
     AngularFireModule.initializeApp(environment.firebase),
+    ImageUploadModule.forRoot(),
     AngularFireDatabaseModule,
     AngularFireAuthModule,
     BrowserModule,

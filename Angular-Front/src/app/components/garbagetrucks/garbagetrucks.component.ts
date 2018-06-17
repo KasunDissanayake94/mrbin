@@ -18,6 +18,7 @@ export class GarbagetrucksComponent implements OnInit {
   truckid = '';
   display_success='none';
   display_addsuccess='none';
+  view_truck_no='';
   //
   // public tblObj1: any;
   public garbage_truck: any;
@@ -161,18 +162,6 @@ export class GarbagetrucksComponent implements OnInit {
     this.dsplay2='none';
   }
 
-  //View truck
-  openViewtruck(item:any){
-    this.delete_item = item;
-    this.dsplay3="block";
-  }
-
-
-  //No button on Modal
-  noViewtruck(){
-    this.dsplay3='none';
-  }
-
   // add success modal
   succesModal(){
     this.dsplay='none';
@@ -186,4 +175,11 @@ export class GarbagetrucksComponent implements OnInit {
     this.display_success='none';
   }
 
+  openViewtruck(truck_no: string) {
+    this.dsplay3="block";
+    this.view_truck_no = truck_no;
+  }
+  noViewtruck(){
+    this.dsplay3='none';
+  }
 }
