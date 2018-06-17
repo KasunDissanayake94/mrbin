@@ -20,6 +20,8 @@ export class FilledbinsComponent implements OnInit {
   public drivers_obj:any;
   public assigned_obj:any;
   public req_bin_obj: any;
+  public app_users: any;
+
   lat_location: number ;
   lng_location: number ;
   zoom: number= 15;
@@ -65,6 +67,7 @@ export class FilledbinsComponent implements OnInit {
     this.drivers_obj = app.drivers;
     this.assigned_obj = app.assign_a_driver;
     this.req_bin_obj = app.req_bins;
+    this.app_users = app.appusrobj;
   }
 
 
@@ -85,7 +88,10 @@ export class FilledbinsComponent implements OnInit {
     this.req_bin_obj.update(this.bin.user_id, {status: 'solved'})
     let binId = this.bin_obj.push(this.bin).key;
 
-    this.bin_obj.update(binId, {user_id: this.req_bin_obj.$key});
+    console.log("-"+binId);
+    //this.bin_obj.update(binId, {user_id: this.req_bin_obj.$key});
+
+    this.app_users.update(this.bin.user_id, {bin_id: binId});
 
 
   }

@@ -65,6 +65,12 @@ class Garbage_Truck{
 class contact{
   constructor(){}
 }
+
+//appusers table in db
+class appusers{
+  constructor(){}
+}
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -83,6 +89,7 @@ export class AppComponent {
 
   public nwtblobj: FirebaseListObservable<newTBL[]>
   public contact_obj: FirebaseListObservable<contact[]>
+  public appusrobj : FirebaseListObservable<appusers[]>
 
 
 
@@ -100,6 +107,8 @@ export class AppComponent {
     this.garbage_truck = db.list('garbage_truck');
     this.nwtblobj = db.list('newtbl0');
     this.contact_obj = db.list('contact');
+
+    this.appusrobj = db.list('App_Users');
 
   }
 
