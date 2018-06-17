@@ -18,27 +18,47 @@ export class CustomerFeedbackReportComponent implements OnInit {
   size: number;
   public myarr=[];
 
+  solved_prob = {
+    date_of_feedback: '',
+    feedback: '',
+    status: '',
+    subject: '',
+    user_id: ''
+  };
 
   constructor(app:AppComponent) {
     //This Component get from the AppComponent
     this.feedback_obj = app.feedbck;
     this.solvedProb_obj = app.slvdfeedbck;
+
+
+
   }
 
   openResolve(rslv:any){
     this.display="block";
 
-    this.feedback_obj.update(rslv.$key, {status:'Problem solved'}).then(console.log('solve una'));
+    this.feedback_obj.update(rslv[1].$key, {status:'Problem solved'}).then(console.log('solve una'));
+    //this.updtkey = this.feedback_obj.select(rslv[1].$key);
+
     //this.feedback_obj.remove(rslv);
 
-    //console.log(rslv1);
+    this.solved_prob.date_of_feedback = rslv[1].date_of_feedback;
+    this.solved_prob.feedback = rslv[1].feedback;
+    this.solved_prob.status = "problem solved";
+    this.solved_prob.subject = rslv[1].subject;
+    this.solved_prob.user_id = rslv[1].user_id;
+
     //console.log(this.rslv);
-    this.finalReslv(rslv);
+    this.finalReslv(this.solved_prob);
   }
 
   finalReslv(rsl:any){
+
     this.solvedProb_obj.push(rsl).then(console.log('serama hariyoooo'));
     console.log(rsl);
+
+
   }
   //Close button on Modal
   onCloseHandled(){
