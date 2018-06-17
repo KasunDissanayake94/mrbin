@@ -67,8 +67,12 @@
             </button>
           </td>
           <!--<td>{{item[1].location.lat}},{{item[1].location.lon}}</td>-->
-          <td>{{item[1].level}}</td>
-
+          <!--<td>{{item[1].level}}</td>-->
+          <td>
+            <div class="progress">
+              <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="44" aria-valuemin="0" aria-valuemax="100" [style.width.%]="item[1].level*10">{{item[1].level*10}}%</div>
+            </div>
+          </td>
           <td>
             <button class="btn btn-info" (click)="openAssign(item)">Assign a driver</button>
           </td>
