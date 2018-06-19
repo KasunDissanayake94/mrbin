@@ -88,7 +88,7 @@ export class FilledbinsComponent implements OnInit {
     this.req_bin_obj.update(this.bin.user_id, {status: 'solved'})
     let binId = this.bin_obj.push(this.bin).key;
 
-    console.log("-"+binId);
+   // console.log("-"+binId);
     //this.bin_obj.update(binId, {user_id: this.req_bin_obj.$key});
 
     this.app_users.update(this.bin.user_id, {bin_id: binId});
