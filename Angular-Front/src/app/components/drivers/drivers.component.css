@@ -7,3 +7,10 @@
   width:100%;
   height:100vh;
 }
+
+div.scroll {
+
+  width: 1225px;
+  height: 330px;
+  overflow: scroll;
+}

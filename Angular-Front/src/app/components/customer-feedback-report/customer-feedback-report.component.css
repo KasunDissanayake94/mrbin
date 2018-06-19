@@ -1,0 +1,6 @@
+div.scroll {
+
+  width: 1230px;
+  height: 375px;
+  overflow: scroll;
+}
