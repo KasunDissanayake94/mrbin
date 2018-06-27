@@ -28,6 +28,7 @@ import { AboutComponent } from './components/about/about.component';
 import { ContactComponent } from './components/contact/contact.component';
 import { DriversComponent } from './components/drivers/drivers.component';
 import {FilledbinsComponent} from "./components/filledbins/filledbins.component";
+import {ReportsComponent} from "./components/reports/reports.component";
 import { CustomerFeedbackReportComponent } from './components/customer-feedback-report/customer-feedback-report.component';
 //import component lib for charts
 import { ChartsModule } from 'ng2-charts';
@@ -47,6 +48,7 @@ import { GarbagetrucksComponent } from './components/garbagetrucks/garbagetrucks
 //upload image
 import { ImageUploadModule } from "angular2-image-upload";
 
+
 const  applicationRouters:Routes = [
   //add all components links here
   {path:'',component:HomePageContentComponent,canActivate:[AuthGuarduser]},
@@ -63,6 +65,7 @@ const  applicationRouters:Routes = [
   {path:'customer-feedback-report',component:CustomerFeedbackReportComponent},
   {path:'error',component:ErrorComponent},
   {path:'garbagetruck',component:GarbagetrucksComponent},
+  {path:'reports',component:ReportsComponent},
 
 
 ];
@@ -91,6 +94,7 @@ const  applicationRouters:Routes = [
     GoogleMapComponent,
     ErrorComponent,
     GarbagetrucksComponent,
+    ReportsComponent,
 
   ],
   imports: [
