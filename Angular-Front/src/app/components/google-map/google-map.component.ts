@@ -44,6 +44,7 @@ import * as _ from 'lodash';
                        [origin]="dir.origin" [destination]="{ lat:(marker.lat), lng: (marker.lon) }"></agm-direction>
 
       </agm-map>
+      <button></button>
 
       </div>
   `
