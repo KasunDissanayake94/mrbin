@@ -1,5 +1,15 @@
 <app-sidebar></app-sidebar>
 
 <div class="jumbotron" style="margin-left: 50px">
-  <button type="button" (click)="createPdf()">Download PDF</button>
-</div>
+  <div class="row">
+    <div class="col-md-3">
+      <button class="btn btn-sm btn-outline-primary mr-2" style="margin: 5px;" (click)="generate_annual_report()">Generate Yesterday Garbage Collection</button>
+      <button class="btn btn-sm btn-outline-primary mr-2" style="margin: 5px;" (click)="generate_monthly_report()">Generate Today Garbage Collection </button>
+      <button class="btn btn-sm btn-outline-primary mr-2" style="margin: 5px;" (click)="generate_users_report()">Generate Driver Details</button>
+      <button class="btn btn-sm btn-outline-primary mr-2" style="margin: 5px;" (click)="generate_users_report()">Generate Truck Details</button>
+      <button class="btn btn-sm btn-outline-primary mr-2" style="margin: 5px;" (click)="generate_users_report()">Generate Today Collection Report</button>
+
+    </div>
+    </div>
+    </div>
+    
