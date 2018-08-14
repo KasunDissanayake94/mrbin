@@ -3,13 +3,36 @@
 <div class="jumbotron" style="margin-left: 50px">
   <div class="row">
     <div class="col-md-3">
-      <button class="btn btn-sm btn-outline-primary mr-2" style="margin: 5px;" (click)="generate_annual_report()">Generate Yesterday Garbage Collection</button>
-      <button class="btn btn-sm btn-outline-primary mr-2" style="margin: 5px;" (click)="generate_monthly_report()">Generate Today Garbage Collection </button>
-      <button class="btn btn-sm btn-outline-primary mr-2" style="margin: 5px;" (click)="generate_users_report()">Generate Driver Details</button>
-      <button class="btn btn-sm btn-outline-primary mr-2" style="margin: 5px;" (click)="generate_users_report()">Generate Truck Details</button>
-      <button class="btn btn-sm btn-outline-primary mr-2" style="margin: 5px;" (click)="generate_users_report()">Generate Today Collection Report</button>
+      <button class="btn btn-sm btn-outline-primary mr-2" style="margin: 5px;" (click)="generate_yesterday_report()">Generate Yesterday Garbage Collection</button>
+      <button class="btn btn-sm btn-outline-primary mr-2" style="margin: 5px;" (click)="generate_today_report()">Generate Today Garbage Collection </button>
+      <button class="btn btn-sm btn-outline-primary mr-2" style="margin: 5px;" (click)="generate_driver_details()">Generate Driver Details</button>
+      <button class="btn btn-sm btn-outline-primary mr-2" style="margin: 5px;" (click)="generate_truck_details()">Generate Truck Details</button>
+      <button class="btn btn-sm btn-outline-primary mr-2" style="margin: 5px;" (click)="generate_today_collection_details()">Generate Today Collection Report</button>
 
     </div>
+        <!--Result Table-->
+        <div class="col-md-9" [ngStyle]="{'display':driver_details}">
+          <button class="btn btn-sm btn-outline-primary mr-2" (click)="generateReport('Annual Usage Report of '+search.lab)" style="float: right;margin: 5px;">Export PDF</button>
+            <table class="table table-striped" >
+              <thead>
+              <tr>
+                <th></th>
+                <th>Driver Name</th>
+                <th>Mobile Number</th>
+                <th>Truck Number</th>
+              </tr>
+              </thead>
+              <tbody>                
+              <tr *ngFor="let item of this.myarr">
+                <th scope="row"></th>
+                <td>{{item[1].name}}</td>
+                <td>{{item[1].mobile_no}}</td>
+                <td>{{item[1].truck_no}}</td>
+              </tr>
+              
+                </tbody>
+            </table>
+        </div>
     </div>
     </div>
     
