@@ -15,9 +15,11 @@ import * as _ from 'lodash';
   `],
   template: `
     <app-sidebar></app-sidebar>
-    <div *ngIf="lat && lng">
+    <div *ngIf="lat && lng"  style="margin-left: 50px">
+    <button style="margin: 10px" class="btn btn-success">Pause Monitoring</button>
+    <button style="margin: 10px" class="btn btn-success">Print Map</button>
 
-      <agm-map [latitude]="lat" [longitude]="lng" [zoom]="13">
+      <agm-map [latitude]="lat" [longitude]="lng" [zoom]="10" (mapReady)="mapReady($event)">
 
         <agm-marker [latitude]="lat" [longitude]="lng" >
 
@@ -43,9 +45,10 @@ import * as _ from 'lodash';
         <agm-direction *ngFor="let marker of push_array;let i=index"
                        [origin]="dir.origin" [destination]="{ lat:(marker.lat), lng: (marker.lon) }"></agm-direction>
 
-      </agm-map>
-      <button></button>
 
+      
+      </agm-map>
+      
       </div>
   `
 })
@@ -128,6 +131,7 @@ export class GoogleMapComponent implements OnInit {
       });
     }
   }
+
 
 
 }
