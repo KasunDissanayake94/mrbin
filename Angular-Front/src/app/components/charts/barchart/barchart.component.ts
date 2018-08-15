@@ -11,14 +11,42 @@ export class BarchartComponent implements OnInit {
     scaleShowVerticalLines: false,
     responsive: true
   };
-  public barChartLabels:string[] = ['2006', '2007', '2008', '2009', '2010', '2011', '2012'];
+
+  
+
+
+  //public barChartLabels:string[] = ['2006', '2007', '2008', '2009', '2010', '2011', '2012'];
+  public barChartLabels:string[] = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
   public barChartType:string = 'bar';
   public barChartLegend:boolean = true;
 
+  /**
   public barChartData:any[] = [
     {data: [65, 59, 80, 81, 56, 55, 40], label: 'Series A'},
     {data: [28, 48, 40, 19, 86, 27, 90], label: 'Series B'}
   ];
+  
+  **/
+
+ monthCollection = {
+  January:50,
+  February:45,
+  March:67,
+  April:55,
+  May:52,
+  June:50,
+  July:50,
+  August:40,
+  September:0,
+  October:0,
+  November:0,
+  December:0
+};
+
+ public barChartData:any[] = [
+  //{data: [65], label: 'January'}
+  {data: [65, 25, 89, 45, 56, 65, 65, 25, 0, 0, 0, 0]}
+];
 
   // events
   public chartClicked(e:any):void {
