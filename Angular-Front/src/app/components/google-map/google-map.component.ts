@@ -1,4 +1,4 @@
-import { Component, OnInit ,OnDestroy } from '@angular/core';
+import { Component, OnInit ,OnDestroy,Renderer } from '@angular/core';
 import { AppComponent } from '../../app.component';
 import { GeoService } from '../../service/geo.service'
 import { Headers , Http } from '@angular/http';
@@ -9,6 +9,7 @@ import { componentRefresh, containerRefreshEnd } from '../../../../node_modules/
 import { trigger } from '../../../../node_modules/@angular/core/src/animation/dsl';
 import { AgmMap } from '../../../../node_modules/@agm/core';
 import { filter } from '../../../../node_modules/rxjs/operator/filter';
+import { ResourceLoader } from '../../../../node_modules/@angular/compiler';
 
 @Component({
   selector: 'app-google-map',
@@ -39,7 +40,7 @@ import { filter } from '../../../../node_modules/rxjs/operator/filter';
 <button type="button" class="btn btn-danger btn-lg btn-block" (click)="pause_running()">Pause Running</button>
 
     </div>
-    <div class="col-md-9 map_class"  *ngIf="lat && lng">
+    <div class="col-md-9"  *ngIf="lat && lng" id="mydiv">
       <agm-map [latitude]="lat" [longitude]="lng" [zoom]="15" (mapReady)="mapReady($event)">
 
         <agm-marker [latitude]="lat" [longitude]="lng" >
@@ -104,7 +105,7 @@ export class GoogleMapComponent implements OnInit {
   no_of_bins = 100 ;
 
 
-  constructor(private http:Http,app:AppComponent) {
+  constructor(private http:Http,app:AppComponent,renderer: Renderer) {
     //This component get from the AppComponent
     this.bin_obj = app.bins;
     
@@ -163,7 +164,6 @@ export class GoogleMapComponent implements OnInit {
                 sortJsonArray(this.push_array,'msg','des');
                 this.push_array = this.push_array.slice(0,this.no_of_bins);
                 console.log("Bins",this.no_of_bins);
- 
               });
             this.myarray.push([element[i].location.lat, element[i].location.lon, element[i].description]);
           }
