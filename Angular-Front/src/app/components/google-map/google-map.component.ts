@@ -4,6 +4,11 @@ import { GeoService } from '../../service/geo.service'
 import { Headers , Http } from '@angular/http';
 import 'rxjs/add/operator/map';
 import * as _ from 'lodash';
+import { map } from '../../../../node_modules/@firebase/util';
+import { componentRefresh } from '../../../../node_modules/@angular/core/src/render3/instructions';
+import { trigger } from '../../../../node_modules/@angular/core/src/animation/dsl';
+import { AgmMap } from '../../../../node_modules/@agm/core';
+import { filter } from '../../../../node_modules/rxjs/operator/filter';
 
 @Component({
   selector: 'app-google-map',
@@ -20,17 +25,18 @@ import * as _ from 'lodash';
     <div class="col-md-3">
     <div class="form-group">
   <label class="col-form-label" for="inputDefault">Enter No of Garbage Trucks can use Today</label>
-  <input type="text" class="form-control" placeholder="0" id="inputDefault">
+  <input type="text" class="form-control" placeholder="0" [(ngModel)]="filter.trucks" id="inputDefault">
 </div>
 <div class="form-group">
   <label class="col-form-label" for="inputDefault">Enter No of Garbage Tractors can use Today</label>
-  <input type="text" class="form-control" placeholder="0" id="inputDefault">
+  <input type="text" class="form-control" placeholder="0" [(ngModel)]="filter.tractors" id="inputDefault">
 </div>
 <div class="form-group">
   <label class="col-form-label" for="inputDefault">Enter Expected Capacity</label>
-  <input type="text" class="form-control" placeholder="10000Lts" id="inputDefault">
+  <input type="text" class="form-control" placeholder="10000Lts" [(ngModel)]="filter.capacity" id="inputDefault">
 </div>
-<button type="button" class="btn btn-primary btn-lg btn-block">Filter Route</button>
+<button type="button" class="btn btn-primary btn-lg btn-block" (click)="filter_path()">Show Route</button>
+<button type="button" class="btn btn-danger btn-lg btn-block" (click)="pause_running()">Pause Running</button>
 
     </div>
     <div class="col-md-9" *ngIf="lat && lng">
@@ -85,7 +91,14 @@ export class GoogleMapComponent implements OnInit {
   private push_array= [];
   private new_array= [];
   private sum_capacity =0;
-
+  filter = {
+    //pri_key: '',
+    //driver_id: '',
+    capacity: '',
+    trucks: '',
+    tractors: ''
+  };
+  pause = false;
 
 
 
@@ -106,35 +119,41 @@ export class GoogleMapComponent implements OnInit {
     const sortJsonArray = require('sort-json-array');
     //Check each and every bin in the system and if garbage level is high it shows in the map
     this.bin_obj.forEach(element => {
-      this.size = element.length;
-      for (var i =0 ; i<this.size;i++){
-        if(element[i].level) {
-          //Define lockdata object for calculation
-          const lockdata = {
-            bin_id: element[i].$key,
-            level: element[i].level,
-            priority: element[i].location.priority,
-            description: element[i].description,
-            longit: element[i].location.lon,
-            latti: element[i].location.lat
-          };
+      if(this.pause){
+        console.log("Pause Chosen");
 
-          //Pass lockdata to backend and get optimal solution as response
-          let headers = new Headers();
-          headers.append('Content-Type', 'application/json');
-          this.http.post('http://localhost:3000/maps', lockdata, {headers: headers}).map(response => response.json())
-            .subscribe((data) => {
-              this.push_array.push({msg:data.msg,bin_id:data.id,description:data.description,lon:data.lon,lat:data.lat});
-              //this.new_array.push([data.lat,data.lon]);
-              //console.log(this.new_array);
-              sortJsonArray(this.push_array,'msg','des');
-              //console.log(this.push_array);
-
-            });
-          this.myarray.push([element[i].location.lat, element[i].location.lon, element[i].description]);
-        }
-        }
+      }else{
+        this.size = element.length;
+        for (var i =0 ; i<this.size;i++){
+          if(element[i].level) {
+            //Define lockdata object for calculation
+            const lockdata = {
+              bin_id: element[i].$key,
+              level: element[i].level,
+              priority: element[i].location.priority,
+              description: element[i].description,
+              longit: element[i].location.lon,
+              latti: element[i].location.lat
+            };
+            console.log("Come to the Loop");
+  
+            //Pass lockdata to backend and get optimal solution as response
+            let headers = new Headers();
+            headers.append('Content-Type', 'application/json');
+            this.http.post('http://localhost:3000/maps', lockdata, {headers: headers}).map(response => response.json())
+              .subscribe((data) => {
+                this.push_array.push({msg:data.msg,bin_id:data.id,description:data.description,lon:data.lon,lat:data.lat});
+                //this.new_array.push([data.lat,data.lon]);
+                //console.log(this.new_array);
+                sortJsonArray(this.push_array,'msg','des');
+                //console.log(this.push_array);
+  
+              });
+            this.myarray.push([element[i].location.lat, element[i].location.lon, element[i].description]);
+          }
+          }}
     });
+    
     //console.log(sortJsonArray(this.push_array,'msg','asc'));
   }
 
@@ -148,6 +167,15 @@ export class GoogleMapComponent implements OnInit {
         this.lng = position.coords.longitude;
       });
     }
+  }
+  private filter_path(){
+    this.push_array = [];
+
+  }
+
+  private pause_running(){
+    this.pause = true;
+
   }
 
 
