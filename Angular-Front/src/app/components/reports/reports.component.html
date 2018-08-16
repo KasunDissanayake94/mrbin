@@ -59,6 +59,31 @@
                   </tbody>
               </table>
           </div>
+          <!--Daily Capacity Result Table-->
+        <div class="col-md-9" [ngStyle]="{'display':daily_capacity}">
+          <button class="btn btn-sm btn-outline-primary mr-2" (click)="generateReport('Garbage Truck Details of the System')" style="float: right;margin: 5px;">Export PDF</button>
+            <table class="table table-striped" >
+              <thead>
+              <tr>
+                <th></th>
+                <th>Truck Number</th>
+                <th>Truck Type</th>
+                <th>Capacity</th>
+                <th>Assigned Driver</th>
+              </tr>
+              </thead>
+              <tbody>                
+              <tr *ngFor="let item of this.myarr">
+                <th scope="row"></th>
+                <td>{{item[1].truck_no}}</td>
+                <td>{{item[1].truck_type}}</td> 
+                <td>{{item[1].capacity}}</td>                   
+                <td>{{item[1].drivername}}</td>
+              </tr>
+              
+                </tbody>
+            </table>
+        </div>
     </div>
     </div>
     

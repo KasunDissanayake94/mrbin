@@ -15,11 +15,26 @@ import * as _ from 'lodash';
   `],
   template: `
     <app-sidebar></app-sidebar>
-    <div *ngIf="lat && lng"  style="margin-left: 50px">
-    <button style="margin: 10px" class="btn btn-success">Pause Monitoring</button>
-    <button style="margin: 10px" class="btn btn-success">Print Map</button>
+    <div class="jumbotron" style="margin-left: 50px">
+        <div class="row">
+    <div class="col-md-3">
+    <div class="form-group">
+  <label class="col-form-label" for="inputDefault">Enter No of Garbage Trucks can use Today</label>
+  <input type="text" class="form-control" placeholder="0" id="inputDefault">
+</div>
+<div class="form-group">
+  <label class="col-form-label" for="inputDefault">Enter No of Garbage Tractors can use Today</label>
+  <input type="text" class="form-control" placeholder="0" id="inputDefault">
+</div>
+<div class="form-group">
+  <label class="col-form-label" for="inputDefault">Enter Expected Capacity</label>
+  <input type="text" class="form-control" placeholder="10000Lts" id="inputDefault">
+</div>
+<button type="button" class="btn btn-primary btn-lg btn-block">Filter Route</button>
 
-      <agm-map [latitude]="lat" [longitude]="lng" [zoom]="10" (mapReady)="mapReady($event)">
+    </div>
+    <div class="col-md-9" *ngIf="lat && lng">
+      <agm-map [latitude]="lat" [longitude]="lng" [zoom]="15" (mapReady)="mapReady($event)">
 
         <agm-marker [latitude]="lat" [longitude]="lng" >
 
@@ -50,6 +65,8 @@ import * as _ from 'lodash';
       </agm-map>
       
       </div>
+      </div>
+      </div>
   `
 })
 
@@ -67,6 +84,7 @@ export class GoogleMapComponent implements OnInit {
   dir:any;
   private push_array= [];
   private new_array= [];
+  private sum_capacity =0;
 
 
 
