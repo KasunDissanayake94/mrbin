@@ -98,21 +98,21 @@ export class ReportsComponent implements OnInit {
     this.download_pdf = "generate_truck_details.pdf";
   }
 
-  generateReport(title){
-    const doc = new jsPDF();
-    doc.autoTable(this.columns,this.rows,{
-      margin: {top:35},
-      addPageContent: function (data) {
-        doc.text(title,50,20);
-        doc.text("Issue Date : "+now.getFullYear()+"-"+(now.getMonth()+1)+"-"+now.getDate(),14,28,{
-          fontSize: 4
-        });
-      }
-    });
-    //var img ='../../assets/images/background.jpg';
-    //doc.addImage(img, 'JPEG', 15, 40, 180, 160)
-    doc.save(this.download_pdf);
-  }
+  // generateReport(title){
+  //   const doc = new jsPDF();
+  //   doc.autoTable(this.columns,this.rows,{
+  //     margin: {top:35},
+  //     addPageContent: function (data) {
+  //       doc.text(title,50,20);
+  //       doc.text("Issue Date : "+now.getFullYear()+"-"+(now.getMonth()+1)+"-"+now.getDate(),14,28,{
+  //         fontSize: 4
+  //       });
+  //     }
+  //   });
+  //   //var img ='../../assets/images/background.jpg';
+  //   //doc.addImage(img, 'JPEG', 15, 40, 180, 160)
+  //   doc.save(this.download_pdf);
+  // }
 
   add_data_myarray(database_object){
     this.myarr = [];
