@@ -86,11 +86,11 @@ export class GoogleMapComponent implements OnInit {
     this.bin_obj.forEach(element => {
       this.size = element.length;
       for (var i =0 ; i<this.size;i++){
-        if(element[i].level == "high") {
+        if(element[i].level) {
           //Define lockdata object for calculation
           const lockdata = {
             bin_id: element[i].$key,
-            level: 6,
+            level: element[i].level,
             priority: element[i].location.priority,
             description: element[i].description,
             longit: element[i].location.lon,

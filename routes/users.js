@@ -11,6 +11,7 @@ router.get("/register",function (req,res) {
 });
 //When user types maps on url
 router.post("/maps",function (req,res) {
+    console.log("awa");
     //Get the data and pass to calculate optimal solution
     var garbage_level = req.body.level;
     var loc_prioroty = req.body.priority;
