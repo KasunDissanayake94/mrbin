@@ -38,12 +38,6 @@ import * as _ from 'lodash';
             <p>{{ marker[2]}} </p>
           </agm-info-window>
 
-        </agm-marker>
-        <agm-marker 
-        [latitude]="dir.origin.lat"
-        [longitude]="dir.origin.lng"
-        [iconUrl]="'../../assets/img/house.png'">
-
         </agm-marker>        
 
         <agm-direction *ngFor="let marker of push_array;let i=index"
@@ -87,7 +81,7 @@ export class GoogleMapComponent implements OnInit {
 
 
     this.getUserLocation();
-    var sortJsonArray = require('sort-json-array');
+    const sortJsonArray = require('sort-json-array');
     //Check each and every bin in the system and if garbage level is high it shows in the map
     this.bin_obj.forEach(element => {
       this.size = element.length;
@@ -96,7 +90,7 @@ export class GoogleMapComponent implements OnInit {
           //Define lockdata object for calculation
           const lockdata = {
             bin_id: element[i].$key,
-            level: element[i].level,
+            level: 6,
             priority: element[i].location.priority,
             description: element[i].description,
             longit: element[i].location.lon,
@@ -107,19 +101,18 @@ export class GoogleMapComponent implements OnInit {
           headers.append('Content-Type', 'application/json');
           this.http.post('http://localhost:3000/maps', lockdata, {headers: headers}).map(response => response.json())
             .subscribe((data) => {
-              this.push_array.push({bin_id:data.id,description:data.description,lon:data.lon,lat:data.lat,opti_val:data.value});
+              this.push_array.push({msg:data.msg,bin_id:data.id,description:data.description,lon:data.lon,lat:data.lat});
               //this.new_array.push([data.lat,data.lon]);
               //console.log(this.new_array);
-              sortJsonArray(this.push_array,'opti_val','des');
+              sortJsonArray(this.push_array,'msg','des');
               console.log(this.push_array);
-                        });
+
+            });
           this.myarray.push([element[i].location.lat, element[i].location.lon, element[i].description]);
         }
         }
     });
-    
     //console.log(sortJsonArray(this.push_array,'msg','asc'));
-    
   }
 
 

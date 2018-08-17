@@ -27,7 +27,7 @@ router.post("/maps",function (req,res) {
     dir.stdout.on("data", function(data) {
         console.log('stdout: ' + data);
         //Pass optimal solution as msg to front-end with bin id
-        res.json({id:garb_bin_id,description:garb_description,lon:garb_longit,lat:garb_latti,value:parseFloat(data)});
+        res.json({msg:parseFloat(data),id:garb_bin_id,description:garb_description,lon:garb_longit,lat:garb_latti});
     });
 
 });
