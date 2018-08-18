@@ -3,6 +3,8 @@ import { AppComponent } from '../../app.component';
 import  * as jsPDF from 'jspdf';
 import * as html2canvas from "html2canvas";
 import 'jspdf-autotable';
+import { Headers , Http } from '@angular/http';
+import 'rxjs/add/operator/map';
 const now = new Date();
 
 @Component({
@@ -13,10 +15,12 @@ const now = new Date();
 export class ReportsComponent implements OnInit {
   driver_details ='none';
   truck_details = 'none';  
+  anual_details = 'none';
   public myarr = [];
 
   public drivers_row = [];
   public trucks_row = [];
+  public annual_data = [];
   public driver_obj:any;
   public truck_obj:any;
   
@@ -24,9 +28,22 @@ export class ReportsComponent implements OnInit {
   download_pdf = '';
   private columns: { title: string; dataKey: string }[];
   private rows: any;
+
+  public jan = 0;
+  public feb = 0;
+  public mar = 0;
+  public apr = 0;
+  public may = 0;
+  public jun = 0;
+  public jul = 0;
+  public aug = 0;
+  public sep = 0;
+  public oct = 0;
+  public nov = 0;
+  public dec = 0;
   
 
-  constructor(app:AppComponent) {
+  constructor(private http:Http,app:AppComponent) {
     //This Component get from the AppComponent
     this.driver_obj = app.drivers;
     this.truck_obj = app.garbage_truck;
@@ -61,6 +78,7 @@ export class ReportsComponent implements OnInit {
     this.add_data_myarray(this.driver_obj);
     this.driver_details = 'block';  
     this.truck_details  = 'none';
+    this.anual_details = 'none';
     this.columns = [
       {title: "Driver Name", dataKey: "driver_name"},
       {title: "Mobile Number", dataKey: "mobile_number"},
@@ -82,6 +100,7 @@ export class ReportsComponent implements OnInit {
     this.add_data_myarray(this.truck_obj);
     this.truck_details = 'block'; 
     this.driver_details = 'none'; 
+    this.anual_details = 'none';
     this.columns = [
       {title: "Truck Number", dataKey: "truck_number"},
       {title: "Truck Type", dataKey: "truck_type"},
@@ -98,21 +117,21 @@ export class ReportsComponent implements OnInit {
     this.download_pdf = "generate_truck_details.pdf";
   }
 
-  // generateReport(title){
-  //   const doc = new jsPDF();
-  //   doc.autoTable(this.columns,this.rows,{
-  //     margin: {top:35},
-  //     addPageContent: function (data) {
-  //       doc.text(title,50,20);
-  //       doc.text("Issue Date : "+now.getFullYear()+"-"+(now.getMonth()+1)+"-"+now.getDate(),14,28,{
-  //         fontSize: 4
-  //       });
-  //     }
-  //   });
-  //   //var img ='../../assets/images/background.jpg';
-  //   //doc.addImage(img, 'JPEG', 15, 40, 180, 160)
-  //   doc.save(this.download_pdf);
-  // }
+  generateReport(title){
+    const doc = new jsPDF();
+    doc.autoTable(this.columns,this.rows,{
+      margin: {top:35},
+      addPageContent: function (data) {
+        doc.text(title,50,20);
+        doc.text("Issue Date : "+now.getFullYear()+"-"+(now.getMonth()+1)+"-"+now.getDate(),14,28,{
+          fontSize: 4
+        });
+      }
+    });
+    //var img ='../../assets/images/background.jpg';
+    //doc.addImage(img, 'JPEG', 15, 40, 180, 160)
+    doc.save(this.download_pdf);
+  }
 
   add_data_myarray(database_object){
     this.myarr = [];
@@ -122,7 +141,53 @@ export class ReportsComponent implements OnInit {
         this.myarr.push([i+1, element[i]]);
       }
     });
+  }
+  //Generate annual reports
+  generate_annual_report(){
+    this.anual_details = 'block';
+    this.driver_details = 'none';
+    this.truck_details = 'none';
+    let headers = new Headers();
+          headers.append('Content-Type', 'application/json');
+          this.http.post('http://localhost:3000/reports/annual_report',  {headers: headers}).map(response => response.json())
+            .subscribe((data) => {
+                        this.jan = data.m_1; 
+                        this.feb = data.m_2; 
+                        this.mar = data.m_3; 
+                        this.apr = data.m_4; 
+                        this.may = data.m_5; 
+                        this.jun = data.m_6; 
+                        this.jul = data.m_7; 
+                        this.aug = data.m_8; 
+                        this.sep = data.m_9; 
+                        this.oct = data.m_10; 
+                        this.nov = data.m_11; 
+                        this.dec = data.m_12;                      
+            });
+            this.columns = [
+              {title: "Month", dataKey: "month"},
+              {title: "Garbage Capacity (Tons)", dataKey: "garbage_cap"},
+              
+            ];
+             
+            this.download_pdf = "annual_capacity_details.pdf";            
+  }
 
-
+  get_rows(title){
+    this.rows = [
+      {"month": "January", "garbage_cap": this.jan},
+      {"month": "February", "garbage_cap": this.feb},
+      {"month": "March", "garbage_cap": this.mar},
+      {"month": "April", "garbage_cap": this.apr},
+      {"month": "May", "garbage_cap": this.may},
+      {"month": "June", "garbage_cap": this.jun},
+      {"month": "July", "garbage_cap": this.jul},
+      {"month": "August", "garbage_cap": this.aug},
+      {"month": "September", "garbage_cap": this.sep},
+      {"month": "October", "garbage_cap": this.oct},
+      {"month": "November", "garbage_cap": this.nov},
+      {"month": "December", "garbage_cap": this.dec},
+    ];
+    this.generateReport(title);
   }
 }
