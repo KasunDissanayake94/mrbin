@@ -16,11 +16,13 @@ export class ReportsComponent implements OnInit {
   driver_details ='none';
   truck_details = 'none';  
   anual_details = 'none';
+  five_years_details = 'none';
   public myarr = [];
 
   public drivers_row = [];
   public trucks_row = [];
   public annual_data = [];
+  public five_year_data = [];
   public driver_obj:any;
   public truck_obj:any;
   
@@ -41,6 +43,13 @@ export class ReportsComponent implements OnInit {
   public oct = 0;
   public nov = 0;
   public dec = 0;
+
+  public annual_collection = 0;
+  public five_years_back_collection = 0;
+  public four_years_back_collection = 0;
+  public three_years_back_collection = 0;
+  public two_years_back_collection = 0;
+  public one_year_back_collection = 0;
   
 
   constructor(private http:Http,app:AppComponent) {
@@ -79,6 +88,7 @@ export class ReportsComponent implements OnInit {
     this.driver_details = 'block';  
     this.truck_details  = 'none';
     this.anual_details = 'none';
+    this.five_years_details = 'none'; 
     this.columns = [
       {title: "Driver Name", dataKey: "driver_name"},
       {title: "Mobile Number", dataKey: "mobile_number"},
@@ -101,6 +111,7 @@ export class ReportsComponent implements OnInit {
     this.truck_details = 'block'; 
     this.driver_details = 'none'; 
     this.anual_details = 'none';
+    this.five_years_details = 'none'; 
     this.columns = [
       {title: "Truck Number", dataKey: "truck_number"},
       {title: "Truck Type", dataKey: "truck_type"},
@@ -146,6 +157,7 @@ export class ReportsComponent implements OnInit {
   generate_annual_report(){
     this.anual_details = 'block';
     this.driver_details = 'none';
+    this.five_years_details = 'none'; 
     this.truck_details = 'none';
     let headers = new Headers();
           headers.append('Content-Type', 'application/json');
@@ -166,11 +178,11 @@ export class ReportsComponent implements OnInit {
             });
             this.columns = [
               {title: "Month", dataKey: "month"},
-              {title: "Garbage Capacity (Tons)", dataKey: "garbage_cap"},
+              {title: "Garbage Collection(Ton)", dataKey: "garbage_cap"},
               
             ];
              
-            this.download_pdf = "annual_capacity_details.pdf";            
+            this.download_pdf = "annual_collection_details.pdf";            
   }
 
   get_rows(title){
@@ -187,6 +199,44 @@ export class ReportsComponent implements OnInit {
       {"month": "October", "garbage_cap": this.oct},
       {"month": "November", "garbage_cap": this.nov},
       {"month": "December", "garbage_cap": this.dec},
+    ];
+    this.generateReport(title);
+  }
+  generate_five_years_report(){
+    this.anual_details = 'none';
+    this.driver_details = 'none';
+    this.truck_details = 'none';
+    this.five_years_details = 'block';   
+
+    let headers = new Headers();
+          headers.append('Content-Type', 'application/json');
+          this.http.post('http://localhost:3000/reports/last_five_details',  {headers: headers}).map(response => response.json())
+            .subscribe((data) => {
+                        this.annual_collection = data.current;
+                        this.five_years_back_collection = data.five;
+                        this.four_years_back_collection = data.four;
+                        this.three_years_back_collection = data.three;
+                        this.two_years_back_collection = data.two;
+                        this.one_year_back_collection = data.one;
+
+            });
+            this.columns = [
+              {title: "Year", dataKey: "year"},
+              {title: "Garbage Collection(Ton)", dataKey: "garbage_cap"},
+              
+            ];
+             
+            this.download_pdf = "last_five_years_collection_details.pdf"; 
+  }
+  get_last_five_rows(title){
+    this.rows = [
+      {"year": "2013", "garbage_cap": this.five_years_back_collection},
+      {"year": "2014", "garbage_cap": this.four_years_back_collection},
+      {"year": "2015", "garbage_cap": this.three_years_back_collection},
+      {"year": "2016", "garbage_cap": this.two_years_back_collection},
+      {"year": "2017", "garbage_cap": this.one_year_back_collection},
+      {"year": "2018", "garbage_cap": this.annual_collection},
+     
     ];
     this.generateReport(title);
   }

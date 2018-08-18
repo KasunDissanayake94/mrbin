@@ -4,7 +4,6 @@
   <div class="row">
     <div class="col-md-3">
       <button class="btn btn-sm btn-outline-primary mr-2" style="margin: 5px;" (click)="generate_annual_report()">Generate Annual Garbage Collection Report</button>
-      <button class="btn btn-sm btn-outline-primary mr-2" style="margin: 5px;" (click)="generate_monthly_report()">Generate Monthly Garbage Collection Report</button>
       <button class="btn btn-sm btn-outline-primary mr-2" style="margin: 5px;" (click)="generate_five_years_report()">Generate Past five years Collection Report</button>
       <button class="btn btn-sm btn-outline-primary mr-2" style="margin: 5px;" (click)="generate_driver_details()">Generate Driver Details Report</button>
       <button class="btn btn-sm btn-outline-primary mr-2" style="margin: 5px;" (click)="generate_truck_details()">Generate Truck Details Report</button>
@@ -68,7 +67,7 @@
               <tr>
                 <th></th>
                 <th>Month</th>
-                <th>Garbage Capacity(Ton)</th>
+                <th>Garbage Collection(Tons)</th>
               </tr>
               </thead>
               <tbody>                
@@ -136,6 +135,52 @@
                 </tbody>
             </table>
         </div>
+          <!--Annual Result Table-->
+          <div class="col-md-9" [ngStyle]="{'display':five_years_details}">
+            <button class="btn btn-sm btn-outline-primary mr-2" (click)="get_last_five_rows('Last Five Years Garbage Collection')" style="float: right;margin: 5px;">Export PDF</button>
+              <table class="table table-striped" >
+                <thead>
+                <tr>
+                  <th></th>
+                  <th>Year</th>
+                  <th>Garbage Collection(Ton)</th>
+                </tr>
+                </thead>
+                <tbody>                
+                <tr>
+                  <th scope="row"></th>
+                  <td>2013</td>
+                  <td>{{five_years_back_collection}}</td>
+                </tr>
+                <tr>
+                  <th scope="row"></th>
+                  <td>2014</td>
+                  <td>{{four_years_back_collection}}</td>
+                </tr>
+                <tr>
+                  <th scope="row"></th>
+                  <td>2015</td>
+                  <td>{{three_years_back_collection}}</td>
+                </tr>
+                <tr>
+                  <th scope="row"></th>
+                  <td>2016</td>
+                  <td>{{two_years_back_collection}}</td>
+                </tr>
+                <tr>
+                  <th scope="row"></th>
+                  <td>2017</td>
+                  <td>{{one_year_back_collection}}</td>
+                </tr>
+                <tr>
+                  <th scope="row"></th>
+                  <td>2018</td>
+                  <td>{{annual_collection}}</td>
+                </tr>               
+                
+                  </tbody>
+              </table>
+          </div>
     </div>
     </div>
     

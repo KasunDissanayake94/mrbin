@@ -15,11 +15,11 @@ const x= 9;
 var daily_collection = 0;
 var monthly_collection = 0;
 var annual_collection = 0;
-var five_years_back_collection = 0;
-var four_years_back_collection = 0;
-var three_years_back_collection = 0;
-var two_years_back_collection = 0;
-var one_year_back_collection = 0;
+var five_years_back_collection = 120000;
+var four_years_back_collection = 200000;
+var three_years_back_collection = 345600;
+var two_years_back_collection = 366730;
+var one_year_back_collection = 704450;
 
 
 var jan = 22;
@@ -177,8 +177,14 @@ function daily_script(){
 }
 
 app.post("/reports/annual_report",function(req,res){
-    res.json({m_1:jan,m_2:feb,m_3:mar,m_4:apr,m_5:may,m_6:jun,m_7:jul,m_8:aug,m_9:sep,m_10:oct,m_11:nov,m_12:dec});  
-       
+    res.json({m_1:jan,m_2:feb,m_3:mar,m_4:apr,m_5:may,m_6:jun,m_7:jul,m_8:aug,m_9:sep,m_10:oct,m_11:nov,m_12:dec});        
+
+});
+app.post("/reports/last_five_details",function(req,res){
+    console.log("awa");
+    res.json({five:five_years_back_collection,four:four_years_back_collection,three:three_years_back_collection,two:two_years_back_collection,
+    one:one_year_back_collection,current:annual_collection});  
+    
 
 });
 
