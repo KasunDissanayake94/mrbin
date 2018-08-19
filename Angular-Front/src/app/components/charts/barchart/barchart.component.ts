@@ -45,7 +45,9 @@ export class BarchartComponent implements OnInit {
 
  public barChartData:any[] = [
   //{data: [65], label: 'January'}
-  {data: [65, 25, 89, 45, 56, 65, 65, 25, 0, 0, 0, 0]}
+  {data: [75, 75, 75, 75, 75, 75, 75, 75, 75, 75, 75, 75], label : 'Max Amount'},
+  {data: [65, 25, 45, 70, 56, 65, 65, 25, 0, 0, 0, 0], label : 'Collected Amount'}
+  
 ];
 
   // events
