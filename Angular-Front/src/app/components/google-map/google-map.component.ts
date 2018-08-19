@@ -106,7 +106,6 @@ export class GoogleMapComponent implements OnInit {
               //console.log(this.new_array);
               sortJsonArray(this.push_array,'msg','des');
               console.log(this.push_array);
-
             });
           this.myarray.push([element[i].location.lat, element[i].location.lon, element[i].description]);
         }

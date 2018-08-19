@@ -18,6 +18,10 @@
     "mongoose": "^5.0.7",
     "ng-editable-table": "^0.3.15",
     "ng2-bootstrap-modal": "^1.0.1",
+    "node-schedule": "^1.3.0",
     "python-shell": "^0.5.0"
+  },
+  "devDependencies": {
+    "firebase": "^5.4.0"
   }
 }

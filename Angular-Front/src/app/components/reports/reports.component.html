@@ -3,11 +3,11 @@
 <div class="jumbotron" style="margin-left: 50px">
   <div class="row">
     <div class="col-md-3">
-      <button class="btn btn-sm btn-outline-primary mr-2" style="margin: 5px;" (click)="generate_yesterday_report()">Generate Yesterday Garbage Collection</button>
-      <button class="btn btn-sm btn-outline-primary mr-2" style="margin: 5px;" (click)="generate_today_report()">Generate Today Garbage Collection </button>
-      <button class="btn btn-sm btn-outline-primary mr-2" style="margin: 5px;" (click)="generate_driver_details()">Generate Driver Details</button>
-      <button class="btn btn-sm btn-outline-primary mr-2" style="margin: 5px;" (click)="generate_truck_details()">Generate Truck Details</button>
-      <button class="btn btn-sm btn-outline-primary mr-2" style="margin: 5px;" (click)="generate_today_collection_details()">Generate Today Collection Report</button>
+      <button class="btn btn-sm btn-outline-primary mr-2" style="margin: 5px;" (click)="generate_annual_report()">Generate Annual Garbage Collection Report</button>
+      <button class="btn btn-sm btn-outline-primary mr-2" style="margin: 5px;" (click)="generate_five_years_report()">Generate Past five years Collection Report</button>
+      <button class="btn btn-sm btn-outline-primary mr-2" style="margin: 5px;" (click)="generate_driver_details()">Generate Driver Details Report</button>
+      <button class="btn btn-sm btn-outline-primary mr-2" style="margin: 5px;" (click)="generate_truck_details()">Generate Truck Details Report</button>
+      
 
     </div>
         <!--Driver Result Table-->
@@ -59,31 +59,128 @@
                   </tbody>
               </table>
           </div>
-          <!--Daily Capacity Result Table-->
-        <!-- <div class="col-md-9" [ngStyle]="{'display':daily_capacity}">
-          <button class="btn btn-sm btn-outline-primary mr-2" (click)="generateReport('Garbage Truck Details of the System')" style="float: right;margin: 5px;">Export PDF</button>
+          <!--Annual Result Table-->
+        <div class="col-md-9" [ngStyle]="{'display':anual_details}">
+          <button class="btn btn-sm btn-outline-primary mr-2" (click)="get_rows('Annual Collection of the System')" style="float: right;margin: 5px;">Export PDF</button>
             <table class="table table-striped" >
               <thead>
               <tr>
                 <th></th>
-                <th>Truck Number</th>
-                <th>Truck Type</th>
-                <th>Capacity</th>
-                <th>Assigned Driver</th>
+                <th>Month</th>
+                <th>Garbage Collection(Tons)</th>
               </tr>
               </thead>
               <tbody>                
-              <tr *ngFor="let item of this.myarr">
+              <tr>
                 <th scope="row"></th>
-                <td>{{item[1].truck_no}}</td>
-                <td>{{item[1].truck_type}}</td> 
-                <td>{{item[1].capacity}}</td>                   
-                <td>{{item[1].drivername}}</td>
+                <td>January</td>
+                <td>{{jan}}</td>
+              </tr>
+              <tr>
+                <th scope="row"></th>
+                <td>February</td>
+                <td>{{feb}}</td>
+              </tr>
+              <tr>
+                <th scope="row"></th>
+                <td>March</td>
+                <td>{{mar}}</td>
+              </tr>
+              <tr>
+                <th scope="row"></th>
+                <td>April</td>
+                <td>{{apr}}</td>
+              </tr>
+              <tr>
+                <th scope="row"></th>
+                <td>May</td>
+                <td>{{may}}</td>
+              </tr>
+              <tr>
+                <th scope="row"></th>
+                <td>June</td>
+                <td>{{jun}}</td>
+              </tr>
+              <tr>
+                <th scope="row"></th>
+                <td>July</td>
+                <td>{{jul}}</td>
+              </tr>
+              <tr>
+                <th scope="row"></th>
+                <td>August</td>
+                <td>{{aug}}</td>
+              </tr>
+              <tr>
+                <th scope="row"></th>
+                <td>September</td>
+                <td>{{sep}}</td>
+              </tr>
+              <tr>
+                <th scope="row"></th>
+                <td>Octomber</td>
+                <td>{{oct}}</td>
+              </tr>
+              <tr>
+                <th scope="row"></th>
+                <td>November</td>
+                <td>{{nov}}</td>
+              </tr>
+              <tr>
+                <th scope="row"></th>
+                <td>December</td>
+                <td>{{dec}}</td>
               </tr>
               
                 </tbody>
             </table>
-        </div> -->
+        </div>
+          <!--Annual Result Table-->
+          <div class="col-md-9" [ngStyle]="{'display':five_years_details}">
+            <button class="btn btn-sm btn-outline-primary mr-2" (click)="get_last_five_rows('Last Five Years Garbage Collection')" style="float: right;margin: 5px;">Export PDF</button>
+              <table class="table table-striped" >
+                <thead>
+                <tr>
+                  <th></th>
+                  <th>Year</th>
+                  <th>Garbage Collection(Ton)</th>
+                </tr>
+                </thead>
+                <tbody>                
+                <tr>
+                  <th scope="row"></th>
+                  <td>2013</td>
+                  <td>{{five_years_back_collection}}</td>
+                </tr>
+                <tr>
+                  <th scope="row"></th>
+                  <td>2014</td>
+                  <td>{{four_years_back_collection}}</td>
+                </tr>
+                <tr>
+                  <th scope="row"></th>
+                  <td>2015</td>
+                  <td>{{three_years_back_collection}}</td>
+                </tr>
+                <tr>
+                  <th scope="row"></th>
+                  <td>2016</td>
+                  <td>{{two_years_back_collection}}</td>
+                </tr>
+                <tr>
+                  <th scope="row"></th>
+                  <td>2017</td>
+                  <td>{{one_year_back_collection}}</td>
+                </tr>
+                <tr>
+                  <th scope="row"></th>
+                  <td>2018</td>
+                  <td>{{annual_collection}}</td>
+                </tr>               
+                
+                  </tbody>
+              </table>
+          </div>
     </div>
     </div>
     
