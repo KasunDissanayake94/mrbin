@@ -43,12 +43,14 @@
       <div class="card bg-light col-md-4"style="margin: 15px">
           <div class="card-body">
             <h4 class="card-title">Available Truck Driver Details</h4>
-            <table>
+            <div class="table-full-width">
+              <table class="table">
                 <thead>
                     <tr>
 
                       <th scope="col"> Truck Number &nbsp; </th>
                       <th scope="col"> Capacity &nbsp; </th>
+                      <th scope="col"> Vehicle</th>
                       <th scope="col"> Availability &nbsp; </th>
                     </tr>
                   </thead>
@@ -58,12 +60,16 @@
 
                           <td>{{item.truck_no}} &nbsp; </td>
                           <td>{{item.capacity}} &nbsp; </td>
+                          <td *ngIf="item.truck_type == 'Garbage Truck'"><img  [src]=truck_image></td>
+                          <td *ngIf="item.truck_type == 'Garbage Tractor'"><img [src]=tractor_image></td>
+
                           <td>Available</td>
 
                         </tr>
                   </tbody>
 
             </table>
+            </div>
           </div>
       </div>
       <!-- <div class="card bg-light mb-3" style="max-width: 20rem;margin: 10px">
@@ -93,7 +99,6 @@
             </div>
           </div>
         </div-->
-
       <div class="card bg-light col-md-6" style="max-width: 20rem;margin: 10px">
             <div class="card-body">
               <h4 class="card-title">Today Collection</h4>
@@ -140,6 +145,8 @@
           </div>
         </div>
       </div>
+
+
       </div>
   </div>
 </div>

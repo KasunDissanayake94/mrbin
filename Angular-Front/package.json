@@ -28,6 +28,7 @@
     "@types/angular": "^1.6.45",
     "agm-direction": "^0.5.4",
     "angular2-flash-messages": "^2.0.5",
+    "angular2-google-chart": "^2.3.0",
     "angular2-image-upload": "^1.0.0-rc.1",
     "angular2-jwt": "^0.2.3",
     "angular2-jwt-session": "^0.1.2",

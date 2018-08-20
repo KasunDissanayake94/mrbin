@@ -23,6 +23,8 @@ export class DashboardComponent implements OnInit {
   today_gaugeValue = 28.3;
   gaugeLabel = "Collection";
   gaugeAppendText = "L/day";
+  truck_image = '../assets/img/truck.png';
+  tractor_image = '../assets/img/tractor.png';
 
 
   constructor(private http:Http,app:AppComponent) {
@@ -96,4 +98,6 @@ export class DashboardComponent implements OnInit {
       }
     });
   }
+
+
 }
