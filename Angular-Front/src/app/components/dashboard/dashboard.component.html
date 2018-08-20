@@ -16,12 +16,10 @@
       </div>
     -->
 
-      <div class="card bg-light col-md-8"> 
-        <div class="card-header"> 
-            Analytics
-        </div> 
-        <div class="card-body"> 
-          <h4 class="card-title">Data on Year Plans</h4> 
+      <div class="card bg-light col-md-7" style="margin: 15px">
+
+        <div class="card-body">
+          <h4 class="card-title">Data on Year Plans</h4>
           <div>
 
               <!-- <div class="card bg-light mb-3" style="margin: 10px"> -->
@@ -30,27 +28,24 @@
                 </div>
               <!-- </div> -->
           </div>
-        </div> 
-      </div> 
+        </div>
+      </div>
 
       <!--
         Data on current year monthly plan
       -->
 
-      
 
 
 
-      <div class="card bg-light col-md-4"> 
-          <div class="card-header"> 
-              <a [routerLink]="['/drivers']">Truck Drivers</a> 
-          </div> 
-          <div class="card-body"> 
-            <h4 class="card-title">Available Truck Driver Details</h4> 
+
+      <div class="card bg-light col-md-4"style="margin: 15px">
+          <div class="card-body">
+            <h4 class="card-title">Available Truck Driver Details</h4>
             <table>
                 <thead>
                     <tr>
-                      
+
                       <th scope="col"> Truck Number &nbsp; </th>
                       <th scope="col"> Capacity &nbsp; </th>
                       <th scope="col"> Availability &nbsp; </th>
@@ -59,29 +54,29 @@
 
                   <tbody>
                       <tr *ngFor="let item of this.garbage_truck | async" >
-                          
+
                           <td>{{item.truck_no}} &nbsp; </td>
                           <td>{{item.capacity}} &nbsp; </td>
                           <td>Available</td>
-                          
+
                         </tr>
                   </tbody>
-              
-            </table> 
-          </div> 
-      </div> 
-      <!-- <div class="card bg-light mb-3" style="max-width: 20rem;margin: 10px"> 
-          <div class="card-header"> 
-              <a [routerLink]="['/reports']">Reports Available</a> 
-          </div> 
-          <div class="card-body"> 
-            <h4 class="card-title">Report Details</h4> 
-            <p class="card-text">Linked to Reports page</p> 
-          </div> 
+
+            </table>
+          </div>
+      </div>
+      <!-- <div class="card bg-light mb-3" style="max-width: 20rem;margin: 10px">
+          <div class="card-header">
+              <a [routerLink]="['/reports']">Reports Available</a>
+          </div>
+          <div class="card-body">
+            <h4 class="card-title">Report Details</h4>
+            <p class="card-text">Linked to Reports page</p>
+          </div>
       </div>  -->
 
       <div class="col-md-1"></div>
-      
+
         <div class="col-md-10">
           <div class="card bg-light mb-3" style="margin: 10px">
             <div class="card-body">
@@ -90,7 +85,7 @@
           </div>
         </div>
         <div class="col-md-1"></div>
-      
+
         <!--div class="col-md-6">
           <div class="card bg-light mb-3" style="margin: 10px">
             <div class="card-body">
@@ -108,7 +103,7 @@
                   <li>Colombo 2: Slave Island </li>
                   <li>Colombo 3: Collupety </li>
                   <li>Colombo 4: Bambalapitiya </li>
-                  <li>Colombo 5: Narahenpita, Havelock Town , Kirulapona North</li> 
+                  <li>Colombo 5: Narahenpita, Havelock Town , Kirulapona North</li>
                   <li>Colombo 6: Wellawatta, Pamankada, Kirulapona South </li>
                   <li>Colombo 7: Cinnamon Garden </li>
                   <li>Colombo 8: Borella </li>
@@ -119,7 +114,7 @@
                   <li>Colombo 13: Kotahena, Kochchikade </li>
                   <li>Colombo 14: Grandpass </li>
                   <li>Colombo 15: Mattakkuliya, Modara, Mutwal, Madampitiya </li>
-                  
+
               </ul>
             </div>
       </div>
