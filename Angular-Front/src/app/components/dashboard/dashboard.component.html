@@ -6,7 +6,7 @@
       <!--div class="col-md-4" >
         <app-linechart></app-linechart>
       </div-->
-      <div class="card bg-light mb-3" style="max-width: 20rem; margin: 10px">
+      <!-- <div class="card bg-light mb-3" style="max-width: 20rem; margin: 10px">
         <div class="card-header">Header</div>
         <div class="card-body">
           <h4 class="card-title">Light card title</h4>
@@ -14,21 +14,36 @@
 
         </div>
       </div>
+    -->
 
-      <div class="card bg-light mb-3" style="max-width: 20rem;margin: 10px">
-        <div class="card-header">Header</div>
-        <div class="card-body">
-          <h4 class="card-title">Light card title</h4>
-          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-        </div>
-      </div>
-      <div class="card bg-light mb-3" style="max-width: 20rem;margin: 10px">
-        <div class="card-header">Header</div>
-        <div class="card-body">
-          <h4 class="card-title">Light card title</h4>
-          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-        </div>
-      </div>
+      <div class="card bg-light mb-3" style="max-width: 20rem;margin: 10px"> 
+        <div class="card-header"> 
+            <a [routerLink]="['/garbagetruck']">Truck Available</a> 
+        </div> 
+        <div class="card-body"> 
+          <h4 class="card-title">Available Truck Details</h4> 
+          <p class="card-text">Linked to Truck Details</p> 
+        </div> 
+      </div> 
+
+      <div class="card bg-light mb-3" style="max-width: 20rem;margin: 10px"> 
+          <div class="card-header"> 
+              <a [routerLink]="['/drivers']">Truck Drivers</a> 
+          </div> 
+          <div class="card-body"> 
+            <h4 class="card-title">Available Truck Driver Details</h4> 
+            <p class="card-text">Linked to Driver Details</p> 
+          </div> 
+      </div> 
+      <div class="card bg-light mb-3" style="max-width: 20rem;margin: 10px"> 
+          <div class="card-header"> 
+              <a [routerLink]="['/reports']">Reports Available</a> 
+          </div> 
+          <div class="card-body"> 
+            <h4 class="card-title">Report Details</h4> 
+            <p class="card-text">Linked to Reports page</p> 
+          </div> 
+      </div> 
 
       <div class="col-md-1"></div>
       
@@ -73,8 +88,8 @@
               </ul>
             </div>
       </div>
-      <div class="col-md-1"></div>
-      <div class="col-md-6">
+      <!-- <div class="col-md-1"></div> -->
+      <div class="col-md-8">
         <div class="card bg-light mb-3" style="margin: 10px">
           <div class="card-body">
             <h4 class="card-title">Bins Locations of the System</h4>
