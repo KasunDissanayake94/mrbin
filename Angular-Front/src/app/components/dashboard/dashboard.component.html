@@ -36,29 +36,43 @@
           <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
         </div>
       </div>
+
       <div class="col-md-12">
         <app-barchart></app-barchart>
       </div>
 
-      <div class="col-md-2"></div>
-
-      <div class="col-md-8" >
-        <app-linechart></app-linechart>
-      </div>
-      
-      <div class="col-md-2"></div>
-
-
-      <!--div class="row">
-        <div class="col-md-6">
-          <app-doughnutchart></app-doughnutchart>
+    
+      <!-- <div class="col-md-2"></div> -->
+      <div class="card bg-light col-md-4" style="max-width: 20rem;margin: 10px">
+        <div class="card-header">Colombo District</div>
+        <div class="card-body">
+          <h4 class="card-title">Zones in Colombo</h4>
+          
+            <ul>
+              <li>Colombo 1: Colombo Fort </li>
+              <li>Colombo 2: Slave Island</li>
+              <li>Colombo 3: Collupety</li>
+              <li>Colombo 4: Bambalapitiya</li>
+              <li>Colombo 5: Narahenpita, Havelock Town , Kirulapona North</li>
+              <li>Colombo 6: Wellawatta, Pamankada, Kirulapona South</li>
+              <li> Colombo 7: Cinnamon Garden</li>
+              <li>Colombo 8: Borella</li>
+              <li>Colombo 9: Dematagoda</li>
+              <li>Colombo 10: Maradana, Panchikawatte</li>
+              <li>Colombo 11: Pettah</li>
+              <li>Colombo 12: Hulsfdorf</li>
+              <li>Colombo 13: Kotahena, Kochchikade</li>
+              <li>Colombo 14: Grandpass</li>
+              <li>Colombo 15: Mattakkuliya, Modara, Mutwal, Madampitiya</li>
+                
+            </ul>
+          
         </div>
       </div>
-      <div class="col-md-6"-->
-
+      <div class="col-md-8">
         <agm-map [latitude]="lat" [longitude]="lng" [zoom]="13">
 
-          <agm-marker [latitude]="lat" [longitude]="lng" >
+          <agm-marker [latitude]="lat" [longitude]="lng">
 
             <agm-info-window>
               <h3><strong>Location</strong></h3>
@@ -68,6 +82,19 @@
           </agm-marker>
 
         </agm-map>
+      </div>
+      
+      <!-- <div class="col-md-2"></div> -->
+
+
+      <!--div class="row">
+        <div class="col-md-6">
+          <app-doughnutchart></app-doughnutchart>
+        </div>
+      </div>
+      <div class="col-md-6"-->
+
+        
 
                         <!--/label>
                       </div>
