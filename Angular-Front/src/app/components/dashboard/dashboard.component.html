@@ -48,10 +48,10 @@
                 <thead>
                     <tr>
 
-                      <th scope="col"> Truck Number &nbsp; </th>
-                      <th scope="col"> Capacity &nbsp; </th>
-                      <th scope="col"> Vehicle</th>
-                      <th scope="col"> Availability &nbsp; </th>
+                      <th scope="col"> Truck Number</th>
+                      <th scope="col"> Capacity &nbsp;</th>
+                      <th scope="col"> Vehicle Type</th>
+                      <th scope="col"> Availability </th>
                     </tr>
                   </thead>
 
@@ -83,9 +83,11 @@
       </div>  -->
 
 
-        <div class="col-md-10">
+        <div class="col-md-9">
           <div class="card bg-light mb-3" style="margin: 10px">
             <div class="card-body">
+              <h4 class="card-title">Monthly Collection</h4>
+
               <app-barchart></app-barchart>
             </div>
           </div>
@@ -99,7 +101,9 @@
             </div>
           </div>
         </div-->
-      <div class="card bg-light col-md-6" style="max-width: 20rem;margin: 10px">
+
+        <!-- <div class="card bg-light col-md-6" style="max-width: 20rem;margin: 10px"> -->
+        <div class="card bg-light col-md-3">
             <div class="card-body">
               <h4 class="card-title">Today Collection</h4>
               <ngx-gauge [thick]="15"
@@ -121,7 +125,7 @@
             </div>
       </div>
       <!-- <div class="col-md-1"></div> -->
-      <div class="col-md-6">
+      <div class="col-md-12">
         <div class="card bg-light mb-3" style="margin: 10px">
           <div class="card-body">
             <h4 class="card-title">Bins Locations of the System</h4>
