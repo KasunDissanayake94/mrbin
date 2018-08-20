@@ -19,7 +19,6 @@ export class DashboardComponent implements OnInit {
   private myarray = [];
   private size: number;
   gaugeType = "full";
-  gaugeForm = "thick";
   gaugeValue = 28.3;
   gaugeLabel = "Collection";
   gaugeAppendText = "L/day";

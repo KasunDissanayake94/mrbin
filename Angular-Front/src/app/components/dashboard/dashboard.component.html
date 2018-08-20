@@ -99,6 +99,7 @@
               <h4 class="card-title">Today Collection</h4>
               <ngx-gauge [thick]="15"
                          [value]="gaugeValue"
+                         [type]="gaugeType"
                          [label]="gaugeLabel"
                          [append]="gaugeAppendText"
                          [thresholds]="thresholdConfig">
@@ -106,10 +107,10 @@
               <h4 class="card-title">Yesterday Collection</h4>
               <ngx-gauge [thick]="15"
                          [value]="gaugeValue"
+                         [type]="gaugeType"
                          [label]="gaugeLabel"
                          [append]="gaugeAppendText"
                          [thresholds]="thresholdConfig">
-
               </ngx-gauge>
 
             </div>
