@@ -16,26 +16,61 @@
       </div>
     -->
 
-      <div class="card bg-light mb-3" style="max-width: 20rem;margin: 10px"> 
+      <div class="card bg-light col-md-8"> 
         <div class="card-header"> 
-            <a [routerLink]="['/garbagetruck']">Truck Available</a> 
+            Analytics
         </div> 
         <div class="card-body"> 
-          <h4 class="card-title">Available Truck Details</h4> 
-          <p class="card-text">Linked to Truck Details</p> 
+          <h4 class="card-title">Data on Year Plans</h4> 
+          <div>
+
+              <!-- <div class="card bg-light mb-3" style="margin: 10px"> -->
+                <div class="card-body">
+                  <app-barchart-yrcol></app-barchart-yrcol>
+                </div>
+              <!-- </div> -->
+          </div>
         </div> 
       </div> 
 
-      <div class="card bg-light mb-3" style="max-width: 20rem;margin: 10px"> 
+      <!--
+        Data on current year monthly plan
+      -->
+
+      
+
+
+
+      <div class="card bg-light col-md-4"> 
           <div class="card-header"> 
               <a [routerLink]="['/drivers']">Truck Drivers</a> 
           </div> 
           <div class="card-body"> 
             <h4 class="card-title">Available Truck Driver Details</h4> 
-            <p class="card-text">Linked to Driver Details</p> 
+            <table>
+                <thead>
+                    <tr>
+                      
+                      <th scope="col"> Truck Number &nbsp; </th>
+                      <th scope="col"> Capacity &nbsp; </th>
+                      <th scope="col"> Availability &nbsp; </th>
+                    </tr>
+                  </thead>
+
+                  <tbody>
+                      <tr *ngFor="let item of this.garbage_truck | async" >
+                          
+                          <td>{{item.truck_no}} &nbsp; </td>
+                          <td>{{item.capacity}} &nbsp; </td>
+                          <td>Available</td>
+                          
+                        </tr>
+                  </tbody>
+              
+            </table> 
           </div> 
       </div> 
-      <div class="card bg-light mb-3" style="max-width: 20rem;margin: 10px"> 
+      <!-- <div class="card bg-light mb-3" style="max-width: 20rem;margin: 10px"> 
           <div class="card-header"> 
               <a [routerLink]="['/reports']">Reports Available</a> 
           </div> 
@@ -43,7 +78,7 @@
             <h4 class="card-title">Report Details</h4> 
             <p class="card-text">Linked to Reports page</p> 
           </div> 
-      </div> 
+      </div>  -->
 
       <div class="col-md-1"></div>
       
@@ -64,7 +99,7 @@
           </div>
         </div-->
 
-      <div class="card bg-light col-md-4" style="max-width: 20rem;margin: 10px">
+      <div class="card bg-light col-md-5" style="max-width: 20rem;margin: 10px">
             <div class="card-header">Colombo District</div>
             <div class="card-body">
               <h4 class="card-title">Colomo Zone Numbers</h4>
@@ -89,7 +124,7 @@
             </div>
       </div>
       <!-- <div class="col-md-1"></div> -->
-      <div class="col-md-8">
+      <div class="col-md-7">
         <div class="card bg-light mb-3" style="margin: 10px">
           <div class="card-body">
             <h4 class="card-title">Bins Locations of the System</h4>

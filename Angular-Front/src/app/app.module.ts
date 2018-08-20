@@ -47,6 +47,7 @@ import { Ng2SearchPipeModule } from "ng2-search-filter";
 import { GarbagetrucksComponent } from './components/garbagetrucks/garbagetrucks.component';
 //upload image
 import { ImageUploadModule } from "angular2-image-upload";
+import { BarchartYrcolComponent } from './components/charts/barchart-yrcol/barchart-yrcol.component';
 
 
 const  applicationRouters:Routes = [
@@ -95,6 +96,7 @@ const  applicationRouters:Routes = [
     ErrorComponent,
     GarbagetrucksComponent,
     ReportsComponent,
+    BarchartYrcolComponent,
 
   ],
   imports: [

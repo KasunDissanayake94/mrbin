@@ -12,14 +12,20 @@ export class DashboardComponent implements OnInit {
   private lng: number;
   private lat: number;
   public bin_obj:any;
+  public garbage_truck:any;
+
   private myarray = [];
   private size: number;
 
   constructor(private http:Http,app:AppComponent) {
     this.bin_obj = app.bins;
+    this.garbage_truck = app.garbage_truck;
+
     this.getUserLocation();
     this.getbins();
   }
+
+  
 
   lastCollected:number;
   todayCollect : number;
