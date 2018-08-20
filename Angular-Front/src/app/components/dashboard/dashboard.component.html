@@ -3,6 +3,7 @@
   <div class="container-fluid">
     <div class="row">
 
+
       <!--div class="col-md-4" >
         <app-linechart></app-linechart>
       </div-->
@@ -75,7 +76,6 @@
           </div>
       </div>  -->
 
-      <div class="col-md-1"></div>
 
         <div class="col-md-10">
           <div class="card bg-light mb-3" style="margin: 10px">
@@ -84,7 +84,7 @@
             </div>
           </div>
         </div>
-        <div class="col-md-1"></div>
+
 
         <!--div class="col-md-6">
           <div class="card bg-light mb-3" style="margin: 10px">
@@ -94,32 +94,29 @@
           </div>
         </div-->
 
-      <div class="card bg-light col-md-5" style="max-width: 20rem;margin: 10px">
-            <div class="card-header">Colombo District</div>
+      <div class="card bg-light col-md-6" style="max-width: 20rem;margin: 10px">
             <div class="card-body">
-              <h4 class="card-title">Colomo Zone Numbers</h4>
-              <ul>
-                  <li>Colombo 1: Colombo Fort </li>
-                  <li>Colombo 2: Slave Island </li>
-                  <li>Colombo 3: Collupety </li>
-                  <li>Colombo 4: Bambalapitiya </li>
-                  <li>Colombo 5: Narahenpita, Havelock Town , Kirulapona North</li>
-                  <li>Colombo 6: Wellawatta, Pamankada, Kirulapona South </li>
-                  <li>Colombo 7: Cinnamon Garden </li>
-                  <li>Colombo 8: Borella </li>
-                  <li>Colombo 9: Dematagoda </li>
-                  <li>Colombo 10: Maradana, Panchikawatte </li>
-                  <li>Colombo 11: Pettah </li>
-                  <li>Colombo 12: Hulsfdorf </li>
-                  <li>Colombo 13: Kotahena, Kochchikade </li>
-                  <li>Colombo 14: Grandpass </li>
-                  <li>Colombo 15: Mattakkuliya, Modara, Mutwal, Madampitiya </li>
+              <h4 class="card-title">Today Collection</h4>
+              <ngx-gauge [type]="gaugeType"
+                         [value]="gaugeValue"
+                         [label]="gaugeLabel"
+                         [append]="gaugeAppendText"
+                         [thresholds]="thresholdConfig">
 
-              </ul>
+              </ngx-gauge>
+              <h4 class="card-title">Yesterday Collection</h4>
+              <ngx-gauge [type]="gaugeType"
+                         [value]="gaugeValue"
+                         [label]="gaugeLabel"
+                         [append]="gaugeAppendText"
+                         [thresholds]="thresholdConfig">
+
+              </ngx-gauge>
+
             </div>
       </div>
       <!-- <div class="col-md-1"></div> -->
-      <div class="col-md-7">
+      <div class="col-md-6">
         <div class="card bg-light mb-3" style="margin: 10px">
           <div class="card-body">
             <h4 class="card-title">Bins Locations of the System</h4>

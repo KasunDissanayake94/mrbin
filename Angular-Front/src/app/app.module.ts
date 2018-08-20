@@ -48,6 +48,8 @@ import { GarbagetrucksComponent } from './components/garbagetrucks/garbagetrucks
 //upload image
 import { ImageUploadModule } from "angular2-image-upload";
 import { BarchartYrcolComponent } from './components/charts/barchart-yrcol/barchart-yrcol.component';
+import { GaugeModule } from 'angular-gauge';
+import { NgxGaugeModule } from 'ngx-gauge';
 
 
 const  applicationRouters:Routes = [
@@ -112,6 +114,8 @@ const  applicationRouters:Routes = [
     BrowserModule,
     FormsModule,
     RouterModule,
+    GaugeModule.forRoot(),
+    NgxGaugeModule,
     LbdModule,
     HttpModule,
     FlashMessagesModule.forRoot(),

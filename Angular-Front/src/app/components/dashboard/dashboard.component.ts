@@ -8,6 +8,8 @@ import 'rxjs/add/operator/map';
   templateUrl: './dashboard.component.html',
   styleUrls: ['./dashboard.component.css']
 })
+
+
 export class DashboardComponent implements OnInit {
   private lng: number;
   private lat: number;
@@ -16,6 +18,10 @@ export class DashboardComponent implements OnInit {
 
   private myarray = [];
   private size: number;
+  gaugeType = "semi";
+  gaugeValue = 28.3;
+  gaugeLabel = "Speed";
+  gaugeAppendText = "km/hr";
 
   constructor(private http:Http,app:AppComponent) {
     this.bin_obj = app.bins;
@@ -25,7 +31,13 @@ export class DashboardComponent implements OnInit {
     this.getbins();
   }
 
-  
+  thresholdConfig = {
+    '0': {color: 'green'},
+    '40': {color: 'orange'},
+    '75.5': {color: 'red'}
+  };
+
+
 
   lastCollected:number;
   todayCollect : number;
