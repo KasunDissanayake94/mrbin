@@ -11,9 +11,14 @@ import 'rxjs/add/operator/map';
 export class DashboardComponent implements OnInit {
   private lng: number;
   private lat: number;
+  public bin_obj:any;
+  private myarray = [];
+  private size: number;
 
-  constructor() {
+  constructor(private http:Http,app:AppComponent) {
+    this.bin_obj = app.bins;
     this.getUserLocation();
+    this.getbins();
   }
 
   lastCollected:number;
@@ -46,14 +51,30 @@ export class DashboardComponent implements OnInit {
 
   }
   private getUserLocation() {
-    /// locate the user
+    /// locate Urban Council
     console.log("Google map called");
-    if (navigator.geolocation) {
-      navigator.geolocation.getCurrentPosition(position => {
-        this.lat = position.coords.latitude;
-        this.lng = position.coords.longitude;
-      });
-    }
+    this.lat = 6.915810;
+    this.lng = 79.863773;
   }
 
+  private getbins() {
+    this.bin_obj.forEach(element => {
+      this.size = element.length;
+      for (var i =0 ; i<this.size;i++){
+        if(element[i].level) {
+          //Define lockdata object for calculation
+          const lockdata = {
+            bin_id: element[i].$key,
+            level: element[i].level,
+            priority: element[i].location.priority,
+            description: element[i].description,
+            longit: element[i].location.lon,
+            latti: element[i].location.lat
+          };
+
+          this.myarray.push([element[i].location.lat, element[i].location.lon, element[i].description]);
+        }
+      }
+    });
+  }
 }

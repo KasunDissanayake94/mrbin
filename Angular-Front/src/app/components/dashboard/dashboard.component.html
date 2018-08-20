@@ -3,100 +3,79 @@
   <div class="container-fluid">
     <div class="row">
 
-          
-        <!--div class="card bg-light mb-3" style="max-width: 20rem;margin: 10px">
-          <div class="card-header">Header</div>
-          <div class="card-body">
-            <h4 class="card-title">Light card title</h4>
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-          </div>
-        </div-->
-
-
-      
-      
-      <div class="card bg-light mb-3" style="max-width: 20rem;margin: 10px">
-        <div class="card-header">Header</div>
-        <div class="card-body">
-          <h4 class="card-title">Light card title</h4>
-          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-        </div>
-      </div>
-      <div class="card bg-light mb-3" style="max-width: 20rem;margin: 10px">
-        <div class="card-header">Header</div>
-        <div class="card-body">
-          <h4 class="card-title">Light card title</h4>
-          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-        </div>
-      </div>
-      <div class="card bg-light mb-3" style="max-width: 20rem;margin: 10px">
-        <div class="card-header">Header</div>
-        <div class="card-body">
-          <h4 class="card-title">Light card title</h4>
-          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-        </div>
-      </div>
-      <div class="col-md-12">
-        <app-barchart></app-barchart>
-      </div>
-
-      <div class="col-md-2"></div>
-
-      <div class="col-md-8" >
+      <!--div class="col-md-4" >
         <app-linechart></app-linechart>
-      </div>
-      
-      <div class="col-md-2"></div>
+      </div-->
+      <div class="card bg-light mb-3" style="max-width: 20rem; margin: 10px">
+        <div class="card-header">Header</div>
+        <div class="card-body">
+          <h4 class="card-title">Light card title</h4>
+          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
 
-
-      <!--div class="row">
-        <div class="col-md-6">
-          <app-doughnutchart></app-doughnutchart>
         </div>
       </div>
-      <div class="col-md-6"-->
 
-        <agm-map [latitude]="lat" [longitude]="lng" [zoom]="13">
-
-          <agm-marker [latitude]="lat" [longitude]="lng" >
-
-            <agm-info-window>
-              <h3><strong>Location</strong></h3>
-              <p>You are here!</p>
-            </agm-info-window>
-
-          </agm-marker>
-
-        </agm-map>
-
-                        <!--/label>
-                      </div>
-                    </td>
-                    <td>Unfollow 5 enemies from twitter</td>
-                    <td class="td-actions text-right">
-                      <button type="button" rel="tooltip" title="Edit Task" class="btn btn-info btn-simple btn-xs">
-                        <i class="fa fa-edit"></i>
-                      </button>
-                      <button type="button" rel="tooltip" title="Remove" class="btn btn-danger btn-simple btn-xs">
-                        <i class="fa fa-times"></i>
-                      </button>
-                    </td>
-                  </tr>
-                  </tbody>
-                </table>
-              </div>
-
-            </div>
-            <div class="card-footer text-muted">
-              <hr>
-                <i class="fa fa-history"></i> Updated 3 minutes ago
+      <div class="card bg-light mb-3" style="max-width: 20rem;margin: 10px">
+        <div class="card-header">Header</div>
+        <div class="card-body">
+          <h4 class="card-title">Light card title</h4>
+          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+        </div>
+      </div>
+      <div class="card bg-light mb-3" style="max-width: 20rem;margin: 10px">
+        <div class="card-header">Header</div>
+        <div class="card-body">
+          <h4 class="card-title">Light card title</h4>
+          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+        </div>
+      </div>
+      <div class="card bg-light mb-3" style="max-width: 20rem;margin: 10px">
+        <div class="card-header">Header</div>
+        <div class="card-body">
+          <h4 class="card-title">Light card title</h4>
+          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+        </div>
+      </div>
+        <div class="col-md-6">
+          <div class="card bg-light mb-3" style="margin: 10px">
+            <div class="card-body">
+              <app-barchart></app-barchart>
             </div>
           </div>
         </div>
-      </div-->
+        <div class="col-md-6">
+          <div class="card bg-light mb-3" style="margin: 10px">
+            <div class="card-body">
+              <app-doughnutchart></app-doughnutchart>
+            </div>
+          </div>
+        </div>
+      <div class="col-md-6">
+        <div class="card bg-light mb-3" style="margin: 10px">
+          <div class="card-body">
+            <h4 class="card-title">Bins Locations of the System</h4>
+            <agm-map [latitude]="lat" [longitude]="lng" [zoom]="13">
+              <agm-marker [latitude]="lat" [longitude]="lng" >
+                <agm-info-window>
+                  <h3><strong>Location</strong></h3>
+                  <p>You are here!</p>
+                </agm-info-window>
+                <agm-marker *ngFor="let marker of myarray"
+                            [latitude]="marker[0]"
+                            [longitude]="marker[1]"
+                            [iconUrl]="'../../assets/img/map_icon3.png'">
+                  <agm-info-window>
+                    <h3><strong>Bin Filled</strong></h3>
+                    <p>{{ marker[2]}} </p>
+                  </agm-info-window>
+                </agm-marker>
+              </agm-marker>
+            </agm-map>
+          </div>
+        </div>
 
-    </div>
+      </div>
+      </div>
 
   </div>
-
 </div>
