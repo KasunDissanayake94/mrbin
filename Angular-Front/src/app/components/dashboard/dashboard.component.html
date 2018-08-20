@@ -97,15 +97,14 @@
       <div class="card bg-light col-md-6" style="max-width: 20rem;margin: 10px">
             <div class="card-body">
               <h4 class="card-title">Today Collection</h4>
-              <ngx-gauge [type]="gaugeType"
+              <ngx-gauge [thick]="15"
                          [value]="gaugeValue"
                          [label]="gaugeLabel"
                          [append]="gaugeAppendText"
                          [thresholds]="thresholdConfig">
-
               </ngx-gauge>
-              <h4 class="card-title">Yesterday Collection</h4>
-              <ngx-gauge [type]="gaugeType"
+              <h4 class="card-title">Today Collection</h4>
+              <ngx-gauge [thick]="15"
                          [value]="gaugeValue"
                          [label]="gaugeLabel"
                          [append]="gaugeAppendText"

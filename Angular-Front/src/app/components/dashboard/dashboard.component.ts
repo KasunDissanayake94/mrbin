@@ -18,10 +18,12 @@ export class DashboardComponent implements OnInit {
 
   private myarray = [];
   private size: number;
-  gaugeType = "semi";
+  gaugeType = "full";
+  gaugeForm = "thick";
   gaugeValue = 28.3;
-  gaugeLabel = "Speed";
-  gaugeAppendText = "km/hr";
+  gaugeLabel = "Collection";
+  gaugeAppendText = "L/day";
+
 
   constructor(private http:Http,app:AppComponent) {
     this.bin_obj = app.bins;
@@ -30,7 +32,6 @@ export class DashboardComponent implements OnInit {
     this.getUserLocation();
     this.getbins();
   }
-
   thresholdConfig = {
     '0': {color: 'green'},
     '40': {color: 'orange'},
