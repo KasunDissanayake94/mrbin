@@ -2,6 +2,7 @@
     <div style="display: block">
       <canvas baseChart
               [datasets]="barChartData"
+              [colors]="chartColors"
               [labels]="barChartLabels"
               [options]="barChartOptions"
               [legend]="barChartLegend"
@@ -10,4 +11,3 @@
               (chartClick)="chartClicked($event)"></canvas>
     </div>
   </div>
-  

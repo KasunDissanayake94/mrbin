@@ -85,12 +85,13 @@ export class GoogleMapComponent implements OnInit {
     //Check each and every bin in the system and if garbage level is high it shows in the map
     this.bin_obj.forEach(element => {
       this.size = element.length;
+      this.push_array =[];
       for (var i =0 ; i<this.size;i++){
         if(element[i].level) {
           //Define lockdata object for calculation
           const lockdata = {
             bin_id: element[i].$key,
-            level: 6,
+            level: element[i].level/10 ,
             priority: element[i].location.priority,
             description: element[i].description,
             longit: element[i].location.lon,
