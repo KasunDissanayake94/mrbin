@@ -8,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 export class DoughnutchartComponent implements OnInit {
 
   // Doughnut
-  public doughnutChartLabels:string[] = ['Download Sales', 'In-Store Sales', 'Mail-Order Sales'];
+  public doughnutChartLabels:string[] = ['High Level', 'Medium Level', 'Low Level'];
   public doughnutChartData:number[] = [350, 450, 100];
   public doughnutChartType:string = 'doughnut';
 
@@ -16,6 +16,13 @@ export class DoughnutchartComponent implements OnInit {
   public chartClicked(e:any):void {
     console.log(e);
   }
+  public chartColors: any[] = [
+    {
+      backgroundColor:["#16A085",
+        "#DAF7A6",
+        "#669612",
+        ]
+    }];
 
   public chartHovered(e:any):void {
     console.log(e);

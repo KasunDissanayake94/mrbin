@@ -12,7 +12,7 @@ export class BarchartComponent implements OnInit {
     responsive: true
   };
 
-  
+
 
 
   //public barChartLabels:string[] = ['2006', '2007', '2008', '2009', '2010', '2011', '2012'];
@@ -25,7 +25,7 @@ export class BarchartComponent implements OnInit {
     {data: [65, 59, 80, 81, 56, 55, 40], label: 'Series A'},
     {data: [28, 48, 40, 19, 86, 27, 90], label: 'Series B'}
   ];
-  
+
   **/
 
  monthCollection = {
@@ -47,13 +47,46 @@ export class BarchartComponent implements OnInit {
   //{data: [65], label: 'January'}
   {data: [75, 75, 75, 75, 75, 75, 75, 75, 75, 75, 75, 75], label : 'Max Amount'},
   {data: [65, 25, 45, 70, 56, 65, 65, 25, 0, 0, 0, 0], label : 'Collected Amount'}
-  
+
 ];
 
   // events
   public chartClicked(e:any):void {
     console.log(e);
   }
+  public chartColors: any[] = [
+    {
+      backgroundColor:["#145A32",
+        "#145A32",
+        "#145A32",
+        "#145A32",
+        "#145A32",
+        "#145A32",
+        "#145A32",
+        "#145A32",
+        "#145A32",
+        "#145A32",
+        "#145A32",
+        "#145A32",
+
+      ]
+    },
+    {
+      backgroundColor:["#58D68D",
+        "#58D68D",
+        "#58D68D",
+        "#58D68D",
+        "#58D68D",
+        "#58D68D",
+        "#58D68D",
+        "#58D68D",
+        "#58D68D",
+        "#58D68D",
+        "#58D68D",
+        "#58D68D",
+
+      ]
+    }];
 
   public chartHovered(e:any):void {
     console.log(e);
