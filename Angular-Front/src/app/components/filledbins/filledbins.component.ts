@@ -28,6 +28,7 @@ export class FilledbinsComponent implements OnInit {
 
   //inorder to take size and store on on arrAY
   size: number;
+  temp: number;
   public myarr=[];
 
 
@@ -82,6 +83,9 @@ export class FilledbinsComponent implements OnInit {
 
   //Add New Bin
   add_new_bin(){
+    this.temp= Number(this.bin.location.priority);
+
+    this.bin.location.priority = this.temp;
     console.log(this.bin);
     this.onCloseHandled();
 
