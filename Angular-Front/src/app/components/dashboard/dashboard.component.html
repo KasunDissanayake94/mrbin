@@ -56,7 +56,7 @@
                   </thead>
 
                   <tbody>
-                      <tr *ngFor="let item of this.garbage_truck | async" >
+                      <tr align="center" *ngFor="let item of this.garbage_truck | async" >
 
                           <td>{{item.truck_no}} &nbsp; </td>
                           <td>{{item.capacity}} &nbsp; </td>
@@ -64,7 +64,7 @@
                           <td *ngIf="item.truck_type == 'Garbage Tractor'"><img [src]=tractor_image></td>
 
                           <!-- <td>Available</td> -->
-                          <td class="avail"></td>
+                          <td><img [src]=available_image></td>
 
                         </tr>
                   </tbody>

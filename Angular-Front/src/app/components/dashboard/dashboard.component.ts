@@ -25,6 +25,7 @@ export class DashboardComponent implements OnInit {
   gaugeAppendText = "L/day";
   truck_image = '../assets/img/truck.png';
   tractor_image = '../assets/img/tractor.png';
+  available_image = '../assets/img/available.png';
 
 
   constructor(private http:Http,app:AppComponent) {
