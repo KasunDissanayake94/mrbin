@@ -1,7 +1,13 @@
 <app-sidebar></app-sidebar>
 
+
 <div class="jumbotron" style="margin-left: 50px">
   <h1 class="display-4">Driver details</h1>
+
+  <div class="col-md-9">
+      <flash-messages></flash-messages>
+  </div>
+
 <div class="row">
   <div  align="center">
   <form class="form-inline my-2 my-lg-0">
@@ -65,10 +71,14 @@
       </div>
       <div class="modal-body container">
 
+          
+
+
         <!-- Form body -->
 
         <form name="" method="post" #formCtrl="">
           <fieldset>
+
 
             <!--div class="form-group">
               <label for="exampleInputEmail1">Driver ID</label>
@@ -80,7 +90,7 @@
             </div>
             <div class="form-group">
               <label for="exampleInputPassword1">Mobile Number</label>
-              <input type="text" class="form-control" id="exampleInputPassword1" name="mbno" placeholder="Mobile no" value="" [(ngModel)]="driver_set.mobile_no" required=true>
+              <input type="text" class="form-control" id="exampleInputPassword1" name="mbno" placeholder="Mobile no" value="" [(ngModel)]="driver_set.mobile_no" required=true maxlength="10" minlength="10">
             </div>
             <div class="form-group">
               <label for="exampleInputPassword1">Truck No</label>
@@ -119,6 +129,8 @@
       <div class="modal-body container">
 
         <!-- Form body -->
+        
+
 
         <form name="" method="post" #formCtrl="">
           <fieldset>
@@ -133,7 +145,7 @@
             </div>
             <div class="form-group">
               <label for="exampleInputPassword1">Mobile Number</label>
-              <input type="text" class="form-control" id="exampleInputPassword1" name="mbno" value={{driver_set.mobile_no}} [(ngModel)]="driver_set.mobile_no" placeholder="Driver name"  required=true>
+              <input type="text" class="form-control" id="exampleInputPassword1" name="mbno" value={{driver_set.mobile_no}} [(ngModel)]="driver_set.mobile_no" placeholder="Driver name"  required=true maxlength="10" minlength="10">
             </div>
             <div class="form-group">
               <label for="exampleInputPassword1">Truck No</label>

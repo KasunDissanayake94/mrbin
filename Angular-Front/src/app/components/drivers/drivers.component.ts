@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AppComponent } from '../../app.component';
 import {$} from "protractor";
+import { FlashMessagesService } from 'angular2-flash-messages';
 
 
 
@@ -16,6 +17,10 @@ export class DriversComponent implements OnInit {
   dsplay2 = 'none';
   delete_item ='none';
   drivrid = '';
+
+  
+  addDriValid = true;
+  editDriValid = true;
 
   //inorder to take size and store on on arrAY
   size: number;
@@ -37,7 +42,8 @@ export class DriversComponent implements OnInit {
     truck_no: ''
   };
 
-  constructor(app:AppComponent) {
+  constructor(app:AppComponent,
+    private flashMessagesService: FlashMessagesService) {
     //This Component get from the AppComponent
     this.driver_obj = app.drivers;
 
@@ -60,8 +66,50 @@ export class DriversComponent implements OnInit {
   //Add driver method execution
 
   addDriver(){
-    this.driver_obj.push(this.driver_set);
-    this.onCloseHandled();
+    this.checkAddDriValid();
+    if(this.addDriValid==true){
+      this.driver_obj.push(this.driver_set);
+      this.onCloseHandled();
+
+      this.flashMessagesService.show('Driver Added Successfully', { cssClass: 'alert alert-success', timeout: 5000 });
+
+    }
+    if(this.addDriValid==false){
+      //console.log("come");
+      this.flashMessagesService.show('Please Fill all the fields*', { cssClass: 'alert alert-danger', timeout: 5000 });
+    }
+    
+  }
+
+  //check Validation in add driver function
+  
+  checkAddDriValid(){
+    if(this.driver_set.name == null){
+      this.addDriValid = false;
+    }
+    if(this.driver_set.mobile_no == null){
+      this.addDriValid = false;
+    }
+    if(this.driver_set.truck_no == null){
+      this.addDriValid = false;
+    }
+  }
+
+  //check Validation in edit driver function
+  
+  checkEditDriValid(){
+    if(this.driver_set.name == ""){
+      this.editDriValid = false;
+    }
+    else if(this.driver_set.mobile_no == ""){
+      this.editDriValid = false;
+    }
+    else if(this.driver_set.truck_no == ""){
+      this.editDriValid = false;
+    }else{
+      this.editDriValid = true;
+
+    }
   }
 
   //Testing Edit code
@@ -90,7 +138,9 @@ export class DriversComponent implements OnInit {
   //when click Edit driver on editing modal this works
   editDriNow(mykey:any){
 
-    console.log(this.driver_set);
+    
+
+    //console.log(this.driver_set);
 
 
 
@@ -101,17 +151,30 @@ export class DriversComponent implements OnInit {
 
     console.log('updt_set: ');
     console.log(this.updt_driver_set);
+    console.log('driver_set: ');
+    console.log(this.driver_set);
 
+    this.checkEditDriValid();
+    if(this.editDriValid==true){
+      this.driver_obj.update(mykey, this.updt_driver_set).then(console.log('wade hari1'));
 
-    this.driver_obj.update(mykey, this.driver_set).then(console.log('wade hari1'));
+      //this.driver_obj.push(this.driver_set).then(console.log('wade hari1'));
+      console.log('updt_set: ');
+      this.flashMessagesService.show('Driver updated successfully', { cssClass: 'alert alert-success', timeout: 5000 });
+      this.onCloseEditDri();
 
-    //this.driver_obj.push(this.driver_set).then(console.log('wade hari1'));
-    console.log('updt_set: ');
+    }
+    if(this.editDriValid==false){
+      //console.log("come");
+      this.flashMessagesService.show('Please Fill all the fields*', { cssClass: 'alert alert-danger', timeout: 5000 });
+    }
+
+    
 
    // this.driver_obj.update(this.updt_driver_set).then(console.log('wade hari'));
 
 
-    this.onCloseEditDri();
+    
   }
 
   // used to try xcept for update ------------------------
@@ -132,6 +195,8 @@ export class DriversComponent implements OnInit {
   yesDltDri(){
     this.driver_obj.remove(this.delete_item).then(console.log("Data Deleted"));
     this.dsplay2='none';
+    this.flashMessagesService.show('Driver deleted successfully', { cssClass: 'alert alert-success', timeout: 5000 });
+
   }
 
   //No button on Modal
