@@ -19,14 +19,14 @@ import * as _ from 'lodash';
     <div class="row">
       <div class="col-md-3">
         <div class="form-group has-success">
-          <label class="form-control-label" placeholder="hvbjh" for="inputSuccess1">Enter Trucks Count</label>
+          <label class="form-control-label" for="inputSuccess1">Enter Trucks Count</label>
           <small id="fileHelp" class="form-text text-muted">*Enter Maximum Number of Trucks system can use</small>
           <div class="form-group">
             <select class="custom-select" [(ngModel)]="truck_amount">
-              <option selected="">Open this select menu</option>
-              <option value=1>1</option>
-              <option value=2>2</option>
-              <option value=3>3</option>
+              <option value="{{default_trucks}}" selected="">{{default_trucks}} (Max)</option>
+              <option value="{{default_trucks-1}}">{{default_trucks-1}}</option>
+              <option value="{{default_trucks-2}}">{{default_trucks-2}}</option>
+              <option value="{{default_trucks-3}}">{{default_trucks-3}}</option>
             </select>
           </div>
         </div>
@@ -35,10 +35,10 @@ import * as _ from 'lodash';
           <small id="fileHelp" class="form-text text-muted">*Enter Maximum Number of Tractors system can use</small>
           <div class="form-group">
             <select class="custom-select"  [(ngModel)]="tractor_amount">
-              <option selected="">Open this select menu</option>
-              <option value=1>1</option>
-              <option value=2>2</option>
-              <option value=3>3</option>
+              <option value="{{default_tractor}}" selected="">{{default_tractor}} (Max)</option>
+              <option value="{{default_tractor-1}}">{{default_tractor-1}}</option>
+              <option *ngIf="default_tractor-2 >= 0" value="{{default_tractor-2}}">{{default_tractor-2}}</option>
+              <option *ngIf="default_tractor-3 >= 0" value="{{default_tractor-3}}">{{default_tractor-3}}</option>
             </select>
           </div>
         </div>
@@ -68,7 +68,7 @@ import * as _ from 'lodash';
 
           </agm-marker>
 
-          <agm-direction *ngFor="let marker of push_array  | slice:1:3"
+          <agm-direction *ngFor="let marker of push_array"
                          [origin]="dir.origin" [destination]="{ lat:(marker.lat), lng: (marker.lon) }"></agm-direction>
 
         </agm-map>
@@ -101,6 +101,9 @@ export class GoogleMapComponent implements OnInit {
   private average_tractor_capacity = 2000;
   private average_garbagebin_capacity = 250;
   private max_bins = 0;
+  private garbage_truck: any;
+  private default_trucks = 0;
+  private default_tractor = 0;
 
 
 
@@ -108,6 +111,7 @@ export class GoogleMapComponent implements OnInit {
   constructor(private http:Http,app:AppComponent) {
     //This component get from the AppComponent
     this.bin_obj = app.bins;
+    this.garbage_truck = app.garbage_truck;
   }
 
   ngOnInit() {
@@ -115,6 +119,16 @@ export class GoogleMapComponent implements OnInit {
       //The Origin of the process should be started
       origin: { lat: 6.915810, lng: 79.863773 },
     }
+    this.garbage_truck.forEach(element =>{
+      var size1 = element.length;
+      for (var i =0 ; i<size1;i++){
+        if(element[i].truck_type == "Garbage Truck") {
+          this.default_trucks = this.default_trucks+1;
+        }else if(element[i].truck_type == "Garbage Tractor"){
+          this.default_tractor = this.default_tractor+1;
+        }
+      }
+    });
 
     //console.log(sortJsonArray(this.push_array,'msg','asc'));
   }
