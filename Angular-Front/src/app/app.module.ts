@@ -17,6 +17,7 @@ import { AuthService} from "./service/auth.service";
 import { AuthGuard } from "./service/auth.guard"
 import { AuthGuarduser } from "./service/auth.guarduser"
 import { HttpModule } from '@angular/http';
+
 //components
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
@@ -49,6 +50,8 @@ import { GarbagetrucksComponent } from './components/garbagetrucks/garbagetrucks
 import { ImageUploadModule } from "angular2-image-upload";
 import { BarchartYrcolComponent } from './components/charts/barchart-yrcol/barchart-yrcol.component';
 import { NgxGaugeModule } from 'ngx-gauge';
+import { Ng4GeoautocompleteModule } from 'ng4-geoautocomplete';
+
 
 
 const  applicationRouters:Routes = [
@@ -105,6 +108,7 @@ const  applicationRouters:Routes = [
     Ng2CarouselamosModule,
     Ng2SearchPipeModule,
     FormsModule,
+    Ng4GeoautocompleteModule.forRoot(),
     RouterModule.forRoot(applicationRouters),
     AngularFireModule.initializeApp(environment.firebase),
     ImageUploadModule.forRoot(),

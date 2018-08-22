@@ -51,3 +51,6 @@ div.scroll {
   height: 330px;
   overflow: scroll;
 }
+.demo #search_places {
+  height: 100px;
+}

@@ -156,6 +156,7 @@
             </div>
             <div class="form-group">
               <label for="exampleInputPassword1">Description</label>
+              <div class="demo"><ng4geo-autocomplete (componentCallback)="autoCompleteCallback1($event)"></ng4geo-autocomplete></div>
               <input type="text" class="form-control" id="exampleInputPassword1" name="dnm" placeholder="Description" [(ngModel)]="bin.description">
             </div>
             <!--div class="form-group">
@@ -168,7 +169,7 @@
 
               <br>
 
-              
+
               <select class="form-control" id="exampleSelect1" name="prior" placeholder="Description" [(ngModel)]="bin.location.priority">
                 <option>Select Priority</option>
                 <option>1</option>
@@ -361,7 +362,7 @@
 
         <!-- Form body -->
 
-        Are you sure about Deleting this Bin???
+        Are you sure you want to delete this Bin???
 
       </div>
 

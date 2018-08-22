@@ -203,6 +203,9 @@ closeshowLocation(){
 
 
   }
+  autoCompleteCallback1(selectedData:any) {
+    //do any necessery stuff.
+  }
 
 
 
