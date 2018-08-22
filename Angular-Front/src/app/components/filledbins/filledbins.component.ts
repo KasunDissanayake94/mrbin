@@ -26,6 +26,9 @@ export class FilledbinsComponent implements OnInit {
   public req_bin_obj: any;
   public app_users: any;
 
+  addBinValid = true;
+
+
   lat_location: number ;
   lng_location: number ;
   zoom: number= 15;
@@ -100,6 +103,31 @@ export class FilledbinsComponent implements OnInit {
     this.display='none';
   }
 
+  //validate function to check Add bin form
+  checkAddBnValidate(){
+
+    
+    if(this.bin.user_id == null){
+      this.addBinValid = false;
+    }
+    else if(this.bin.description == ""){
+      this.addBinValid = false;
+    }
+    else if(this.bin.location.lon == ""){
+      this.addBinValid = false;
+    }
+    else if(this.bin.location.lat == ""){
+      this.addBinValid = false;
+    }
+    // else if(this.bin.location.priority == 'Select priority'){
+    //   this.addBinValid = false;
+    // }
+    else{
+      this.addBinValid = true;
+    }
+    
+  }
+
   //Add New Bin
   add_new_bin(){
     this.temp= Number(this.bin.location.priority);
@@ -108,16 +136,31 @@ export class FilledbinsComponent implements OnInit {
     console.log(this.bin);
     this.onCloseHandled();
 
-    this.req_bin_obj.update(this.bin.user_id, {status: 'solved'});
-    let binId = this.bin_obj.push(this.bin).key;
+    this.checkAddBnValidate();
 
-   // console.log("-"+binId);
-    //this.bin_obj.update(binId, {user_id: this.req_bin_obj.$key});
+    if(this.addBinValid == true){
 
-    this.app_users.update(this.bin.user_id, {bin_id: binId});
+      this.req_bin_obj.update(this.bin.user_id, {status: 'solved'});
+      let binId = this.bin_obj.push(this.bin).key;
+
+      //console.log("-"+binId);
+      // this.bin_obj.update(binId, {user_id: this.req_bin_obj.$key});
+
+      this.app_users.update(this.bin.user_id, {bin_id: binId});
+
+      this._flashMessagesService.show('Bin added successfully', { cssClass: 'alert alert-success', timeout: 5000 });
+
+
+   }else if(this.addBinValid == false){
+    this._flashMessagesService.show('Please Fill all the fields*', { cssClass: 'alert alert-danger', timeout: 5000 });
+
+   }
 
 
   }
+
+  
+
   //Showing the Actual Location of the bin
   showLocation(lat,lon){
     this.dsply4="block";
@@ -188,6 +231,9 @@ closeshowLocation(){
 
     this.delete_item = 'none';
     this.dsplay5='none';
+
+    this._flashMessagesService.show('Bin deleted successfully', { cssClass: 'alert alert-success', timeout: 5000 });
+
   }
 
   placeMarker($event){
