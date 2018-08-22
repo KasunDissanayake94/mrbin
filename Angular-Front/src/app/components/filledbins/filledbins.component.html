@@ -147,7 +147,9 @@
 
                 <!--to select driver id from drivers table -->
                 <option *ngFor="let itmm of req_bin_obj | async">
-                  {{itmm.$key}}
+                  <div *ngIf="itmm.status=='not solved'">
+                      {{itmm.$key}}
+                  </div>
                 </option>
 
               </select>
