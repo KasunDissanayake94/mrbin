@@ -78,6 +78,7 @@
           </td>
           <td>
             <button class="btn btn-info" (click)="openAssign(item)">Assign a driver</button>
+            <button class="btn btn-info" (click)="openDltBin(item)">Delete Bin</button>
           </td>
 
           <!--div *ngIf="{{item.level}} == this.Level; then full else notfull"></div-->
@@ -346,3 +347,28 @@
   </div><!-- /.modal !-->
 
 
+<!-- When clicked delete bin this model opens-->
+
+<div class="backdrop" [ngStyle]="{'display':dsplay5}"></div>
+<div class="modal" tabindex="-1" role="dialog"  [ngStyle]="{'display':dsplay5}">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title">Delete Bin</h4>
+        <button type="button" class="close" aria-label="Close" (click)="noDltDri()"><span aria-hidden="true">&times;</span></button>
+      </div>
+      <div class="modal-body container">
+
+        <!-- Form body -->
+
+        Are you sure about Deleting this Bin???
+
+      </div>
+
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" (click)="yesDltDri()">Yes</button>
+        <button type="button" class="btn btn-default" (click)="noDltDri()">No</button>
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal !-->

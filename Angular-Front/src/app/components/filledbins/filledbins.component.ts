@@ -36,6 +36,9 @@ export class FilledbinsComponent implements OnInit {
   dsply = 'none';
   dsply2 = 'none';
   dsply4 = 'none';
+  dsplay5 = 'none';
+  delete_item ='none';
+  rel_user ='none';
 
 
   bin = {
@@ -89,7 +92,7 @@ export class FilledbinsComponent implements OnInit {
     console.log(this.bin);
     this.onCloseHandled();
 
-    this.req_bin_obj.update(this.bin.user_id, {status: 'solved'})
+    this.req_bin_obj.update(this.bin.user_id, {status: 'solved'});
     let binId = this.bin_obj.push(this.bin).key;
 
    // console.log("-"+binId);
@@ -147,6 +150,38 @@ closeshowLocation(){
   clsAssigned(){
     this.dsply2='none';
   }
+
+
+  //After Clicking delete a relevant bin  this Model will be called
+  openDltBin(item:any){
+    this.rel_user = item[1].user_id;
+    
+    this.delete_item = item[1].$key;
+    this.dsplay5="block";
+  }
+
+  //Yes button on Modal
+  yesDltDri(){
+    this.deleteBinfrmUser();
+    this.bin_obj.remove(this.delete_item).then(console.log("Data Deleted"));
+
+    this.delete_item = 'none';
+    this.dsplay5='none';
+  }
+
+  //No button on Modal
+  noDltDri(){
+    this.delete_item = 'none';
+    this.dsplay5='none';
+  }
+
+  deleteBinfrmUser(){
+    // this.app_users.update(this.bin.user_id, {bin_id: null});
+    this.app_users.remove(this.rel_user).then(console.log("Data Deleted"));
+    this.req_bin_obj.remove(this.rel_user).then(console.log("Data Deleted"));
+
+  }
+
 
 
   ngOnInit() {

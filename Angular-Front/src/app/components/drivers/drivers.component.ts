@@ -14,7 +14,7 @@ export class DriversComponent implements OnInit {
   display='none';
   dsplay='none';
   dsplay2 = 'none';
-  delete_item ='none;'
+  delete_item ='none';
   drivrid = '';
 
   //inorder to take size and store on on arrAY
