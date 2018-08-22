@@ -146,13 +146,17 @@ closeshowLocation(){
   closeAssign(){
     this.dsply='none';
   }
-  //After select assign on assign a driver
+  //After select assign button on assign a driver
   assignNow(){
     console.log(this.assigned_drivers1);
-    console.log(this.assigned_drivers1.bin_id);
-
-    this.assigned_obj.push(this.assigned_drivers1);
-    this.closeAssign();
+    console.log(this.assigned_drivers1.assigned_dri_id);
+    if(this.assigned_drivers1.assigned_dri_id == null){
+      console.log("come");
+      this._flashMessagesService.show('Please Fill all the fields*', { cssClass: 'alert alert-danger', timeout: 5000 });
+    }else{
+      this.assigned_obj.push(this.assigned_drivers1);
+      this.closeAssign();
+    }
   }
 
   searchIt(){

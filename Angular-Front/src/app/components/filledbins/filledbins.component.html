@@ -229,8 +229,7 @@
 
         <form name="" method="post" #formCtrl="">
           <fieldset>
-
-
+            <flash-messages></flash-messages>
             <div class="form-group">
               <label for="exampleInputEmail1">Bin ID</label>
               <input disabled type="text" class="form-control" id="exampleInputEmail1" name="bid" value="{{assigned_drivers1.bin_id}}" placeholder="Enter Bin ID" [(ngModel)]="this.assigned_drivers1.bin_id" required>
