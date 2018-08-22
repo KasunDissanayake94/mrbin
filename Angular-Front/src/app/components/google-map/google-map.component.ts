@@ -15,37 +15,68 @@ import * as _ from 'lodash';
   `],
   template: `
     <app-sidebar></app-sidebar>
-    <div *ngIf="lat && lng">
+    <div class="jumbotron" style="margin-left: 50px">
+    <div class="row">
+      <div class="col-md-3">
+        <div class="form-group has-success">
+          <label class="form-control-label" placeholder="hvbjh" for="inputSuccess1">Enter Trucks Count</label>
+          <small id="fileHelp" class="form-text text-muted">*Enter Maximum Number of Trucks system can use</small>
+          <div class="form-group">
+            <select class="custom-select" [(ngModel)]="truck_amount">
+              <option selected="">Open this select menu</option>
+              <option value=1>1</option>
+              <option value=2>2</option>
+              <option value=3>3</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-group has-success">
+          <label class="form-control-label" for="inputSuccess1">Enter Tractor Count</label>
+          <small id="fileHelp" class="form-text text-muted">*Enter Maximum Number of Tractors system can use</small>
+          <div class="form-group">
+            <select class="custom-select"  [(ngModel)]="tractor_amount">
+              <option selected="">Open this select menu</option>
+              <option value=1>1</option>
+              <option value=2>2</option>
+              <option value=3>3</option>
+            </select>
+          </div>
+        </div>
+        <button type="button" class="btn btn-primary btn-lg btn-block" (click)="generate_path()">Generate Path</button>
+      </div>
+      <div class="col-md-9" *ngIf="lat && lng">
 
-      <agm-map [latitude]="lat" [longitude]="lng" [zoom]="13">
+        <agm-map [latitude]="lat" [longitude]="lng" [zoom]="13">
 
-        <agm-marker [latitude]="lat" [longitude]="lng" >
+          <agm-marker [latitude]="lat" [longitude]="lng" >
+            <agm-info-window>
+              <h3><strong>Location</strong></h3>
+              <p>You are here!</p>
+            </agm-info-window>
 
-          <agm-info-window>
-            <h3><strong>Location</strong></h3>
-            <p>You are here!</p>
-          </agm-info-window>
+          </agm-marker>
+          <agm-marker *ngFor="let marker of myarray"
+                      [latitude]="marker[0]"
+                      [longitude]="marker[1]"
+                      [iconUrl]="'../../assets/img/map_icon3.png'">
 
-        </agm-marker>
-        <agm-marker *ngFor="let marker of myarray"
-                    [latitude]="marker[0]"
-                    [longitude]="marker[1]"
-                    [iconUrl]="'../../assets/img/map_icon3.png'">
+            <agm-info-window>
+              <h3><strong>Bin Filled</strong></h3>
 
-          <agm-info-window>
-            <h3><strong>Bin Filled</strong></h3>
+              <p>{{ marker[2]}} </p>
+            </agm-info-window>
 
-            <p>{{ marker[2]}} </p>
-          </agm-info-window>
+          </agm-marker>
 
-        </agm-marker>        
+          <agm-direction *ngFor="let marker of push_array  | slice:1:3"
+                         [origin]="dir.origin" [destination]="{ lat:(marker.lat), lng: (marker.lon) }"></agm-direction>
 
-        <agm-direction *ngFor="let marker of push_array;let i=index"
-                       [origin]="dir.origin" [destination]="{ lat:(marker.lat), lng: (marker.lon) }"></agm-direction>
-
-      </agm-map>
+        </agm-map>
 
       </div>
+    </div>
+    </div>
+    
   `
 })
 
@@ -63,6 +94,13 @@ export class GoogleMapComponent implements OnInit {
   dir:any;
   private push_array= [];
   private new_array= [];
+  private truck_amount = 0;
+  private tractor_amount = 0;
+  private total_capacity = 0;
+  private average_truck_capacity = 10000;
+  private average_tractor_capacity = 2000;
+  private average_garbagebin_capacity = 250;
+  private max_bins = 0;
 
 
 
@@ -78,8 +116,30 @@ export class GoogleMapComponent implements OnInit {
       origin: { lat: 6.915810, lng: 79.863773 },
     }
 
+    //console.log(sortJsonArray(this.push_array,'msg','asc'));
+  }
 
 
+
+  private getUserLocation() {
+    /// locate the user
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(position => {
+        this.lat = position.coords.latitude;
+        this.lng = position.coords.longitude;
+      });
+    }
+  }
+  private generate_path(){
+    console.log(this.tractor_amount);
+    console.log(this.truck_amount);
+    this.total_capacity = this.tractor_amount*this.average_tractor_capacity + this.truck_amount*this.average_truck_capacity;
+    this.max_bins = this.total_capacity/this.average_garbagebin_capacity;
+    console.log(this.max_bins);
+    this.calculate_path();
+  }
+
+  private calculate_path(){
     this.getUserLocation();
     const sortJsonArray = require('sort-json-array');
     //Check each and every bin in the system and if garbage level is high it shows in the map
@@ -110,21 +170,9 @@ export class GoogleMapComponent implements OnInit {
             });
           this.myarray.push([element[i].location.lat, element[i].location.lon, element[i].description]);
         }
-        }
+      }
     });
-    //console.log(sortJsonArray(this.push_array,'msg','asc'));
-  }
 
-
-
-  private getUserLocation() {
-    /// locate the user
-    if (navigator.geolocation) {
-      navigator.geolocation.getCurrentPosition(position => {
-        this.lat = position.coords.latitude;
-        this.lng = position.coords.longitude;
-      });
-    }
   }
 
 

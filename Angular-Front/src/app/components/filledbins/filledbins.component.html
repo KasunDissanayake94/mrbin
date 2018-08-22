@@ -147,7 +147,7 @@
 
                 <!--to select driver id from drivers table -->
                 <option *ngFor="let itmm of req_bin_obj | async">
-                  <div *ngIf="itmm.status=='not solved'">
+                  <div *ngIf="itmm.status !='solved'">
                       {{itmm.$key}}
                   </div>
                 </option>
@@ -160,6 +160,7 @@
                 <option>4</option>
                 <option>5</option>
               </select-->
+
             </div>
             <div class="form-group">
               <label for="exampleInputPassword1">Location</label>
