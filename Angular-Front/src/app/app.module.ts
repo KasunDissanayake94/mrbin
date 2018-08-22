@@ -50,7 +50,8 @@ import { GarbagetrucksComponent } from './components/garbagetrucks/garbagetrucks
 import { ImageUploadModule } from "angular2-image-upload";
 import { BarchartYrcolComponent } from './components/charts/barchart-yrcol/barchart-yrcol.component';
 import { NgxGaugeModule } from 'ngx-gauge';
-import { Ng4GeoautocompleteModule } from 'ng4-geoautocomplete';
+import { GooglePlaceModule } from "ngx-google-places-autocomplete";
+
 
 
 
@@ -108,7 +109,6 @@ const  applicationRouters:Routes = [
     Ng2CarouselamosModule,
     Ng2SearchPipeModule,
     FormsModule,
-    Ng4GeoautocompleteModule.forRoot(),
     RouterModule.forRoot(applicationRouters),
     AngularFireModule.initializeApp(environment.firebase),
     ImageUploadModule.forRoot(),
@@ -119,6 +119,7 @@ const  applicationRouters:Routes = [
     RouterModule,
     NgxGaugeModule,
     LbdModule,
+    GooglePlaceModule,
     HttpModule,
     FlashMessagesModule.forRoot(),
     ChartsModule,

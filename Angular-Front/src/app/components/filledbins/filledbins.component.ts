@@ -2,8 +2,10 @@ import {Component, OnInit} from '@angular/core';
 import { AppComponent } from '../../app.component';
 import { GeoService } from '../../service/geo.service'
 import {_if} from "rxjs/observable/if";
+import { FlashMessagesService } from 'angular2-flash-messages';
 
 
+declare var google: any;
 
 
 @Component({
@@ -14,7 +16,9 @@ import {_if} from "rxjs/observable/if";
 
 })
 
+
 export class FilledbinsComponent implements OnInit {
+
 
   public bin_obj:any;
   public drivers_obj:any;
@@ -30,6 +34,9 @@ export class FilledbinsComponent implements OnInit {
   size: number;
   temp: number;
   public myarr=[];
+
+
+  location_image = '../assets/img/house.png';
 
 
   display='none';
@@ -61,11 +68,20 @@ export class FilledbinsComponent implements OnInit {
     location: '',
     assigned_dri_id: ''
   };
+  private latitude_origin: number;
+  private longitude_origin: number;
+   marker = {
+    buildingNum  : '',
+    streetName : ''
+
+
+
+  }
 
 
 
 
-  constructor(app:AppComponent) {
+  constructor(app:AppComponent,private _flashMessagesService: FlashMessagesService) {
     //This component get from the AppComponent
     this.bin_obj = app.bins;
     this.drivers_obj = app.drivers;
@@ -107,6 +123,7 @@ export class FilledbinsComponent implements OnInit {
     this.dsply4="block";
     this.lat_location = lat;
     this.lng_location = lon;
+    console.log(lat);
 
 }
 closeshowLocation(){
@@ -155,7 +172,7 @@ closeshowLocation(){
   //After Clicking delete a relevant bin  this Model will be called
   openDltBin(item:any){
     this.rel_user = item[1].user_id;
-    
+
     this.delete_item = item[1].$key;
     this.dsplay5="block";
   }
@@ -169,7 +186,12 @@ closeshowLocation(){
     this.dsplay5='none';
   }
 
-  //No button on Modal
+  placeMarker($event){
+    console.log($event.coords.lat);
+    console.log($event.coords.lng);
+    this.geolocation($event.coords.lat, $event.coords.lng);
+  }
+
   noDltDri(){
     this.delete_item = 'none';
     this.dsplay5='none';
@@ -185,8 +207,8 @@ closeshowLocation(){
 
 
   ngOnInit() {
-
-
+    this.latitude_origin = 6.9158103;
+    this.longitude_origin = 79.86377;
     //Check each and every bin in the system and if garbage level is high it shows in the map
     this.bin_obj.forEach(element => {
       this.size = element.length;
@@ -203,10 +225,31 @@ closeshowLocation(){
 
 
   }
-  autoCompleteCallback1(selectedData:any) {
-    //do any necessery stuff.
+
+
+  private geolocation(lat_1, lng_1) {
+    if (navigator.geolocation) {
+      let geocoder = new google.maps.Geocoder();
+      let latlng = new google.maps.LatLng(lat_1, lng_1);
+      let request = { latLng: latlng };
+
+      geocoder.geocode(<google.maps.GeocoderRequest>request, (results, status) => {
+        if (status == google.maps.GeocoderStatus.OK) {
+          let result = results[0];
+          let rsltAdrComponent = result.address_components;
+          let resultLength = rsltAdrComponent.length;
+          if (result != null) {
+            this.marker.buildingNum = rsltAdrComponent[resultLength-8].short_name;
+            this.marker.streetName = rsltAdrComponent[resultLength-7].short_name;
+            this.bin.description = this.marker.buildingNum+' '+this.marker.streetName;
+            this.bin.location.lat = lat_1;
+            this.bin.location.lon = lng_1;
+            this._flashMessagesService.show(this.marker.buildingNum+' '+this.marker.streetName, { cssClass: 'alert alert-info', timeout: 5000 });
+          } else {
+            this._flashMessagesService.show('No such Address Available', { cssClass: 'alert alert-info', timeout: 5000 });
+          }
+        }
+      });
+    }
   }
-
-
-
 }
