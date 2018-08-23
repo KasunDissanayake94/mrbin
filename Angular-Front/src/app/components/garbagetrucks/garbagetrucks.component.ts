@@ -61,6 +61,7 @@ export class GarbagetrucksComponent implements OnInit {
   ngOnInit() {
     this.garbage_truck.forEach(element => {
       this.size = element.length;
+      this.myarr = [];
       for (var i =0 ; i<this.size;i++){
 
         console.log(element[i].level);

@@ -262,6 +262,7 @@ closeshowLocation(){
     //Check each and every bin in the system and if garbage level is high it shows in the map
     this.bin_obj.forEach(element => {
       this.size = element.length;
+      this.myarr = [];
       for (var i =0 ; i<this.size;i++){
 
           console.log(element[i].level);
