@@ -44,8 +44,13 @@
           <td>{{item[1].mobile_no}}
             <!-- <button class="btn btn-success"><i class="fa fa-phone fa-1x"></i></button></td> -->
           <td>{{item[1].truck_no}}</td>
-          <td><button class="btn btn-danger" (click)="openEditDri(item)">Edit</button></td>
-          <td><button class="btn btn-info" (click)="openDltDri(item)" >Delete</button></td>
+          <td><button class="btn btn-info" (click)="openEditDri(item)">
+              <i class="fa fa-cog"></i>
+          </button></td>
+          <td><button class="btn btn-danger" (click)="openDltDri(item)" >
+            <!-- Delete -->
+            <i class="fa fa-trash-o fa-lg"></i>
+          </button></td>
         </tr>
 
         </tbody>
