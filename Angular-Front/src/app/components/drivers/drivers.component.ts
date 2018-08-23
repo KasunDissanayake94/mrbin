@@ -87,11 +87,13 @@ export class DriversComponent implements OnInit {
     if(this.driver_set.name == null){
       this.addDriValid = false;
     }
-    if(this.driver_set.mobile_no == null){
+    else if(this.driver_set.mobile_no == null){
       this.addDriValid = false;
     }
-    if(this.driver_set.truck_no == null){
+    else if(this.driver_set.truck_no == null){
       this.addDriValid = false;
+    }else{
+      this.addDriValid = true;
     }
   }
 
