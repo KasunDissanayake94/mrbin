@@ -120,8 +120,8 @@ export class GarbagetrucksComponent implements OnInit {
     this.checkAddTruValid();
 
     if(this.addTruckValid == true){
-      // this.garbage_truck.push(this.gar_truck);
-      // this.onCloseHandled();
+      this.garbage_truck.push(this.gar_truck);
+      this.onCloseHandled();
 
       this.flashMessagesService.show('Garbage truck Added Successfully', { cssClass: 'alert alert-success', timeout: 5000 });
 
