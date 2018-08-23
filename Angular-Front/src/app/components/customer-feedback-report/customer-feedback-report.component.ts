@@ -55,7 +55,7 @@ export class CustomerFeedbackReportComponent implements OnInit {
 
   finalReslv(rsl:any){
 
-    this.solvedProb_obj.push(rsl).then(console.log('serama hariyoooo'));
+    this.solvedProb_obj.push(rsl).then(console.log('Done'));
     console.log(rsl);
 
 
@@ -78,7 +78,9 @@ export class CustomerFeedbackReportComponent implements OnInit {
 
   ngOnInit() {
     //Check each and every bin in the system and if garbage level is high it shows in the map
+
     this.feedback_obj.forEach(element => {
+      this.myarr = [];
       this.size = element.length;
       for (var i =0 ; i<this.size;i++){
 

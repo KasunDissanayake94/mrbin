@@ -145,8 +145,8 @@ export class ReportsComponent implements OnInit {
   }
 
   add_data_myarray(database_object){
-    this.myarr = [];
     database_object.forEach(element => {
+      this.myarr = [];
       this.size = element.length;
       for (var i =0 ; i<this.size;i++){
         this.myarr.push([i+1, element[i]]);
