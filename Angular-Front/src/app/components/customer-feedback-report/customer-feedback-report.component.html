@@ -18,7 +18,7 @@
           <th scope="col">User ID</th>
           <th scope="col">Date</th>
           <th scope="col">Description</th>
-          <th scope="col">User mobile</th>
+          <!-- <th scope="col">User mobile</th> -->
           <th scope="col">Status</th>
         </tr>
         </thead>
@@ -29,9 +29,9 @@
           <td>{{item[1].user_id}}</td>
           <td>{{item[1].date_of_feedback}}</td>
           <td>{{item[1].feedback}}</td>
-          <td>{{item[1].telephone}}
+          <!-- <td>{{item[1].telephone}}
             <button class="btn btn-success"><i class="fa fa-phone fa-1x"></i></button>
-            <button class="btn btn-success"><i class="fa fa-envelope fa-1x"></i></button> </td>
+            <button class="btn btn-success"><i class="fa fa-envelope fa-1x"></i></button> </td> -->
           <td><button class="btn btn-success" (click)="openResolve(item)">Resolved</button></td>
 
 
