@@ -15,7 +15,7 @@ export class BarchartYrcolComponent implements OnInit {
 
 
 
-  public barChartLabels:string[] = ['2011', '2012', '2013', '2014', '2015', '2016', '2017'];
+  public barChartLabels:string[] = ['2013', '2014', '2015', '2016', '2017'];
 
   public barChartType:string = 'bar';
   public barChartLegend:boolean = true;
@@ -23,7 +23,7 @@ export class BarchartYrcolComponent implements OnInit {
 
   public barChartData:any[] = [
 
-    {data: [465, 475, 465, 470, 456, 500, 486], label : 'Collected Amount'}
+    {data: [465, 470, 456, 500, 486], label : 'Collected Amount'}
 
   ];
   public chartColors: any[] = [
