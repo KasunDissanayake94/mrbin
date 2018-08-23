@@ -45,8 +45,15 @@
           <td>{{item[1].truck_type}}</td>
           <td>{{item[1].capacity}}</td>
           <td>{{item[1].drivername}}</td>
-          <td><button class="btn btn-danger" (click)="openEdittruck(item[1])">Edit</button></td>
-          <td><button class="btn btn-info" (click)="openDlttruck(item[1].$key)" >Delete</button></td>
+          <td><button class="btn btn-info" (click)="openEdittruck(item[1])">
+              <i class="fa fa-cog"></i>
+            <!-- Edit -->
+          </button></td>
+          <td><button class="btn btn-danger" (click)="openDlttruck(item[1].$key)" >
+            <!-- Delete -->
+            <i class="fa fa-trash-o fa-lg"></i>
+
+          </button></td>
           <td><button class="btn btn-info" (click)="openViewtruck(item[1].truck_no)" >View</button></td>
         </tr>
 
