@@ -106,7 +106,7 @@ export class FilledbinsComponent implements OnInit {
   //validate function to check Add bin form
   checkAddBnValidate(){
 
-    
+
     if(this.bin.user_id == null){
       this.addBinValid = false;
     }
@@ -125,7 +125,7 @@ export class FilledbinsComponent implements OnInit {
     else{
       this.addBinValid = true;
     }
-    
+
   }
 
   //Add New Bin
@@ -133,12 +133,11 @@ export class FilledbinsComponent implements OnInit {
     this.temp= Number(this.bin.location.priority);
 
     this.bin.location.priority = this.temp;
-    console.log(this.bin);
-    this.onCloseHandled();
 
     this.checkAddBnValidate();
 
     if(this.addBinValid == true){
+      console.log("Valid");
 
       this.req_bin_obj.update(this.bin.user_id, {status: 'solved'});
       let binId = this.bin_obj.push(this.bin).key;
@@ -147,11 +146,14 @@ export class FilledbinsComponent implements OnInit {
       // this.bin_obj.update(binId, {user_id: this.req_bin_obj.$key});
 
       this.app_users.update(this.bin.user_id, {bin_id: binId});
+      this.onCloseHandled();
+      console.log("Good");
 
       this._flashMessagesService.show('Bin added successfully', { cssClass: 'alert alert-success', timeout: 5000 });
 
 
    }else if(this.addBinValid == false){
+      console.log("Valid");
     this._flashMessagesService.show('Please Fill all the fields*', { cssClass: 'alert alert-danger', timeout: 5000 });
 
    }
@@ -159,7 +161,7 @@ export class FilledbinsComponent implements OnInit {
 
   }
 
-  
+
 
   //Showing the Actual Location of the bin
   showLocation(lat,lon){

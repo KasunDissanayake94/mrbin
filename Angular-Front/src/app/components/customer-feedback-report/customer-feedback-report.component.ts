@@ -75,7 +75,6 @@ export class CustomerFeedbackReportComponent implements OnInit {
   }
 
 
-
   ngOnInit() {
     //Check each and every bin in the system and if garbage level is high it shows in the map
 

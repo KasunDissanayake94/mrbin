@@ -4,7 +4,6 @@
   <h1 class="display-4">Bin Details</h1>
 
   <div class="col-md-9">
-      <flash-messages></flash-messages>
   </div>
 
   <hr class="my-4">
@@ -130,6 +129,7 @@
         <h4 class="modal-title">Add new Bin</h4>
         <button type="button" class="close" aria-label="Close" (click)="onCloseHandled()"><span aria-hidden="true">&times;</span></button>
       </div>
+      <flash-messages></flash-messages>
       <div class="modal-body container">
 
         <!-- Form body -->
@@ -149,7 +149,7 @@
 
               <select  class="form-control" name="dnm" id="exampleSelect1" [(ngModel)]="bin.user_id">
 
-                <option>Select bin user..</option>
+                <option >Select bin user..</option>
 
                 <!--to select driver id from drivers table -->
                 <option *ngFor="let itmm of req_bin_obj | async">
@@ -169,8 +169,8 @@
 
             </div>
             <div class="form-group">
-              <label for="exampleInputPassword1">Location</label>
-              <!-- <flash-messages></flash-messages> -->
+
+              <label >Location</label>
               <agm-map [latitude]="latitude_origin" [longitude]="longitude_origin" [zoom]="13" [streetViewControl]="true" [mapTypeControl]="true" [fullscreenControl]="true" (mapClick)="placeMarker($event)">
                 <agm-marker [latitude]="latitude_origin" [longitude]="longitude_origin" ></agm-marker>
               </agm-map>
@@ -238,7 +238,6 @@
 
         <form name="" method="post" #formCtrl="">
           <fieldset>
-            <!-- <flash-messages></flash-messages> -->
             <div class="form-group">
               <label for="exampleInputEmail1">Bin ID</label>
               <input disabled type="text" class="form-control" id="exampleInputEmail1" name="bid" value="{{assigned_drivers1.bin_id}}" placeholder="Enter Bin ID" [(ngModel)]="this.assigned_drivers1.bin_id" required>
